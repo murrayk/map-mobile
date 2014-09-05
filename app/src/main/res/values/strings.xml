@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">OMG Android</string>
+    <string name="textview">Matt is learning Android!</string>
+    <string name="action_settings">Settings</string>
+    <string name="button">Update The TextView</string>
+    <string name="hint">A Name</string>
+    <string name="activity_details">Map</string>
+    <string-array name="titles" >
+        <item>green</item>
+        <item>blue</item>
+        <item>red</item>
+        <item>black</item>
+    </string-array>
+    <string-array name="descriptions" >
+        <item>green description 1</item>
+        <item>blue description 2</item>
+        <item>red description 3</item>
+        <item>black description 4</item>
+    </string-array>
+    <string-array name="routes" >
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Black</item>
+    </string-array>
+    <string-array name="routes_kml_filenames" >
+        <item>green-route.kml</item>
+        <item>Blue</item>
+        <item>red-route.kml</item>
+        <item>Black</item>
+    </string-array>
+
+
+</resources>
