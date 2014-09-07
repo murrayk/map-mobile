@@ -3,8 +3,11 @@ package com.example.murray.testapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -15,13 +18,19 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MyActivity extends Activity implements  AdapterView.OnItemClickListener {
-
+    private static final String MAP_DB_NAME = "map1.mbtiles";
 
     public static final String ROUTE_CHOSEN_KEY = "ROUTE_CHOSEN_KEY";
+
+    private Utils utils = Utils.getInstance();
 
     ListView listView;
     MyAdapter adapter;
@@ -37,6 +46,16 @@ public class MyActivity extends Activity implements  AdapterView.OnItemClickList
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+
+        // copy large offline map in bg task
+        new Thread(new Runnable() {
+            public void run() {
+
+                utils.copyOfflineMap(MAP_DB_NAME, MyActivity.this.getAssets(), MyActivity.this.getPackageName());
+
+            }
+        }).start();
+
 
 
     }
@@ -73,20 +92,78 @@ public class MyActivity extends Activity implements  AdapterView.OnItemClickList
         SingleRow row =(SingleRow)adapter.getItem(i);
         goToMap(row);
     }
+
+    private File copyFileFromAssets(String filename) {
+
+        String baseDir = Environment.getExternalStorageDirectory().getPath() + "/" + this.getApplicationContext().getPackageName();
+
+        File file = new File(baseDir + filename);
+        if(file.exists()){
+            return file;
+        }
+
+
+        AssetManager assetManager = this.getAssets();
+
+
+        InputStream in;
+        OutputStream out;
+        String newFileName = null;
+        try {
+            Log.i("tag", "copyFile() " + filename);
+            in = assetManager.open(filename);
+
+            newFileName = baseDir + filename;
+            out = new FileOutputStream(newFileName);
+
+            byte[] buffer = new byte[1024];
+            int read;
+            while ((read = in.read(buffer)) != -1) {
+                out.write(buffer, 0, read);
+            }
+            in.close();
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            Log.e("tag", "Exception in copyFile() of "+newFileName);
+            Log.e("tag", "Exception in copyFile() "+e.toString());
+        }
+
+        return file;
+
+    }
 }
 
 class SingleRow implements Serializable{
-    Enum route;
-    int imageId;
-    String title;
-    String description;
-    String routeKmlFile;
 
-    SingleRow(int imageId, String title, String description, Enum route, String routeKmlFile) {
+    private String title;
+    private int imageId;
+    private String description;
+    private String routeKmlFile;
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getRouteKmlFile() {
+        return routeKmlFile;
+    }
+
+
+
+    SingleRow(int imageId, String title, String description , String routeKmlFile) {
         this.imageId = imageId;
         this.title = title;
         this.description = description;
-        this.route = route;
+
         this.routeKmlFile = routeKmlFile;
     }
 }
@@ -105,8 +182,7 @@ class  MyAdapter extends BaseAdapter{
         int[] images = new int[]{R.drawable.icon1,R.drawable.icon2,R.drawable.icon3,R.drawable.icon4};
         String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
         for(int i =0 ; i< titles.length;i++ ){
-            Enum route = Enum.valueOf(MainMapView.RoutesEnum.class, routes[i]);
-            rows.add(new SingleRow(images[i], titles[i], descriptions[i], route, routeKmlFiles[i]));
+            rows.add(new SingleRow(images[i], titles[i], descriptions[i], routeKmlFiles[i]));
         }
 
     }
@@ -135,9 +211,9 @@ class  MyAdapter extends BaseAdapter{
         ImageView imageView = (ImageView)row.findViewById(R.id.img_thumbnail);
         SingleRow singleRow = rows.get(i);
 
-        title.setText(singleRow.title);
-        description.setText(singleRow.description);
-        imageView.setImageResource(singleRow.imageId);
+        title.setText(singleRow.getTitle());
+        description.setText(singleRow.getDescription());
+        imageView.setImageResource(singleRow.getImageId());
         return row;
     }
 }

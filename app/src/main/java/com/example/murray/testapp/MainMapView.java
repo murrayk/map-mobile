@@ -40,16 +40,13 @@ import java.util.Map;
  * Created by murray on 25/08/14.
  */
 public class MainMapView extends Activity {
-    private static final String MAP_DB_NAME = "test.mbtiles";
-    public static final String ROUTE_KEY = "routeKey";
 
-    public enum RoutesEnum {
-        Red, Green, Blue, Black;
-    };
+
 
 
     KmlDocument kmlDocument;
     FixedMapView mapView;
+    Utils utils = Utils.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +58,8 @@ public class MainMapView extends Activity {
         kmlDocument = new KmlDocument();
 
 
-        File mapDbPath = copyFileFromAssets(MAP_DB_NAME);
-        File route = copyFileFromAssets(routeRow.routeKmlFile);
+
+        File route = utils.copyFileFromAssets(routeRow.getRouteKmlFile(), this.getAssets(), this.getPackageName());
 
         boolean success = kmlDocument.parseKMLFile(route);
 
@@ -102,7 +99,7 @@ public class MainMapView extends Activity {
 
 
 
-        IArchiveFile[] files = { MBTilesFileArchive.getDatabaseFileArchive(mapDbPath) };
+        IArchiveFile[] files = { MBTilesFileArchive.getDatabaseFileArchive(utils.getOfflineMap()) };
         SimpleRegisterReceiver sr = new SimpleRegisterReceiver(this);
 
         MapTileModuleProviderBase moduleProvider;
@@ -175,7 +172,7 @@ public class MainMapView extends Activity {
 
         // Set the MainMapView as the root View for this Activity; done!
         setContentView(relativeLayout);
-        mapView.getController().setZoom(16); //set initial zoom-level, depends on your need
+        mapView.getController().setZoom(15); //set initial zoom-level, depends on your need
 
 
         final ViewTreeObserver vto = mapView.getViewTreeObserver();
@@ -204,43 +201,5 @@ public class MainMapView extends Activity {
 
 
 
-    private File copyFileFromAssets(String filename) {
 
-        String baseDir = Environment.getExternalStorageDirectory().getPath() + "/" + this.getApplicationContext().getPackageName();
-
-        File file = new File(baseDir + filename);
-        if(file.exists()){
-            return file;
-        }
-
-
-        AssetManager assetManager = this.getAssets();
-
-
-        InputStream in;
-        OutputStream out;
-        String newFileName = null;
-        try {
-            Log.i("tag", "copyFile() "+filename);
-            in = assetManager.open(filename);
-
-            newFileName = baseDir + filename;
-            out = new FileOutputStream(newFileName);
-
-            byte[] buffer = new byte[1024];
-            int read;
-            while ((read = in.read(buffer)) != -1) {
-                out.write(buffer, 0, read);
-            }
-            in.close();
-            out.flush();
-            out.close();
-        } catch (Exception e) {
-            Log.e("tag", "Exception in copyFile() of "+newFileName);
-            Log.e("tag", "Exception in copyFile() "+e.toString());
-        }
-
-        return file;
-
-    }
 }
