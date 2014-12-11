@@ -1,12 +1,9 @@
 package com.example.murray.testapp;
 
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.res.AssetManager;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
@@ -14,9 +11,7 @@ import android.widget.RelativeLayout;
 
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
-import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.kml.KmlDocument;
-import org.osmdroid.bonuspack.kml.KmlFeature;
 import org.osmdroid.bonuspack.overlays.FolderOverlay;
 import org.osmdroid.tileprovider.MapTileProviderArray;
 import org.osmdroid.tileprovider.modules.IArchiveFile;
@@ -26,22 +21,18 @@ import org.osmdroid.tileprovider.modules.MapTileModuleProviderBase;
 import org.osmdroid.tileprovider.tilesource.XYTileSource;
 import org.osmdroid.tileprovider.util.SimpleRegisterReceiver;
 import org.osmdroid.util.BoundingBoxE6;
-import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
+import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
+import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by murray on 25/08/14.
  */
 public class MainMapView extends Activity {
 
-
+    MyLocationNewOverlay locationOverview;
 
 
     KmlDocument kmlDocument;
@@ -56,6 +47,9 @@ public class MainMapView extends Activity {
 
 
         kmlDocument = new KmlDocument();
+        Context context = this.getApplicationContext();
+
+
 
 
 
@@ -113,7 +107,8 @@ public class MainMapView extends Activity {
 
         mapView = new FixedMapView(this, 256, resProxy, provider);
         mapView.setBuiltInZoomControls(true);
-
+        this.locationOverview = new MyLocationNewOverlay(context, new GpsMyLocationProvider(context),
+                mapView);
 
         Button myUselessButton = new Button(this);
 
@@ -162,7 +157,7 @@ public class MainMapView extends Activity {
         FolderOverlay kmlOverlay = (FolderOverlay)kmlDocument.mKmlRoot.buildOverlay( mapView, null, null, kmlDocument);
 
         mapView.getOverlays().add(kmlOverlay);
-
+        mapView.getOverlays().add(this.locationOverview);
         mapView.setClickable(true);
 
         mapView.setMultiTouchControls(true);
@@ -195,7 +190,7 @@ public class MainMapView extends Activity {
         // Enable the "Up" button for more navigation options
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        locationOverview.enableMyLocation();
     }
 
 
