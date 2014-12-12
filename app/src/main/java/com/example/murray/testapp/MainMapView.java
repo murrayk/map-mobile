@@ -2,6 +2,7 @@ package com.example.murray.testapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,8 @@ import org.osmdroid.tileprovider.tilesource.XYTileSource;
 import org.osmdroid.tileprovider.util.SimpleRegisterReceiver;
 import org.osmdroid.util.BoundingBoxE6;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
+import org.osmdroid.views.overlay.compass.CompassOverlay;
+import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
@@ -32,8 +35,15 @@ import java.io.File;
  */
 public class MainMapView extends Activity {
 
-    MyLocationNewOverlay locationOverview;
-
+    private SharedPreferences prefs;
+    public static final String PREFS_NAME = "com.example.murray.testapp.prefs";
+    public static final String PREFS_SCROLL_X = "scrollX";
+    public static final String PREFS_SCROLL_Y = "scrollY";
+    public static final String PREFS_ZOOM_LEVEL = "zoomLevel";
+    public static final String PREFS_SHOW_LOCATION = "showLocation";
+    public static final String PREFS_SHOW_COMPASS = "showCompass";
+    MyLocationNewOverlay locationOverlay;
+    private CompassOverlay compassOverlay;
 
     KmlDocument kmlDocument;
     FixedMapView mapView;
@@ -43,11 +53,13 @@ public class MainMapView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Context context = this.getApplicationContext();
+        prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SingleRow routeRow = (SingleRow)getIntent().getSerializableExtra(MyActivity.ROUTE_CHOSEN_KEY);
 
 
         kmlDocument = new KmlDocument();
-        Context context = this.getApplicationContext();
+
 
 
 
@@ -107,7 +119,7 @@ public class MainMapView extends Activity {
 
         mapView = new FixedMapView(this, 256, resProxy, provider);
         mapView.setBuiltInZoomControls(true);
-        this.locationOverview = new MyLocationNewOverlay(context, new GpsMyLocationProvider(context),
+        this.locationOverlay = new MyLocationNewOverlay(context, new GpsMyLocationProvider(context),
                 mapView);
 
         Button myUselessButton = new Button(this);
@@ -157,7 +169,7 @@ public class MainMapView extends Activity {
         FolderOverlay kmlOverlay = (FolderOverlay)kmlDocument.mKmlRoot.buildOverlay( mapView, null, null, kmlDocument);
 
         mapView.getOverlays().add(kmlOverlay);
-        mapView.getOverlays().add(this.locationOverview);
+        mapView.getOverlays().add(this.locationOverlay);
         mapView.setClickable(true);
 
         mapView.setMultiTouchControls(true);
@@ -190,11 +202,42 @@ public class MainMapView extends Activity {
         // Enable the "Up" button for more navigation options
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        locationOverview.enableMyLocation();
+        this.compassOverlay = new CompassOverlay(context, new InternalCompassOrientationProvider(context),
+                mapView);
+        mapView.getController().setZoom(prefs.getInt(PREFS_ZOOM_LEVEL, 1));
+        mapView.scrollTo(prefs.getInt(PREFS_SCROLL_X, 0), prefs.getInt(PREFS_SCROLL_Y, 0));
+
+        locationOverlay.enableMyLocation();
+        compassOverlay.enableCompass();
     }
 
 
 
+    @Override
+    public void onPause()
+    {
+        final SharedPreferences.Editor edit = prefs.edit();
+        edit.putInt(PREFS_SCROLL_X, mapView.getScrollX());
+        edit.putInt(PREFS_SCROLL_Y, mapView.getScrollY());
+        edit.putInt(PREFS_ZOOM_LEVEL,  mapView.getZoomLevel());
+        edit.putBoolean(PREFS_SHOW_LOCATION, locationOverlay.isMyLocationEnabled());
+        edit.putBoolean(PREFS_SHOW_COMPASS, compassOverlay.isCompassEnabled());
+        edit.commit();
 
+        this.locationOverlay.disableMyLocation();
+        this.compassOverlay.disableCompass();
 
+        super.onPause();
+    }
+    @Override
+    public void  onResume() {
+        super.onResume();
+
+        if (prefs.getBoolean(PREFS_SHOW_LOCATION, false)) {
+            this.locationOverlay.enableMyLocation();
+        }
+        if (prefs.getBoolean(PREFS_SHOW_COMPASS, false)) {
+            this.compassOverlay.enableCompass();
+        }
+    }
 }
