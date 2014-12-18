@@ -1,18 +1,19 @@
 package com.example.murray.testapp;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import android.content.Context;
+import android.view.MotionEvent;
 
 import org.osmdroid.ResourceProxy;
 import org.osmdroid.tileprovider.MapTileProviderBase;
 import org.osmdroid.views.MapView;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 
 public class FixedMapView extends MapView {
+
     private static final int NONE = 0;
     private static final int ZOOM = 1;
     private static final int LIMIT_ZOOM_TIMER = 500;

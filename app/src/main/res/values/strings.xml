@@ -27,9 +27,9 @@
     </string-array>
     <string-array name="routes_kml_filenames" >
         <item>green-route.kml</item>
-        <item>Blue</item>
+        <item>blue-route.kml</item>
         <item>red-route.kml</item>
-        <item>Black</item>
+        <item>black-route.kml</item>
     </string-array>
 
 

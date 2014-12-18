@@ -26,7 +26,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MyActivity extends Activity implements  AdapterView.OnItemClickListener {
-    private static final String MAP_DB_NAME = "map1.mbtiles";
+    public static final String MAP_DB_NAME = "hires-glentress.mbtiles";
 
     public static final String ROUTE_CHOSEN_KEY = "ROUTE_CHOSEN_KEY";
 
@@ -46,6 +46,9 @@ public class MyActivity extends Activity implements  AdapterView.OnItemClickList
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+
+
+
 
         // copy large offline map in bg task
         new Thread(new Runnable() {

@@ -1,15 +1,19 @@
 package com.example.murray.testapp;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
@@ -34,7 +38,11 @@ import java.io.File;
  * Created by murrayking on 15/12/2014.
  */
 public class MapFragment extends Fragment {
+    ProgressDialog progressBar;
+    private int progressBarStatus = 0;
+    private Handler progressBarHandler = new Handler();
 
+    private long fileSize = 0;
 
     private SharedPreferences prefs;
     public static final String PREFS_NAME = "com.example.murray.testapp.prefs";
@@ -119,13 +127,15 @@ public class MapFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Button mButton = (Button) getActivity().findViewById(R.id.button);
+        ImageButton mButton = (ImageButton) getActivity().findViewById(R.id.locate_button);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // here you set what you want to do when user clicks your button,
                 // e.g. launch a new activity
                 MapFragment.this.locationOverlay.enableFollowLocation();
+
+                showProgressBar(v.getContext());
             }
         });
 
@@ -205,5 +215,93 @@ public class MapFragment extends Fragment {
         if (prefs.getBoolean(PREFS_SHOW_COMPASS, false)) {
             this.compassOverlay.enableCompass();
         }
+    }
+
+
+
+    private void showProgressBar(Context context){
+
+
+        LoadData loadData = new LoadData();
+        loadData.execute();
+        /*
+        new Thread(new Runnable() {
+            public void run() {
+                while (progressBarStatus < 100) {
+
+                    // process some tasks
+                    progressBarStatus = doSomeTasks();
+
+                    // your computer is too fast, sleep 1 second
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    // Update the progress bar
+                    progressBarHandler.post(new Runnable() {
+                        public void run() {
+                            progressBar.setProgress(progressBarStatus);
+                        }
+                    });
+                }
+
+                // ok, file is downloaded,
+                if (progressBarStatus >= 100) {
+
+                    // sleep 2 seconds, so that you can see the 100%
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    // close the progress bar dialog
+                    progressBar.dismiss();
+                }
+            }
+        }).start();*/
+
+
+    }
+
+
+    public class LoadData extends AsyncTask<Void, Integer, Void> {
+        ProgressDialog progressDialog;
+        //declare other objects as per your need
+        @Override
+        protected void onPreExecute()
+        {
+            progressDialog= ProgressDialog.show(MapFragment.this.getActivity(), "Progress Dialog Title Text","Process Description Text", true);
+
+            //do initialization of required objects objects here
+        };
+        @Override
+        protected Void doInBackground(Void... params)
+        {
+
+            //do loading operation here
+            doSomeTasks();
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            Log.i("makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
+
+        }
+        @Override
+        protected void onPostExecute(Void result)
+        {
+            super.onPostExecute(result);
+            progressDialog.dismiss();
+        };
+    }
+
+    // file download simulator... a really simple
+    public void doSomeTasks() {
+        utils.copyOfflineMap(MyActivity.MAP_DB_NAME, MapFragment.this.getActivity().getAssets(), MapFragment.this.getActivity().getPackageName());
     }
 }
