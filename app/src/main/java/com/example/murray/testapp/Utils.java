@@ -32,46 +32,58 @@ public class Utils {
         return instance;
     }
 
-    public void copyOfflineMap(String filename, AssetManager assetManager, String packageName){
-        offlineMap = copyFileFromAssets(filename,assetManager,packageName);
+    public void copyOfflineMap(String filename, AssetManager assetManager, String packageName, MyActivity.UpdateProgress progressBarHandler){
+        offlineMap = copyFileFromAssets(filename, assetManager, packageName, progressBarHandler);
     }
 
-    public File copyFileFromAssets(String filename, AssetManager assetManager, String packageName) {
+    public File copyFileFromAssets(String filename, AssetManager assetManager, String packageName, MyActivity.UpdateProgress progressBarHandler) {
 
         String baseDir = Environment.getExternalStorageDirectory().getPath() + "/" + packageName;
 
-        File file = new File(baseDir + filename);
-        if(file.exists()){
-            return file;
+        File baseDirectory = new File(baseDir);
+        if(!baseDirectory.exists()){
+            baseDirectory.mkdirs();
         }
 
 
+        File fileLocationOnSD = new File(baseDir, filename);
+        if(fileLocationOnSD.exists()){
+            return fileLocationOnSD;
+        }
+
+
+        long size = 20816896;
 
 
         InputStream in;
         OutputStream out;
-        String newFileName = null;
         try {
+
             Log.i("tag", "copyFile() " + filename);
             in = assetManager.open(filename);
 
-            newFileName = baseDir + filename;
-            out = new FileOutputStream(newFileName);
+            out = new FileOutputStream(fileLocationOnSD);
 
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[1024 * 32];
             int read;
+            int amountRead =0;
             while ((read = in.read(buffer)) != -1) {
                 out.write(buffer, 0, read);
+                amountRead += read;
+                int percentage = Math.round((float)amountRead/size * 100);
+                if(progressBarHandler != null){
+                    progressBarHandler.updateProgressBar(percentage);
+                }
             }
             in.close();
             out.flush();
             out.close();
         } catch (Exception e) {
-            Log.e("tag", "Exception in copyFile() of "+newFileName);
+            Log.e("tag", "Exception in copyFile() of "+filename);
             Log.e("tag", "Exception in copyFile() "+e.toString());
         }
 
-        return file;
+        return fileLocationOnSD;
 
     }
 }

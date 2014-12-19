@@ -1,12 +1,12 @@
 package com.example.murray.testapp;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,10 +18,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -49,17 +45,8 @@ public class MyActivity extends Activity implements  AdapterView.OnItemClickList
 
 
 
-
-        // copy large offline map in bg task
-        new Thread(new Runnable() {
-            public void run() {
-
-                utils.copyOfflineMap(MAP_DB_NAME, MyActivity.this.getAssets(), MyActivity.this.getPackageName());
-
-            }
-        }).start();
-
-
+        LoadData loadData = new LoadData();
+        loadData.execute();
 
     }
 
@@ -95,46 +82,66 @@ public class MyActivity extends Activity implements  AdapterView.OnItemClickList
         SingleRow row =(SingleRow)adapter.getItem(i);
         goToMap(row);
     }
+    public interface UpdateProgress {
 
-    private File copyFileFromAssets(String filename) {
-
-        String baseDir = Environment.getExternalStorageDirectory().getPath() + "/" + this.getApplicationContext().getPackageName();
-
-        File file = new File(baseDir + filename);
-        if(file.exists()){
-            return file;
-        }
-
-
-        AssetManager assetManager = this.getAssets();
-
-
-        InputStream in;
-        OutputStream out;
-        String newFileName = null;
-        try {
-            Log.i("tag", "copyFile() " + filename);
-            in = assetManager.open(filename);
-
-            newFileName = baseDir + filename;
-            out = new FileOutputStream(newFileName);
-
-            byte[] buffer = new byte[1024];
-            int read;
-            while ((read = in.read(buffer)) != -1) {
-                out.write(buffer, 0, read);
-            }
-            in.close();
-            out.flush();
-            out.close();
-        } catch (Exception e) {
-            Log.e("tag", "Exception in copyFile() of "+newFileName);
-            Log.e("tag", "Exception in copyFile() "+e.toString());
-        }
-
-        return file;
-
+        void updateProgressBar(int percentage);
     }
+
+    public class LoadData extends AsyncTask<Void, Integer, Void> implements UpdateProgress {
+        ProgressDialog progressBar;
+
+        //declare other objects as per your need
+        @Override
+        protected void onPreExecute()
+        {
+            progressBar = new ProgressDialog(MyActivity.this);
+            progressBar.setCancelable(false);
+            progressBar.setMessage("Unpacking offline map ...");
+            progressBar.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progressBar.setProgress(0);
+            progressBar.setMax(100);
+            progressBar.show();
+            //progressDialog= ProgressDialog.show(MyActivity.this, "Progress Dialog Title Text","Process Description Text", true);
+
+            //do initialization of required objects objects here
+        };
+        @Override
+        protected Void doInBackground(Void... params)
+        {
+
+            //do loading operation here
+            copyOfflineMap();
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(final Integer... values) {
+            super.onProgressUpdate(values);
+
+            progressBar.setProgress(values[0]);
+
+            Log.i("makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
+
+        }
+
+        @Override
+        protected void onPostExecute(Void v){
+
+            progressBar.dismiss();
+        }
+
+
+        public void copyOfflineMap() {
+            utils.copyOfflineMap(MyActivity.MAP_DB_NAME, MyActivity.this.getAssets(), MyActivity.this.getPackageName(), this);
+        }
+
+        @Override
+        public void updateProgressBar(int percentage) {
+            publishProgress(percentage);
+        }
+    }
+
+
 }
 
 class SingleRow implements Serializable{

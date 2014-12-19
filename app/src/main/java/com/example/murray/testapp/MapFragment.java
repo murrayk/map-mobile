@@ -3,12 +3,10 @@ package com.example.murray.testapp;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,7 +71,7 @@ public class MapFragment extends Fragment {
 
         kmlDocument = new KmlDocument();
 
-        File route = utils.copyFileFromAssets(routeRow.getRouteKmlFile(), this.getActivity().getAssets(), this.getActivity().getPackageName());
+        File route = utils.copyFileFromAssets(routeRow.getRouteKmlFile(), this.getActivity().getAssets(), this.getActivity().getPackageName(), null);
 
         kmlDocument.parseKMLFile(route);
     }
@@ -222,8 +220,7 @@ public class MapFragment extends Fragment {
     private void showProgressBar(Context context){
 
 
-        LoadData loadData = new LoadData();
-        loadData.execute();
+
         /*
         new Thread(new Runnable() {
             public void run() {
@@ -267,41 +264,7 @@ public class MapFragment extends Fragment {
     }
 
 
-    public class LoadData extends AsyncTask<Void, Integer, Void> {
-        ProgressDialog progressDialog;
-        //declare other objects as per your need
-        @Override
-        protected void onPreExecute()
-        {
-            progressDialog= ProgressDialog.show(MapFragment.this.getActivity(), "Progress Dialog Title Text","Process Description Text", true);
 
-            //do initialization of required objects objects here
-        };
-        @Override
-        protected Void doInBackground(Void... params)
-        {
 
-            //do loading operation here
-            doSomeTasks();
-            return null;
-        }
 
-        @Override
-        protected void onProgressUpdate(Integer... values) {
-            super.onProgressUpdate(values);
-            Log.i("makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
-
-        }
-        @Override
-        protected void onPostExecute(Void result)
-        {
-            super.onPostExecute(result);
-            progressDialog.dismiss();
-        };
-    }
-
-    // file download simulator... a really simple
-    public void doSomeTasks() {
-        utils.copyOfflineMap(MyActivity.MAP_DB_NAME, MapFragment.this.getActivity().getAssets(), MapFragment.this.getActivity().getPackageName());
-    }
 }
