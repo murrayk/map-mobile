@@ -12,6 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GraphViewSeries;
+import com.jjoe64.graphview.LineGraphView;
 
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
@@ -67,6 +72,8 @@ public class MapFragment extends Fragment {
     {
 
         super.onCreate(savedInstanceState);
+
+
         SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(MyActivity.ROUTE_CHOSEN_KEY);
 
         kmlDocument = new KmlDocument();
@@ -183,6 +190,22 @@ public class MapFragment extends Fragment {
 
         locationOverlay.enableMyLocation();
         compassOverlay.enableCompass();
+        // init example series data
+        GraphViewSeries exampleSeries = new GraphViewSeries(new GraphView.GraphViewData[] {
+                new GraphView.GraphViewData(1, 2.0d)
+                , new GraphView.GraphViewData(2, 1.5d)
+                , new GraphView.GraphViewData(3, 2.5d)
+                , new GraphView.GraphViewData(4, 1.0d)
+        });
+
+        GraphView graphView = new LineGraphView(
+                this.getActivity() // context
+                , "GraphViewDemo" // heading
+        );
+        graphView.addSeries(exampleSeries); // data
+
+        LinearLayout layout = (LinearLayout) this.getActivity().findViewById(R.id.replace);
+        layout.addView(graphView);
     }
 
 

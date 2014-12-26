@@ -2,25 +2,47 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/parent_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/map_container"
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:gravity="bottom"
+        sothree:panelHeight="68dp"
+        sothree:shadowHeight="4dp">
+
+        <FrameLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
+        </FrameLayout>
 
-    </FrameLayout>
+        <LinearLayout
+            android:id="@+id/replace"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="The Awesome Sliding Up Panel"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
     <ImageButton
+        android:id="@+id/locate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/locate_button"
-        android:src="@drawable/ic_action_locate"
         android:layout_gravity="right|top"
         android:layout_margin="@dimen/location_button_padding"
-        />
+        android:src="@drawable/ic_action_locate"
+        android:text="New Button" />
 
 </FrameLayout>
