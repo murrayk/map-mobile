@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="black" >
+        <item>0.0,178.1</item>
+        <item>1.652,274.9</item>
+        <item>2.048,283.7</item>
+        <item>2.131,280.1</item>
+        <item>2.385,298.2</item>
+        <item>2.631,283.5</item>
+        <item>3.053,317.2</item>
+        <item>3.258,303.7</item>
+        <item>3.381,323.2</item>
+        <item>3.608,325.5</item>
+        <item>3.679,319.1</item>
+        <item>4.317,340.4</item>
+        <item>4.741,370.1</item>
+        <item>5.055,359.5</item>
+        <item>5.364,372.7</item>
+        <item>5.718,358.8</item>
+        <item>5.886,393.0</item>
+        <item>6.195,358.1</item>
+        <item>7.028,427.1</item>
+        <item>7.298,385.6</item>
+        <item>7.493,426.3</item>
+        <item>7.808,361.5</item>
+        <item>8.215,390.7</item>
+        <item>8.795,352.8</item>
+        <item>10.245,504.5</item>
+        <item>10.36,489.9</item>
+        <item>11.817,567.9</item>
+        <item>12.101,558.3</item>
+        <item>12.216,564.1</item>
+        <item>12.557,529.0</item>
+        <item>13.284,598.9</item>
+        <item>14.958,497.6</item>
+        <item>15.099,503.9</item>
+        <item>15.473,487.9</item>
+        <item>15.615,494.0</item>
+        <item>15.718,471.8</item>
+        <item>15.867,480.5</item>
+        <item>16.45,403.7</item>
+        <item>16.546,419.1</item>
+        <item>17.063,377.1</item>
+        <item>17.611,427.0</item>
+        <item>19.84,243.4</item>
+        <item>21.273,383.0</item>
+        <item>21.62,357.2</item>
+        <item>22.793,414.9</item>
+        <item>24.246,264.6</item>
+        <item>24.844,312.3</item>
+        <item>25.592,254.7</item>
+        <item>26.156,307.7</item>
+        <item>26.436,284.3</item>
+        <item>26.603,286.9</item>
+        <item>26.721,282.8</item>
+        <item>26.86,284.5</item>
+        <item>27.948,181.1</item>
+    </string-array>
+
+    <string-array name="red" >
+        <item>0.0,182.5</item>
+        <item>5.032,395.4</item>
+        <item>5.508,404.4</item>
+        <item>6.417,349.0</item>
+        <item>9.785,565.9</item>
+        <item>12.942,335.1</item>
+        <item>13.821,387.9</item>
+        <item>14.537,293.1</item>
+        <item>14.714,291.8</item>
+        <item>14.986,294.9</item>
+        <item>15.462,283.8</item>
+        <item>15.628,295.8</item>
+        <item>16.471,248.5</item>
+        <item>17.07,299.3</item>
+        <item>17.298,286.7</item>
+        <item>17.609,290.7</item>
+        <item>18.618,188.6</item>
+        <item>19.123,173.3</item>
+    </string-array>
+
+    <string-array name="blue" >
+        <item>0.0,182.7</item>
+        <item>2.525,320.4</item>
+        <item>2.705,308.7</item>
+        <item>3.148,336.3</item>
+        <item>3.915,353.9</item>
+        <item>4.201,348.8</item>
+        <item>4.413,364.0</item>
+        <item>4.557,350.7</item>
+        <item>5.466,414.3</item>
+        <item>5.606,377.2</item>
+        <item>7.292,426.0</item>
+        <item>8.498,351.2</item>
+        <item>8.834,388.2</item>
+        <item>9.625,351.0</item>
+        <item>9.962,388.8</item>
+        <item>11.946,265.6</item>
+        <item>12.068,259.9</item>
+        <item>12.282,273.3</item>
+        <item>12.556,270.1</item>
+        <item>13.309,226.5</item>
+        <item>13.439,239.1</item>
+        <item>14.471,171.1</item>
+    </string-array>
+</resources>

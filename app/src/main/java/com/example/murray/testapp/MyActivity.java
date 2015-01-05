@@ -150,6 +150,7 @@ class SingleRow implements Serializable{
     private int imageId;
     private String description;
     private String routeKmlFile;
+    private int elevationId;
 
     public int getImageId() {
         return imageId;
@@ -167,13 +168,13 @@ class SingleRow implements Serializable{
         return routeKmlFile;
     }
 
+    public int getElevationId() { return elevationId; }
 
-
-    SingleRow(int imageId, String title, String description , String routeKmlFile) {
+    SingleRow(int imageId, String title, String description , String routeKmlFile, int elevationId) {
         this.imageId = imageId;
         this.title = title;
         this.description = description;
-
+        this.elevationId = elevationId;
         this.routeKmlFile = routeKmlFile;
     }
 }
@@ -190,9 +191,10 @@ class  MyAdapter extends BaseAdapter{
         String[] descriptions = resources.getStringArray(R.array.descriptions);
         String[] routes = resources.getStringArray(R.array.routes);
         int[] images = new int[]{R.drawable.icon1,R.drawable.icon2,R.drawable.icon3,R.drawable.icon4};
+        int[] evelationArray = new int[]{R.array.blue, R.array.blue, R.array.red, R.array.black};
         String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
         for(int i =0 ; i< titles.length;i++ ){
-            rows.add(new SingleRow(images[i], titles[i], descriptions[i], routeKmlFiles[i]));
+            rows.add(new SingleRow(images[i], titles[i], descriptions[i], routeKmlFiles[i], evelationArray[i]));
         }
 
     }

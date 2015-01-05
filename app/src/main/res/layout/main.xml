@@ -15,23 +15,20 @@
         <FrameLayout
             android:id="@+id/map_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center">
 
 
         </FrameLayout>
 
         <LinearLayout
+
             android:id="@+id/replace"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center|top">
 
-            <TextView
 
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="The Awesome Sliding Up Panel"
-                android:textSize="16sp" />
         </LinearLayout>
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>

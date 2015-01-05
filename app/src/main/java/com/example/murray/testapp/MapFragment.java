@@ -3,6 +3,7 @@ package com.example.murray.testapp;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -41,11 +42,7 @@ import java.io.File;
  * Created by murrayking on 15/12/2014.
  */
 public class MapFragment extends Fragment {
-    ProgressDialog progressBar;
-    private int progressBarStatus = 0;
-    private Handler progressBarHandler = new Handler();
 
-    private long fileSize = 0;
 
     private SharedPreferences prefs;
     public static final String PREFS_NAME = "com.example.murray.testapp.prefs";
@@ -140,7 +137,6 @@ public class MapFragment extends Fragment {
                 // e.g. launch a new activity
                 MapFragment.this.locationOverlay.enableFollowLocation();
 
-                showProgressBar(v.getContext());
             }
         });
 
@@ -191,19 +187,34 @@ public class MapFragment extends Fragment {
         locationOverlay.enableMyLocation();
         compassOverlay.enableCompass();
         // init example series data
-        GraphViewSeries exampleSeries = new GraphViewSeries(new GraphView.GraphViewData[] {
-                new GraphView.GraphViewData(1, 2.0d)
-                , new GraphView.GraphViewData(2, 1.5d)
-                , new GraphView.GraphViewData(3, 2.5d)
-                , new GraphView.GraphViewData(4, 1.0d)
-        });
+
+        //get string array pf plot
+        Resources resources = context.getResources();
+        SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(MyActivity.ROUTE_CHOSEN_KEY);
+
+        String[] points = resources.getStringArray(routeRow.getElevationId());
+        GraphView.GraphViewData data[] = new GraphView.GraphViewData[points.length];
+        for(int i = 0; i < points.length; i++){
+            String[] p = points[i].split(",");
+            double x = Double.valueOf(p[0]);
+            double y = Double.valueOf(p[1]);
+            data[i] = new GraphView.GraphViewData(x,y);
+
+        }
+
+        GraphViewSeries exampleSeries = new GraphViewSeries(data);
 
         GraphView graphView = new LineGraphView(
                 this.getActivity() // context
-                , "GraphViewDemo" // heading
+                , "Terrain" // heading
         );
         graphView.addSeries(exampleSeries); // data
 
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        params.weight = 1.0f;
+        params.setMargins(10, 10, 10, 10);
+        graphView.setLayoutParams(params);
         LinearLayout layout = (LinearLayout) this.getActivity().findViewById(R.id.replace);
         layout.addView(graphView);
     }
@@ -237,57 +248,5 @@ public class MapFragment extends Fragment {
             this.compassOverlay.enableCompass();
         }
     }
-
-
-
-    private void showProgressBar(Context context){
-
-
-
-        /*
-        new Thread(new Runnable() {
-            public void run() {
-                while (progressBarStatus < 100) {
-
-                    // process some tasks
-                    progressBarStatus = doSomeTasks();
-
-                    // your computer is too fast, sleep 1 second
-                    try {
-                        Thread.sleep(5000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    // Update the progress bar
-                    progressBarHandler.post(new Runnable() {
-                        public void run() {
-                            progressBar.setProgress(progressBarStatus);
-                        }
-                    });
-                }
-
-                // ok, file is downloaded,
-                if (progressBarStatus >= 100) {
-
-                    // sleep 2 seconds, so that you can see the 100%
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    // close the progress bar dialog
-                    progressBar.dismiss();
-                }
-            }
-        }).start();*/
-
-
-    }
-
-
-
-
 
 }

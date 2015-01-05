@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="black_route" id="black_route">
+	<SimpleField name="id" type="int"></SimpleField>
+	<SimpleField name="routelabel" type="string"></SimpleField>
+</Schema>
+<Folder><name>black_route</name>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">118</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.137250600000012,55.657951899999979 -3.1380033,55.658303699999983</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">118</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1398272,55.6580131 -3.140428467544489,55.658512005112577 -3.1409975,55.6588485 -3.1416024,55.659071799999985</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">119</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1416808,55.6581843 -3.1414084,55.6578069 -3.1414084,55.657419599999969 -3.1417988,55.656867199999986 -3.1423632,55.6560819 -3.142541799999988,55.65589</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">3</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.153198099999988,55.6610608 -3.1531981,55.6610608 -3.153189634553079,55.661065484667532</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1375753,55.6463819 -3.1378977,55.6465082 -3.1380887,55.646586699999986 -3.137944400000012,55.6466513 -3.137618699999989,55.6468339 -3.1375802,55.6468555 -3.137386,55.646993 -3.136868,55.647502 -3.136667,55.647646 -3.136507,55.647708 -3.136327,55.64775 -3.135953,55.647813 -3.135714,55.64787 -3.135086,55.647964 -3.134802,55.648053 -3.134653,55.648124 -3.13451,55.648246 -3.1344536,55.648325899999989 -3.134367,55.648565 -3.134359,55.64871 -3.1344323,55.649010299999986 -3.134429,55.6500293 -3.134409157270041,55.65030216670452 -3.1343769,55.650604199999982 -3.134273,55.6510229 -3.1343125,55.651294300000011 -3.1343163,55.651402199999985 -3.1343507,55.6514309</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">55956259</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1417988,55.6568672 -3.1419085,55.6568878 -3.141636,55.6572941 -3.1416617,55.6573278 -3.1417407,55.6573111 -3.1418197,55.6572025 -3.1418937,55.6572053 -3.1420023,55.6572471 -3.141869,55.6574448 -3.141741,55.6576703 -3.1418394,55.6577762 -3.1419579,55.6578318 -3.1419579,55.6577789 -3.141948,55.6576564 -3.1421797,55.6577259 -3.1423672,55.6577988 -3.1428609,55.6578685 -3.1432903,55.6579019 -3.143784,55.6579725 -3.143932,55.6579966 -3.1444651,55.658236 -3.1445688,55.6582472 -3.1446034,55.6582277 -3.1445441,55.6581609 -3.1444158,55.6580885 -3.1445171,55.6580846 -3.1447218,55.6581859 -3.1448749,55.658236 -3.1449193,55.6582249 -3.144865,55.6581804 -3.1447811,55.6581052 -3.1447021,55.6580634 -3.144707,55.6580272 -3.1448123,55.6580324 -3.1450032,55.658094 -3.1452994,55.6582862 -3.1454243,55.6583029 -3.1454623,55.6582583 -3.1452698,55.6580857 -3.145007,55.657912 -3.14448,55.6576847 -3.1443615,55.657629 -3.1437395,55.6575983 -3.1431867,55.6575176 -3.1430238,55.6574563 -3.1428609,55.657331 -3.1428214,55.6572029 -3.1427819,55.6570665 -3.1428263,55.6569105 -3.1428559,55.65671 -3.1433199,55.6562227 -3.1440999,55.6558662 -3.1447564,55.6557158 -3.1450723,55.6557186 -3.1451217,55.6557492 -3.1450674,55.6558077 -3.1446478,55.6558551 -3.1443714,55.6559108 -3.1441344,55.6560751 -3.1439715,55.6562394 -3.1435223,55.6565373 -3.1434976,55.6566543 -3.1436408,55.6566571 -3.1437445,55.6565179 -3.1438975,55.6564427 -3.1440159,55.6564399 -3.1441788,55.656387 -3.1442183,55.6563229 -3.1445145,55.6561698 -3.1451423,55.6560576 -3.1455363,55.6560166 -3.1461385,55.6560361 -3.1467852,55.6560416 -3.14719,55.6559971 -3.1474713,55.6559887 -3.1476836,55.6559915 -3.1478218,55.6560389 -3.1477922,55.6560667 -3.1472591,55.6561001 -3.1465779,55.6562143 -3.1465433,55.6562561 -3.1466075,55.6562867 -3.1467112,55.6563006 -3.1476441,55.6561196 -3.1476639,55.6561809 -3.1469728,55.6563062 -3.1469234,55.6563536 -3.1470369,55.6563814 -3.1479403,55.6562923 -3.1483895,55.6562784 -3.1491201,55.6563703 -3.1495248,55.6565123 -3.1497766,55.6566515 -3.1502063,55.6570261 -3.1503414,55.6574442 -3.1503929,55.6578218 -3.1503393,55.6579549 -3.150367,55.6581398</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81659780</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1329895,55.659214 -3.1328641,55.6591419</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81562841</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1416024,55.6590718 -3.141622,55.6587834 -3.1416771,55.6586373 -3.1418058,55.658371 -3.1416946,55.6582546 -3.1416808,55.6581843</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81659263</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1300716,55.6594132 -3.1301563,55.6594001 -3.1302091,55.6593208 -3.1303969,55.6591181 -3.130531,55.6589698 -3.1306329,55.6588729 -3.1307456,55.6587761 -3.1309816,55.6586218 -3.1310728,55.658534 -3.1311157,55.6585522 -3.131105,55.6586127 -3.1310513,55.6586369 -3.130987,55.6588185 -3.1309441,55.6589274 -3.1307996,55.6592164</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">26603899</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1307274,55.6533051 -3.1312923,55.6534805 -3.1320334,55.6537819 -3.1325361,55.6540372 -3.1330384,55.6545032 -3.1333462,55.6547866 -3.133634,55.6549241 -3.1345872,55.6553212 -3.1348244,55.6554398 -3.1350958,55.6556431</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">26603816</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1425418,55.65589 -3.1427197,55.655517 -3.1423764,55.6549843 -3.1415181,55.6541127 -3.1410031,55.6536285</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81564873</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1307996,55.6592164 -3.1308524,55.6592659 -3.1311475,55.6594354 -3.1311689,55.6596957 -3.1312333,55.659853 -3.1314912,55.6599109 -3.1317429,55.659853 -3.1322526,55.6597562 -3.1326549,55.6596321 -3.1331591,55.6594324 -3.1331913,55.659269 -3.1329895,55.659214</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81565664</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1380033,55.6583037 -3.1383726,55.6583226 -3.1391017,55.6585151 -3.1394409,55.6582795 -3.1398272,55.6580131</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81659748</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1328641,55.6591419 -3.1330127,55.6590236 -3.1333795,55.6588639 -3.133583,55.6585821 -3.1342267,55.6582552 -3.1347202,55.6579284 -3.1349455,55.6578164 -3.1350742,55.6578346 -3.135085,55.6580161 -3.1351708,55.6580767 -3.1354712,55.6578437 -3.1358575,55.6576984 -3.1359755,55.6577135 -3.1360827,55.6577982 -3.1357823,55.6579919 -3.1358145,55.6581009 -3.1362222,55.6579556 -3.1365256,55.6578871 -3.1367587,55.6578346 -3.136995,55.6578588 -3.1372506,55.6579519</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">55958342</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1343507,55.6514309 -3.1344537,55.651359 -3.1345419,55.6513286 -3.134689,55.6513646 -3.1347527,55.6514282 -3.1347282,55.6515167 -3.1349292,55.6516909 -3.1353704,55.6518956 -3.1359635,55.6521003 -3.1367136,55.6524433 -3.1372283,55.6526922 -3.1375398,55.6528033 -3.1379146,55.653002 -3.1381793,55.6530628 -3.1382921,55.6530462 -3.1382627,55.6529881 -3.1379293,55.6529135 -3.1378607,55.6528692 -3.1378509,55.6528166 -3.1385054,55.6529849 -3.1391794,55.6533698 -3.1396058,55.6538178 -3.1399588,55.6541387 -3.1403359,55.6548352 -3.1405003,55.6551816 -3.140626,55.6553425 -3.140713,55.6555798 -3.1406985,55.6558417 -3.140771,55.6559644 -3.1407807,55.6560708 -3.1408967,55.6560735 -3.1409547,55.6559944 -3.1409451,55.6558199 -3.1409886,55.6558199 -3.1410514,55.6558444 -3.1411094,55.6560599 -3.1411674,55.656379 -3.1411916,55.6565181 -3.14124,55.6567363 -3.1411723,55.6569081 -3.1410514,55.6572273 -3.1411384,55.6572654 -3.1412206,55.6572654 -3.1413173,55.6571263 -3.1414865,55.6567499 -3.1415301,55.6565918 -3.1415639,55.6563381 -3.1415059,55.6561117 -3.1414575,55.6558635 -3.1414575,55.6557271 -3.1415736,55.655708 -3.1416267,55.6557489 -3.1416316,55.6559835 -3.1416606,55.6560572 -3.1417379,55.6560517 -3.1417476,55.6559371 -3.1418443,55.6557353 -3.1419023,55.6557244 -3.1419458,55.6557899 -3.141941,55.6560299 -3.1419845,55.6561854 -3.1419555,55.6564472 -3.1417988,55.6568672</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">26603608</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.135804,55.65021 -3.1358835,55.6500904 -3.1358406,55.6496061 -3.1357548,55.6494608 -3.1355831,55.649146 -3.1354543,55.649146 -3.135158,55.6494013 -3.134879,55.6495223 -3.1347717,55.649256 -3.1349863,55.6483418 -3.1345486,55.6485702 -3.1345486,55.6484733 -3.1344536,55.6483259</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">293521872</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1410031,55.6536285 -3.140574,55.6531926 -3.1398015,55.6529021 -3.1393723,55.6521757 -3.1381707,55.6519335 -3.1382565,55.6515461 -3.1377416,55.6513524 -3.1373982,55.6513524 -3.1375699,55.6510134 -3.1371407,55.6508197 -3.1366258,55.6508681</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">55958546</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1366258,55.6508681 -3.1367116,55.650626 -3.1368746,55.6504304 -3.1359945,55.6502492 -3.135804,55.65021</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81568960</SimpleData>
+		<SimpleData name="routelabel">The goat track</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1422048,55.6733326 -3.1435781,55.6737198 -3.1439214,55.6742038 -3.1445222,55.6749781 -3.1444364,55.6754621 -3.144093,55.6758009 -3.1434922,55.6764785</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81568910</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1492256,55.6694748 -3.1513984,55.6700264 -3.1518551,55.6701769 -3.1522301,55.670377 -3.1522947,55.670458 -3.1523388,55.670584 -3.1523282,55.6707334 -3.1523328,55.6708156 -3.1522235,55.6711927 -3.1521262,55.6713733 -3.1520056,55.6715694 -3.1516213,55.6718678 -3.1510873,55.672172 -3.1496197,55.6734595 -3.1493332,55.6736594 -3.1489247,55.6737248 -3.148269,55.6736357 -3.1478,55.673651 -3.1471789,55.6736356 -3.1459813,55.673381 -3.1450984,55.673186 -3.144337,55.6730914 -3.1436474,55.6730824 -3.1430453,55.6731095 -3.1423133,55.6731212 -3.1421297,55.6731893 -3.1421185,55.6732717 -3.1422048,55.6733326</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81569175</SimpleData>
+		<SimpleData name="routelabel">Soor plooms</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1520057,55.6630108 -3.1513886,55.664329 -3.1513886,55.6652972 -3.1518178,55.6660233 -3.1521611,55.666459 -3.1519036,55.6669915 -3.1513886,55.6673788 -3.1507878,55.667524 -3.1501012,55.6679113 -3.1496762,55.66818 -3.1489681,55.6691965 -3.1492256,55.6694748</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">26623313</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1531981,55.6610608 -3.1531911,55.6613273 -3.1522941,55.6623949 -3.1520057,55.6630108</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81942702</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1434922,55.6764785 -3.145638,55.6765269 -3.1463246,55.6765753 -3.1476121,55.6769141 -3.1487279,55.6772528</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81942708</SimpleData>
+		<SimpleData name="routelabel">The Goat track</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1487279,55.6772528 -3.1477838,55.6781239 -3.1478696,55.6784143 -3.1473543,55.6790941</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81589147</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1473543,55.6790941 -3.1474404,55.679237 -3.1478732,55.6796068</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">82900827</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1478732,55.6796068 -3.1487744,55.6801149 -3.1490534,55.680127 -3.1491821,55.6799456 -3.1495255,55.6793527 -3.1501692,55.6788204 -3.1511992,55.6782276 -3.1524652,55.6779372 -3.1536883,55.6778041 -3.1556194,55.6777194 -3.1560915,55.6778646</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">82900826</SimpleData>
+		<SimpleData name="routelabel">Tower ride</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1560915,55.6778646 -3.1555085,55.6783659 -3.1542211,55.6791402 -3.1532806,55.6795826 -3.152036,55.6801028 -3.1518178,55.6804952 -3.1511348,55.68124 -3.1507878,55.6816566</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81940419</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1194596,55.6618599 -3.1213352,55.6628531 -3.1221163,55.6634116 -3.1225117,55.6635848 -3.1228913,55.6637003 -3.1229893,55.6636977</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81563421</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1229893,55.6636977 -3.1234748,55.6634812 -3.1247289,55.6626428 -3.1248885,55.6625581 -3.1247917,55.6624462 -3.1244328,55.6619429 -3.1240128,55.6609666 -3.1230015,55.6580033 -3.122889,55.657789 -3.1226942,55.6575537 -3.1223606,55.6572747 -3.1219465,55.6570411 -3.1214165,55.6567421 -3.1208866,55.6564076 -3.1207287,55.6563643 -3.1206505,55.6562586 -3.1204505,55.6559153 -3.1204509,55.6556647 -3.1209444,55.6554105 -3.1213686,55.6553726 -3.1214599,55.6554302</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81586319</SimpleData>
+		<SimpleData name="routelabel">Redemption Climb</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1121072,55.6589317 -3.1122969,55.6589259 -3.1143009,55.6594152 -3.1157588,55.6597787 -3.1169928,55.6599834 -3.1184548,55.660269 -3.1194418,55.6605595 -3.1205362,55.6610316 -3.1212013,55.6614673</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81586333</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1212013,55.6614673 -3.1209187,55.661521 -3.1202779,55.6614924 -3.1190255,55.6613124 -3.1208329,55.6620051 -3.1194596,55.6618599</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81658649</SimpleData>
+		<SimpleData name="routelabel">Deliverance</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1204603,55.6700512 -3.1203046,55.6699403 -3.1202964,55.6697296 -3.1202091,55.6696275 -3.1201518,55.6694626 -3.1199072,55.6693411 -3.1196313,55.6691699 -3.1192897,55.6688671 -3.1190117,55.6687916 -3.1187486,55.6686855 -3.1186208,55.6685674 -3.1185854,55.6684361 -3.1178109,55.6680859 -3.1175965,55.6676761 -3.1173199,55.6675243 -3.1172249,55.6672962 -3.1165384,55.6670783 -3.1141823,55.6665052 -3.1137425,55.6664618 -3.113542,55.666305 -3.1131082,55.6661202 -3.1119924,55.6656845 -3.1113915,55.6648131 -3.111649,55.6646678 -3.1119065,55.6642321 -3.1120782,55.6636028 -3.1120782,55.6628282 -3.1115632,55.6614241 -3.1110482,55.6604558 -3.111649,55.6593906 -3.1121072,55.6589317</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81343452</SimpleData>
+		<SimpleData name="routelabel">Deliverance</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.124295,55.6719027 -3.124224,55.6718202 -3.1240356,55.6718499 -3.1237874,55.6717651 -3.1234994,55.671734 -3.1232007,55.6717409 -3.1230316,55.671712 -3.1227735,55.6717172 -3.1226055,55.6716677 -3.122347,55.6716492 -3.1221382,55.6716072 -3.1220044,55.671564 -3.1225409,55.671564 -3.1212534,55.6711405 -3.1214894,55.6710437 -3.121344,55.670881 -3.1211961,55.6706729 -3.121052,55.6703653 -3.1209471,55.6701296 -3.12091,55.6697755 -3.1210126,55.6694679 -3.1207447,55.6687615 -3.1207339,55.6691207 -3.1206573,55.6693965 -3.1204694,55.6697584 -3.1204603,55.6700512</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81343453</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1104368,55.6688366 -3.1107052,55.6688224 -3.111786,55.6686497 -3.1123174,55.6685923 -3.1130831,55.6685293 -3.1136093,55.6685281 -3.1141131,55.6685406 -3.1144877,55.6685607 -3.114764,55.6686442 -3.116944,55.6692478 -3.1178772,55.6696398 -3.1181653,55.6698496 -3.1183555,55.6700944 -3.1184992,55.6703013 -3.1186166,55.67077 -3.1186166,55.6710483 -3.1186903,55.6711715 -3.1188938,55.6712539 -3.1194469,55.67128 -3.1197646,55.6713206 -3.120803,55.671555 -3.122219,55.6718181 -3.1230658,55.6718885 -3.1234424,55.6719166 -3.1239926,55.6719356 -3.124295,55.6719027</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81585357</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.111897,55.6701724 -3.1122113,55.6699798 -3.1127518,55.6696486</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81585350</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1127518,55.6696486 -3.1126097,55.6694583 -3.1124668,55.6693492 -3.1122775,55.6693371 -3.1121033,55.6692735 -3.1113915,55.6693151 -3.1106875,55.6694595 -3.1104747,55.669446 -3.1103283,55.6694601 -3.1102664,55.669564 -3.110205,55.669591 -3.1100831,55.6695446 -3.1099692,55.6695005 -3.1098615,55.6694556 -3.1096536,55.6694841 -3.1095284,55.6694308 -3.1095128,55.6693724 -3.1095864,55.6692492 -3.1096712,55.6691219 -3.1097859,55.6687169 -3.1098931,55.6684022 -3.1100004,55.6686079 -3.1100219,55.6688621 -3.1100434,55.6690678 -3.1102579,55.6690678 -3.1104081,55.6689468 -3.1104368,55.6688366</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81658717</SimpleData>
+		<SimpleData name="routelabel">Leithen door</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1140714,55.6726058 -3.114224,55.6724129 -3.1144851,55.6721173 -3.1143134,55.6719237 -3.1139701,55.6718632 -3.1137555,55.6716211 -3.1133656,55.6715417 -3.1134122,55.6713307 -3.1138628,55.6712097 -3.1146531,55.6712029 -3.114528,55.671004 -3.1140989,55.6709193 -3.1131082,55.6711545 -3.1138414,55.6706773 -3.1144636,55.6704594 -3.114292,55.670411 -3.1133264,55.6706289 -3.1122498,55.6709124 -3.1125073,55.6707188 -3.1127899,55.6704231 -3.1122709,55.6705093 -3.111897,55.6701724</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81942721</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1240338,55.6756021 -3.1240123,55.6754932 -3.1223171,55.6751665 -3.1219055,55.6750903 -3.1219962,55.6749749 -3.1214337,55.674833 -3.1195455,55.6742522 -3.1190305,55.6739134 -3.1186314,55.6741021 -3.1180005,55.6737198 -3.1174443,55.6733586 -3.1157454,55.6733303 -3.1156064,55.6733931 -3.1150565,55.6732475 -3.1148573,55.6731702 -3.1144862,55.6729343 -3.1140714,55.6726058</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81942796</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1348254,55.680748 -3.1345828,55.6802691 -3.1339472,55.679014 -3.1339693,55.6785498</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">26603832</SimpleData>
+		<SimpleData name="routelabel">Boundary trail</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1330245,55.6760256 -3.131892,55.6759818 -3.1313079,55.6757715 -3.1298451,55.6757041 -3.1284718,55.6756557 -3.1275649,55.6757321 -3.1266627,55.6757458 -3.1265658,55.6757473 -3.1240338,55.6756021</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81588155</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1339693,55.6785498 -3.1331104,55.6762551 -3.1330245,55.6760256</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81942929</SimpleData>
+		<SimpleData name="routelabel">The mustard snake</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1386893,55.6843974 -3.1386556,55.6843349 -3.1386019,55.6842441 -3.1385054,55.6842018 -3.1384624,55.6841474 -3.1384303,55.6840808 -3.1384195,55.6840022 -3.1383015,55.6839357 -3.1382371,55.6838812 -3.1382371,55.6837905 -3.1382479,55.6836937 -3.1382371,55.6836151 -3.1380977,55.6835486 -3.137926,55.6835244 -3.1377436,55.6834941 -3.1377007,55.6834215 -3.1377329,55.6833308 -3.13769,55.6832461 -3.1375505,55.6831615 -3.1372715,55.683101 -3.1370355,55.6830344 -3.1368317,55.6829679 -3.1367566,55.6828953 -3.1367673,55.6828106 -3.1366385,55.682726 -3.1364776,55.6826957 -3.1364562,55.6826171 -3.1364562,55.6825082 -3.1363918,55.6824356 -3.1362845,55.6823751 -3.1362201,55.6822481 -3.1361128,55.6821695 -3.1359841,55.6820183 -3.1358017,55.6818912 -3.1356515,55.6817944 -3.135512,55.6816916 -3.1354906,55.681619 -3.1354476,55.6815102 -3.1353511,55.6814376 -3.1352009,55.681371 -3.1351258,55.6813045 -3.1351472,55.6812198 -3.1351043,55.6811472 -3.1349112,55.6811593 -3.1348254,55.6810746 -3.1348683,55.6809779 -3.1348468,55.6808811 -3.1348254,55.680748</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">82900824</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1416556,55.6861585 -3.1404918,55.6861756</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81590191</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1386893,55.6843974 -3.1404918,55.6861756</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">82900823</SimpleData>
+		<SimpleData name="routelabel">Britney Spears</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.145726133718489,55.687039389118837 -3.1451453,55.6872265 -3.1439222,55.6871418 -3.1438719,55.6870979 -3.1437001,55.6869477 -3.1437816,55.6867249 -3.1438793,55.6863919 -3.1444082,55.6861372 -3.1442418,55.6861457 -3.1439222,55.686162 -3.1429352,55.6865128 -3.1437505,55.6859685 -3.1431497,55.6860169 -3.1417979,55.6863677 -3.1416556,55.6861585</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">82900823</SimpleData>
+		<SimpleData name="routelabel">The kipps loop</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1507878,55.6816566 -3.1512472,55.6817491 -3.1514796,55.6818918 -3.1515826,55.6822789 -3.1514753,55.6824604 -3.1511976,55.6823625 -3.1511749,55.6825935 -3.1519259,55.6832346 -3.1531061,55.6837669 -3.1547219,55.6840442 -3.1543785,55.6841162 -3.1542004,55.6842387 -3.1532134,55.6844927 -3.1529988,55.6846016 -3.1515322,55.6841534 -3.149601,55.6839719 -3.1512607,55.6844201 -3.1514753,55.684904 -3.1510032,55.6858354 -3.1507887,55.6849887 -3.1501374,55.6861372 -3.1500806,55.685158 -3.1494154,55.6860532 -3.1492008,55.6853153 -3.1486644,55.686029 -3.1481923,55.6857387 -3.1472267,55.6862467 -3.1471194,55.6858838 -3.1466902,55.6858596 -3.1467546,55.6860169 -3.1464328,55.686162 -3.1461967,55.6868878 -3.145726133718489,55.687039389118837</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81563675</SimpleData>
+		<SimpleData name="routelabel">Ewok Village</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1214599,55.6554302 -3.1216525,55.6559525 -3.1245468,55.6569078 -3.124824,55.6565339 -3.1250289,55.6562278 -3.1252961,55.6560739 -3.125854,55.6560496 -3.1267552,55.655977 -3.1265407,55.6557833 -3.1255965,55.6555412 -3.1259828,55.6553475 -3.125339,55.655178 -3.1255965,55.6551054 -3.125672730038805,55.655080827400937</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81564858</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1356749,55.6575092 -3.1350071,55.6577339 -3.1343414,55.6578756 -3.1337491,55.6580539 -3.1329914,55.658275</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81565208</SimpleData>
+		<SimpleData name="routelabel">Worm Hole</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1350958,55.6556431 -3.135364,55.6558584 -3.1355571,55.6559674 -3.1354927,55.6563063 -3.1355142,55.6567784 -3.1354069,55.6570568 -3.1353854,55.6572142 -3.1356749,55.6575092</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81660785</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1270169,55.6542695 -3.1271321,55.6542433 -3.1295382,55.6542453</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81660779</SimpleData>
+		<SimpleData name="routelabel">The bitch</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1295382,55.6542453 -3.1295876,55.6540159 -3.1299739,55.6538948 -3.129931,55.6537979 -3.1303172,55.6537253 -3.1307179,55.6534097 -3.1307274,55.6533051</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81563675</SimpleData>
+		<SimpleData name="routelabel">Double X</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.125672730038805,55.655080827400937 -3.1264977,55.6548149 -3.1257253,55.654718 -3.1261544,55.6545001 -3.1270169,55.6542695</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">555</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1307996,55.659216399999977 -3.1304287,55.6594052 -3.1301369,55.6596009 -3.1300979,55.6595341 -3.1300716,55.659413199999982</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">81564925</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1329914,55.658275 -3.1323538,55.6584615 -3.1318217,55.6586776 -3.1307996,55.6592164</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50000000</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#black_route">
+		<SimpleData name="id">3</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.150367,55.6581398 -3.15031480000001,55.6583728 -3.1503991,55.658605899999969 -3.150796164774579,55.658959464278752 -3.1531379,55.660942899999966 -3.153198099999988,55.6610608</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>
