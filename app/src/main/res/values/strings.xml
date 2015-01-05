@@ -8,16 +8,16 @@
     <string name="hint">A Name</string>
     <string name="activity_details">Map</string>
     <string-array name="titles" >
-        <item>green</item>
-        <item>blue</item>
-        <item>red</item>
-        <item>black</item>
+        <item>Green Route (Easy)</item>
+        <item>Blue Route (Moderate)</item>
+        <item>Red Route (Difficult)</item>
+        <item>Black Route (Severe)</item>
     </string-array>
     <string-array name="descriptions" >
-        <item>green description 1</item>
-        <item>blue description 2</item>
-        <item>red description 3</item>
-        <item>black description 4</item>
+        <item>Beginner/novice cyclists. Basic bike skills required. Most bikes and hybrids. Some green routes can take trailers.</item>
+        <item>Intermediate cyclist/mountain bikers with basic offroad riding skills. Mountain bikes and hybrids.</item>
+        <item>Proficient mountain bikers with good off-road riding skills. Suitable for better quality off-road mountain bikes.</item>
+        <item>Expert mountain bike users, used to physically demanding routes. Quality off-road mountain bikes.</item>
     </string-array>
     <string-array name="routes" >
         <item>Green</item>

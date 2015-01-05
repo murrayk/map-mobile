@@ -22,7 +22,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MyActivity extends Activity implements  AdapterView.OnItemClickListener {
-    public static final String MAP_DB_NAME = "hires-glentress.mbtiles";
+    public static final String MAP_DB_NAME = "18hi.mbtiles";
 
     public static final String ROUTE_CHOSEN_KEY = "ROUTE_CHOSEN_KEY";
 
@@ -190,7 +190,7 @@ class  MyAdapter extends BaseAdapter{
         String[] titles = resources.getStringArray(R.array.titles);
         String[] descriptions = resources.getStringArray(R.array.descriptions);
         String[] routes = resources.getStringArray(R.array.routes);
-        int[] images = new int[]{R.drawable.icon1,R.drawable.icon2,R.drawable.icon3,R.drawable.icon4};
+        int[] images = new int[]{R.drawable.green_icon,R.drawable.blue_icon,R.drawable.red_icon,R.drawable.black_icon};
         int[] evelationArray = new int[]{R.array.blue, R.array.blue, R.array.red, R.array.black};
         String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
         for(int i =0 ; i< titles.length;i++ ){

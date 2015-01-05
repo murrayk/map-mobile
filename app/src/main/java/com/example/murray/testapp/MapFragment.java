@@ -1,23 +1,23 @@
 package com.example.murray.testapp;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.GraphViewSeries;
-import com.jjoe64.graphview.LineGraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
@@ -158,10 +158,9 @@ public class MapFragment extends Fragment {
         mapView.setMultiTouchControls(true);
 
 
-        mapView.getController().setZoom(15); //set initial zoom-level, depends on your need
 
-
-        final ViewTreeObserver vto = mapView.getViewTreeObserver();
+        final FrameLayout mapContainer = (FrameLayout)getActivity().findViewById(R.id.map_container);
+        final ViewTreeObserver vto = mapContainer.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -169,11 +168,13 @@ public class MapFragment extends Fragment {
 
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
-                    mapView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    mapContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 else
-                    mapView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                    mapContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
 
-                mapView.getController().animateTo(bb.getCenter());
+                mapView.zoomToBoundingBox(bb);
+                //mapView.getController().animateTo(bb.getCenter());
+
             }
         });
 
@@ -193,22 +194,36 @@ public class MapFragment extends Fragment {
         SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(MyActivity.ROUTE_CHOSEN_KEY);
 
         String[] points = resources.getStringArray(routeRow.getElevationId());
-        GraphView.GraphViewData data[] = new GraphView.GraphViewData[points.length];
+
+        DataPoint data[] =  new DataPoint[points.length];
+
         for(int i = 0; i < points.length; i++){
             String[] p = points[i].split(",");
             double x = Double.valueOf(p[0]);
             double y = Double.valueOf(p[1]);
-            data[i] = new GraphView.GraphViewData(x,y);
+            data[i] = new DataPoint(x,y);
 
         }
 
-        GraphViewSeries exampleSeries = new GraphViewSeries(data);
 
-        GraphView graphView = new LineGraphView(
+        LineGraphSeries<DataPoint>  exampleSeries =  new LineGraphSeries<DataPoint>(data);
+        exampleSeries.setDrawBackground(true);
+        exampleSeries.setBackgroundColor(Color.RED);
+        GraphView graphView = new GraphView(
                 this.getActivity() // context
-                , "Terrain" // heading
         );
+        graphView.getViewport().setXAxisBoundsManual(true);
+        //get last x
+        int lastXCoord = (int)Math.ceil(data[data.length-1].getX());
+        //make sure we have an even number
+        if(lastXCoord % 2 == 1) {
+            lastXCoord++;
+        }
+        graphView.getViewport().setMaxX(lastXCoord);
         graphView.addSeries(exampleSeries); // data
+        graphView.setTitle("Terrain (m)");
+
+        graphView.getGridLabelRenderer().setHorizontalAxisTitle("Distance(km)");
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
