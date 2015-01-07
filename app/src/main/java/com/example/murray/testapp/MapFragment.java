@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
@@ -53,6 +52,7 @@ public class MapFragment extends Fragment {
     public static final String PREFS_SHOW_COMPASS = "showCompass";
     private MyLocationNewOverlay locationOverlay;
     private CompassOverlay compassOverlay;
+    private int initialZoomLevel;
 
     KmlDocument kmlDocument;
     FixedMapView mapView;
@@ -65,8 +65,7 @@ public class MapFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
 
@@ -74,7 +73,7 @@ public class MapFragment extends Fragment {
         SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(MyActivity.ROUTE_CHOSEN_KEY);
 
         kmlDocument = new KmlDocument();
-
+        initialZoomLevel = routeRow.getInitialZoomLevel();
         File route = utils.copyFileFromAssets(routeRow.getRouteKmlFile(), this.getActivity().getAssets(), this.getActivity().getPackageName(), null);
 
         kmlDocument.parseKMLFile(route);
@@ -133,8 +132,7 @@ public class MapFragment extends Fragment {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // here you set what you want to do when user clicks your button,
-                // e.g. launch a new activity
+
                 MapFragment.this.locationOverlay.enableFollowLocation();
 
             }
@@ -159,21 +157,20 @@ public class MapFragment extends Fragment {
 
 
 
-        final FrameLayout mapContainer = (FrameLayout)getActivity().findViewById(R.id.map_container);
-        final ViewTreeObserver vto = mapContainer.getViewTreeObserver();
+
+        final ViewTreeObserver vto = mapView.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
 
 
-
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
-                    mapContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    mapView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 else
-                    mapContainer.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                    mapView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
 
-                mapView.zoomToBoundingBox(bb);
-                //mapView.getController().animateTo(bb.getCenter());
+                mapView.getController().setZoom(initialZoomLevel);
+                mapView.getController().animateTo(bb.getCenter());
 
             }
         });
@@ -206,9 +203,9 @@ public class MapFragment extends Fragment {
         }
 
 
-        LineGraphSeries<DataPoint>  exampleSeries =  new LineGraphSeries<DataPoint>(data);
-        exampleSeries.setDrawBackground(true);
-        exampleSeries.setBackgroundColor(Color.RED);
+        LineGraphSeries<DataPoint>  series =  new LineGraphSeries<DataPoint>(data);
+        series.setDrawBackground(true);
+        series.setBackgroundColor(Color.rgb(189, 183, 107));
         GraphView graphView = new GraphView(
                 this.getActivity() // context
         );
@@ -220,7 +217,7 @@ public class MapFragment extends Fragment {
             lastXCoord++;
         }
         graphView.getViewport().setMaxX(lastXCoord);
-        graphView.addSeries(exampleSeries); // data
+        graphView.addSeries(series); // data
         graphView.setTitle("Terrain (m)");
 
         graphView.getGridLabelRenderer().setHorizontalAxisTitle("Distance(km)");
@@ -252,6 +249,8 @@ public class MapFragment extends Fragment {
 
         super.onPause();
     }
+
+
     @Override
     public void  onResume() {
         super.onResume();

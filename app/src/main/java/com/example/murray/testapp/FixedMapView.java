@@ -61,4 +61,5 @@ public class FixedMapView extends MapView {
         }, LIMIT_ZOOM_TIMER);
     }
 
+
 }

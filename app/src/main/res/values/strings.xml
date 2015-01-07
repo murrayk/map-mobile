@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">OMG Android</string>
+    <string name="app_name">Glentress Trail Map</string>
     <string name="textview">Matt is learning Android!</string>
     <string name="action_settings">Settings</string>
     <string name="button">Update The TextView</string>
@@ -28,9 +28,14 @@
     <string-array name="routes_kml_filenames" >
         <item>green-route.kml</item>
         <item>blue-route.kml</item>
-        <item>red.kml</item>
+        <item>red-route.kml</item>
         <item>black-route.kml</item>
     </string-array>
-
+    <integer-array name="initial_zoom_levels" >
+        <item>17</item>
+        <item>15</item>
+        <item>14</item>
+        <item>14</item>
+    </integer-array>
 
 </resources>

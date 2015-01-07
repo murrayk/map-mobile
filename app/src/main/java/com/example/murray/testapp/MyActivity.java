@@ -152,6 +152,12 @@ class SingleRow implements Serializable{
     private String routeKmlFile;
     private int elevationId;
 
+    public int getInitialZoomLevel() {
+        return initialZoomLevel;
+    }
+
+    private int initialZoomLevel;
+
     public int getImageId() {
         return imageId;
     }
@@ -170,13 +176,16 @@ class SingleRow implements Serializable{
 
     public int getElevationId() { return elevationId; }
 
-    SingleRow(int imageId, String title, String description , String routeKmlFile, int elevationId) {
-        this.imageId = imageId;
+    SingleRow(String title, int imageId, String description, String routeKmlFile, int elevationId, int initialZoomLevel) {
         this.title = title;
+        this.imageId = imageId;
         this.description = description;
-        this.elevationId = elevationId;
         this.routeKmlFile = routeKmlFile;
+        this.elevationId = elevationId;
+        this.initialZoomLevel = initialZoomLevel;
     }
+
+
 }
 
 class  MyAdapter extends BaseAdapter{
@@ -191,10 +200,11 @@ class  MyAdapter extends BaseAdapter{
         String[] descriptions = resources.getStringArray(R.array.descriptions);
         String[] routes = resources.getStringArray(R.array.routes);
         int[] images = new int[]{R.drawable.green_icon,R.drawable.blue_icon,R.drawable.red_icon,R.drawable.black_icon};
-        int[] evelationArray = new int[]{R.array.blue, R.array.blue, R.array.red, R.array.black};
+        int[] evelationArray = new int[]{R.array.green, R.array.blue, R.array.red, R.array.black};
+        int[] initialZoomLevels = resources.getIntArray(R.array.initial_zoom_levels);
         String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
         for(int i =0 ; i< titles.length;i++ ){
-            rows.add(new SingleRow(images[i], titles[i], descriptions[i], routeKmlFiles[i], evelationArray[i]));
+            rows.add(new SingleRow( titles[i],images[i], descriptions[i], routeKmlFiles[i], evelationArray[i], initialZoomLevels[i]));
         }
 
     }
