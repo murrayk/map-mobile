@@ -198,13 +198,13 @@ class  MyAdapter extends BaseAdapter{
         Resources resources = context.getResources();
         String[] titles = resources.getStringArray(R.array.titles);
         String[] descriptions = resources.getStringArray(R.array.descriptions);
-        String[] routes = resources.getStringArray(R.array.routes);
+
         int[] images = new int[]{R.drawable.green_icon,R.drawable.blue_icon,R.drawable.red_icon,R.drawable.black_icon};
-        int[] evelationArray = new int[]{R.array.green, R.array.blue, R.array.red, R.array.black};
+        int[] elevationArray = new int[]{R.array.green, R.array.blue, R.array.red, R.array.black};
         int[] initialZoomLevels = resources.getIntArray(R.array.initial_zoom_levels);
         String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
         for(int i =0 ; i< titles.length;i++ ){
-            rows.add(new SingleRow( titles[i],images[i], descriptions[i], routeKmlFiles[i], evelationArray[i], initialZoomLevels[i]));
+            rows.add(new SingleRow( titles[i],images[i], descriptions[i], routeKmlFiles[i], elevationArray[i], initialZoomLevels[i]));
         }
 
     }

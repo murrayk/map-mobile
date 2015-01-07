@@ -19,12 +19,7 @@
         <item>Proficient mountain bikers with good off-road riding skills. Suitable for better quality off-road mountain bikes.</item>
         <item>Expert mountain bike users, used to physically demanding routes. Quality off-road mountain bikes.</item>
     </string-array>
-    <string-array name="routes" >
-        <item>Green</item>
-        <item>Blue</item>
-        <item>Red</item>
-        <item>Black</item>
-    </string-array>
+
     <string-array name="routes_kml_filenames" >
         <item>green-route.kml</item>
         <item>blue-route.kml</item>
