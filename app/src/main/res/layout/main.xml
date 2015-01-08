@@ -22,13 +22,29 @@
         </FrameLayout>
 
         <LinearLayout
-
             android:id="@+id/replace"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center|top">
+            android:gravity="center|top"
+            android:orientation="vertical">
 
-
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/routeIcon"
+                    android:layout_marginRight="15dp" />
+                <TextView
+                    android:id="@+id/routeInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Medium Text\n test line 2"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </LinearLayout>
         </LinearLayout>
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>

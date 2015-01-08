@@ -7,26 +7,32 @@
     <string name="button">Update The TextView</string>
     <string name="hint">A Name</string>
     <string name="activity_details">Map</string>
-    <string-array name="titles" >
+    <string-array name="titles">
         <item>Green Route (Easy)</item>
         <item>Blue Route (Moderate)</item>
         <item>Red Route (Difficult)</item>
         <item>Black Route (Severe)</item>
     </string-array>
-    <string-array name="descriptions" >
+    <string-array name="descriptions">
         <item>Beginner/novice cyclists. Basic bike skills required. Most bikes and hybrids. Some green routes can take trailers.</item>
         <item>Intermediate cyclist/mountain bikers with basic offroad riding skills. Mountain bikes and hybrids.</item>
         <item>Proficient mountain bikers with good off-road riding skills. Suitable for better quality off-road mountain bikes.</item>
         <item>Expert mountain bike users, used to physically demanding routes. Quality off-road mountain bikes.</item>
     </string-array>
+    <string-array name="route_info" formatted="false">
+        <item>Grade: Green - Easy\n Distance: 3.5K - 4.5Km \nSingletrack: 30% - 60%\nEstimated Time To Ride The Route: 30 mins - 1 hr</item>
+        <item>Grade: Blue - Moderate \nDistance: 8Km Lower Loop (recommended). Upper Loop adds 8Km. 16Km total.\nSingletrack: 80% for Lower Loop 60% for Upper Loop\nEstimated Time To Ride The Route: 1 - 2 hrs for each loop</item>
+        <item>Grade: Red - Difficult\nDistance: 18Km\nSingletrack: 65%\nEstimated Time To Ride The Route: 1.5 - 3 hrs</item>
+        <item>Grade: Black - Severe \nDistance: 29Km\nSingletrack: 75%\nEstimated Time To Ride The Route: 3 - 5 hrs</item>
+</string-array>
 
-    <string-array name="routes_kml_filenames" >
+    <string-array name="routes_kml_filenames">
         <item>green-route.kml</item>
         <item>blue-route.kml</item>
         <item>red-route.kml</item>
         <item>black-route.kml</item>
     </string-array>
-    <integer-array name="initial_zoom_levels" >
+    <integer-array name="initial_zoom_levels">
         <item>17</item>
         <item>15</item>
         <item>14</item>

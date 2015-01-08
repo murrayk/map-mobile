@@ -12,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -228,6 +230,11 @@ public class MapFragment extends Fragment {
         params.setMargins(10, 10, 10, 10);
         graphView.setLayoutParams(params);
         LinearLayout layout = (LinearLayout) this.getActivity().findViewById(R.id.replace);
+
+        ImageView routeIcon = (ImageView)this.getActivity().findViewById(R.id.routeIcon);
+        routeIcon.setImageResource(routeRow.getImageId());
+        TextView routeInfo = (TextView)this.getActivity().findViewById(R.id.routeInfo);
+        routeInfo.setText(routeRow.getRouteInfo());
         layout.addView(graphView);
     }
 

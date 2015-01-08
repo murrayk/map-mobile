@@ -151,6 +151,7 @@ class SingleRow implements Serializable{
     private String description;
     private String routeKmlFile;
     private int elevationId;
+    private String routeInfo;
 
     public int getInitialZoomLevel() {
         return initialZoomLevel;
@@ -176,13 +177,16 @@ class SingleRow implements Serializable{
 
     public int getElevationId() { return elevationId; }
 
-    SingleRow(String title, int imageId, String description, String routeKmlFile, int elevationId, int initialZoomLevel) {
+    public String getRouteInfo(){ return routeInfo;}
+
+    SingleRow(String title, int imageId, String description, String routeKmlFile, int elevationId, int initialZoomLevel, String routeInfo) {
         this.title = title;
         this.imageId = imageId;
         this.description = description;
         this.routeKmlFile = routeKmlFile;
         this.elevationId = elevationId;
         this.initialZoomLevel = initialZoomLevel;
+        this.routeInfo = routeInfo;
     }
 
 
@@ -203,8 +207,9 @@ class  MyAdapter extends BaseAdapter{
         int[] elevationArray = new int[]{R.array.green, R.array.blue, R.array.red, R.array.black};
         int[] initialZoomLevels = resources.getIntArray(R.array.initial_zoom_levels);
         String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
+        String[] routeInfo = resources.getStringArray(R.array.route_info);
         for(int i =0 ; i< titles.length;i++ ){
-            rows.add(new SingleRow( titles[i],images[i], descriptions[i], routeKmlFiles[i], elevationArray[i], initialZoomLevels[i]));
+            rows.add(new SingleRow( titles[i],images[i], descriptions[i], routeKmlFiles[i], elevationArray[i], initialZoomLevels[i], routeInfo[i]));
         }
 
     }
