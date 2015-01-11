@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -234,7 +235,8 @@ public class MapFragment extends Fragment {
         ImageView routeIcon = (ImageView)this.getActivity().findViewById(R.id.routeIcon);
         routeIcon.setImageResource(routeRow.getImageId());
         TextView routeInfo = (TextView)this.getActivity().findViewById(R.id.routeInfo);
-        routeInfo.setText(routeRow.getRouteInfo());
+
+        routeInfo.setText(Html.fromHtml(routeRow.getRouteInfo()));
         layout.addView(graphView);
     }
 

@@ -35,6 +35,11 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:src="@drawable/handle_icon"
+                    android:layout_marginRight="15dp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:id="@+id/routeIcon"
                     android:layout_marginRight="15dp" />
                 <TextView
@@ -43,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:text="Medium Text\n test line 2"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    />
             </LinearLayout>
         </LinearLayout>
 

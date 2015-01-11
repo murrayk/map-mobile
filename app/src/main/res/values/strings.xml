@@ -20,10 +20,10 @@
         <item>Expert mountain bike users, used to physically demanding routes. Quality off-road mountain bikes.</item>
     </string-array>
     <string-array name="route_info" formatted="false">
-        <item>Grade: Green - Easy\n Distance: 3.5K - 4.5Km \nSingletrack: 30% - 60%\nEstimated Time To Ride The Route: 30 mins - 1 hr</item>
-        <item>Grade: Blue - Moderate \nDistance: 8Km Lower Loop (recommended). Upper Loop adds 8Km. 16Km total.\nSingletrack: 80% for Lower Loop 60% for Upper Loop\nEstimated Time To Ride The Route: 1 - 2 hrs for each loop</item>
-        <item>Grade: Red - Difficult\nDistance: 18Km\nSingletrack: 65%\nEstimated Time To Ride The Route: 1.5 - 3 hrs</item>
-        <item>Grade: Black - Severe \nDistance: 29Km\nSingletrack: 75%\nEstimated Time To Ride The Route: 3 - 5 hrs</item>
+        <item><![CDATA[<b>Grade:</b> Green &mdash; Easy<br/><b>Distance</b>: 3.5K &mdash; 4.5Km <br/><b>Singletrack</b>: 30% &mdash; 60%<br/><b>Estimated Time</b> To Ride: 30 mins &mdash; 1 hr]]></item>
+        <item><![CDATA[<b>Grade:</b> Blue &mdash; Moderate <br/><b>Distance</b>: 8Km Lower Loop (recommended). Upper Loop adds 8Km. 16Km total.<br/><b>Singletrack</b>: 80% for Lower Loop 60% for Upper Loop<br/><b>Estimated Time</b>: 1 &mdash; 2 hrs for each loop]]></item>
+        <item><![CDATA[<b>Grade:</b> Red &mdash; Difficult<br/><b>Distance</b>: 18Km<br/><b>Singletrack</b>: 65%<br/><b>Estimated Time</b>: 1.5 &mdash; 3 hrs]]></item>
+        <item><![CDATA[<b>Grade:</b> Black &mdash; Severe <br/><b>Distance</b>: 29Km<br/><b>Singletrack</b>: 75%<br/><b>Estimated Time</b>: 3 &mdash; 5 hrs]]></item>
 </string-array>
 
     <string-array name="routes_kml_filenames">
