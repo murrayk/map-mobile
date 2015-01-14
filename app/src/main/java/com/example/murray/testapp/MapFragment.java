@@ -33,6 +33,7 @@ import org.osmdroid.tileprovider.modules.MapTileModuleProviderBase;
 import org.osmdroid.tileprovider.tilesource.XYTileSource;
 import org.osmdroid.tileprovider.util.SimpleRegisterReceiver;
 import org.osmdroid.util.BoundingBoxE6;
+import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
@@ -172,7 +173,19 @@ public class MapFragment extends Fragment {
                 else
                     mapView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
 
-                mapView.getController().setZoom(initialZoomLevel);
+                //work out zoomlevel mapView.zoomToBoundingBox(); doesn't always so wrote own work.
+                //use own code.
+
+                GeoPoint nw = new GeoPoint(bb.getLatNorthE6(), bb.getLonWestE6());
+                GeoPoint ne = new GeoPoint(bb.getLatNorthE6(), bb.getLonEastE6());
+                int widthMeters =ne.distanceTo(nw);
+                GeoPoint se = new GeoPoint(bb.getLatSouthE6(), bb.getLonEastE6());
+                int heightMeters = nw.distanceTo(se);
+
+
+                MyCartoTool cartoTool = new MyCartoTool( mapView.getWidth(), mapView.getHeight());
+                int zoomLevel = cartoTool.zoomLevelForBoundingBox(widthMeters,heightMeters);
+                mapView.getController().setZoom(zoomLevel);
                 mapView.getController().animateTo(bb.getCenter());
 
             }
