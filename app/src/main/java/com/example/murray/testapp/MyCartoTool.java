@@ -9,6 +9,8 @@ public class MyCartoTool {
     private final int tileSize;
     private int mapViewHeightPixels;
     private int mapViewWidthPixels;
+    private final double PADDING = 0.7;
+    double LENGTH_OF_EQUATOR = 40075.016686 * 1000;
 
     public MyCartoTool(int mapViewWidthPixels, int mapViewHeightPixels) {
         this.tileSize = 256;
@@ -18,7 +20,12 @@ public class MyCartoTool {
     }
 
     private double metersPerPixel(int zoomLevel) {
-        return this.initialResolution/(Math.pow(2, zoomLevel));
+        return (initialResolution * PADDING) /(Math.pow(2, zoomLevel));
+    }
+
+    public double getDistancePerPixel( int zoomLevel) {
+        double latitude = 56;
+        return (LENGTH_OF_EQUATOR*Math.cos(Math.toRadians(latitude))/Math.pow(2, zoomLevel+8));
     }
 
 
@@ -27,14 +34,14 @@ public class MyCartoTool {
         int bestZoomLevelForHeight = -1;
 
         for(int i=20; i>0; i--){
-            double widthInPixels = bbWidthInMeters / metersPerPixel(i);
+            double widthInPixels = bbWidthInMeters / getDistancePerPixel(i);
             if( widthInPixels < mapViewWidthPixels){
                 bestZoomLevelForWidth = i;
                 break;
             }
         }
         for(int i=20; i> 0; i--){
-            double heightInPixels = bbHeightInMeters / metersPerPixel(i);
+            double heightInPixels = bbHeightInMeters / getDistancePerPixel(i);
             if( heightInPixels < mapViewHeightPixels){
                 bestZoomLevelForHeight = i;
                 break;
