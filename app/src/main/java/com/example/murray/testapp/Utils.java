@@ -32,11 +32,11 @@ public class Utils {
         return instance;
     }
 
-    public void copyOfflineMap(String filename, AssetManager assetManager, String packageName, MyActivity.UpdateProgress progressBarHandler){
+    public void copyOfflineMap(String filename, AssetManager assetManager, String packageName, ListRoutesFragment.UpdateProgress progressBarHandler){
         offlineMap = copyFileFromAssets(filename, assetManager, packageName, progressBarHandler);
     }
 
-    public File copyFileFromAssets(String filename, AssetManager assetManager, String packageName, MyActivity.UpdateProgress progressBarHandler) {
+    public File copyFileFromAssets(String filename, AssetManager assetManager, String packageName, ListRoutesFragment.UpdateProgress progressBarHandler) {
 
         String baseDir = Environment.getExternalStorageDirectory().getPath() + "/" + packageName;
 

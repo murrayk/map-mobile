@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.murray.testapp.ListRoutesFragment.SingleRow;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -56,7 +57,7 @@ public class MapFragment extends Fragment {
     public static final String PREFS_SHOW_COMPASS = "showCompass";
     private MyLocationNewOverlay locationOverlay;
     private CompassOverlay compassOverlay;
-    private int initialZoomLevel;
+
 
     KmlDocument kmlDocument;
     FixedMapView mapView;
@@ -74,10 +75,9 @@ public class MapFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-        SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(MyActivity.ROUTE_CHOSEN_KEY);
+        SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(ListRoutesFragment.ROUTE_CHOSEN_KEY);
 
         kmlDocument = new KmlDocument();
-        initialZoomLevel = routeRow.getInitialZoomLevel();
         File route = utils.copyFileFromAssets(routeRow.getRouteKmlFile(), this.getActivity().getAssets(), this.getActivity().getPackageName(), null);
 
         kmlDocument.parseKMLFile(route);
@@ -204,7 +204,7 @@ public class MapFragment extends Fragment {
 
         //get string array pf plot
         Resources resources = context.getResources();
-        SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(MyActivity.ROUTE_CHOSEN_KEY);
+        SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(ListRoutesFragment.ROUTE_CHOSEN_KEY);
 
         String[] points = resources.getStringArray(routeRow.getElevationId());
 
