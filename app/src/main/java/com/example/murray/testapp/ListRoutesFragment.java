@@ -53,7 +53,7 @@ public class ListRoutesFragment extends ListFragment{
 
     private void goToMap(SingleRow row){
         // create an Intent to take you over to a new DetailActivity
-        Intent detailIntent = new Intent(this.getActivity(), MainMapView.class);
+        Intent detailIntent = new Intent(this.getActivity(), DetailsActivity.class);
 
         detailIntent.putExtra(ROUTE_CHOSEN_KEY, row);
 
