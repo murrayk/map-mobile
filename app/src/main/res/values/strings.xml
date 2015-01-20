@@ -32,11 +32,5 @@
         <item>red-route.kml</item>
         <item>black-route.kml</item>
     </string-array>
-    <integer-array name="initial_zoom_levels">
-        <item>17</item>
-        <item>15</item>
-        <item>14</item>
-        <item>14</item>
-    </integer-array>
 
 </resources>

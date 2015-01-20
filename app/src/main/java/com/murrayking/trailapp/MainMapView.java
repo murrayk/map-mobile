@@ -1,26 +1,27 @@
-package com.example.murray.testapp;
+package com.murrayking.trailapp;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.murray.testapp.ListRoutesFragment.SingleRow;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.murrayking.trailapp.ListRoutesFragment.SingleRow;
 
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
@@ -43,9 +44,10 @@ import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 import java.io.File;
 
 /**
- * Created by murrayking on 15/12/2014.
+ * Created by murray on 25/08/14.
  */
-public class MapFragment extends Fragment {
+public class MainMapView  extends Fragment{
+
 
 
     private SharedPreferences prefs;
@@ -64,29 +66,28 @@ public class MapFragment extends Fragment {
     Utils utils = Utils.getInstance();
 
 
-    public static MapFragment newInstance() {
-        MapFragment fragment = new MapFragment();
-        return fragment;
+    public MainMapView(){
+
+
     }
 
+
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.main, container, false);
+        Context context = inflater.getContext();
 
-        super.onCreate(savedInstanceState);
+
+        getActivity().getActionBar().hide();
 
 
-        SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(ListRoutesFragment.ROUTE_CHOSEN_KEY);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+        SingleRow routeRow = getRow();
 
         kmlDocument = new KmlDocument();
         File route = utils.copyFileFromAssets(routeRow.getRouteKmlFile(), this.getActivity().getAssets(), this.getActivity().getPackageName(), null);
 
         kmlDocument.parseKMLFile(route);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        Context context = inflater.getContext();
 
         DefaultResourceProxyImpl resProxy;
         resProxy = new DefaultResourceProxyImpl(context);
@@ -126,23 +127,17 @@ public class MapFragment extends Fragment {
         mapView = new FixedMapView(context, 256, resProxy, provider);
 
 
-        return mapView;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        ImageButton mButton = (ImageButton) getActivity().findViewById(R.id.locate_button);
+        ImageButton mButton = (ImageButton) rootView.findViewById(R.id.locate_button);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                MapFragment.this.locationOverlay.enableFollowLocation();
+                MainMapView.this.locationOverlay.enableFollowLocation();
 
             }
         });
 
-        Context context = this.getActivity();
+
         prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 
         mapView.setBuiltInZoomControls(true);
@@ -204,7 +199,7 @@ public class MapFragment extends Fragment {
 
         //get string array pf plot
         Resources resources = context.getResources();
-        SingleRow routeRow = (SingleRow)getActivity().getIntent().getSerializableExtra(ListRoutesFragment.ROUTE_CHOSEN_KEY);
+
 
         String[] points = resources.getStringArray(routeRow.getElevationId());
 
@@ -219,7 +214,7 @@ public class MapFragment extends Fragment {
         }
 
 
-        LineGraphSeries<DataPoint>  series =  new LineGraphSeries<DataPoint>(data);
+        LineGraphSeries<DataPoint> series =  new LineGraphSeries<DataPoint>(data);
         series.setDrawBackground(true);
         series.setBackgroundColor(Color.rgb(189, 183, 107));
         GraphView graphView = new GraphView(
@@ -243,14 +238,23 @@ public class MapFragment extends Fragment {
         params.weight = 1.0f;
         params.setMargins(10, 10, 10, 10);
         graphView.setLayoutParams(params);
-        LinearLayout layout = (LinearLayout) this.getActivity().findViewById(R.id.replace);
+        LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.replace);
 
-        ImageView routeIcon = (ImageView)this.getActivity().findViewById(R.id.routeIcon);
+        ImageView routeIcon = (ImageView)rootView.findViewById(R.id.routeIcon);
         routeIcon.setImageResource(routeRow.getImageId());
-        TextView routeInfo = (TextView)this.getActivity().findViewById(R.id.routeInfo);
+        TextView routeInfo = (TextView)rootView.findViewById(R.id.routeInfo);
 
         routeInfo.setText(Html.fromHtml(routeRow.getRouteInfo()));
         layout.addView(graphView);
+        FrameLayout mapContainer = (FrameLayout)rootView.findViewById(R.id.map_container);
+        mapContainer.addView(mapView);
+        return rootView;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
     }
 
 
@@ -285,4 +289,19 @@ public class MapFragment extends Fragment {
         }
     }
 
+
+    public static MainMapView newInstance(SingleRow row) {
+        MainMapView f = new MainMapView();
+        Bundle args = new Bundle();
+        args.putSerializable(ListRoutesFragment.ROUTE_CHOSEN_KEY, row);
+
+        // Assign key value to the fragment
+        f.setArguments(args);
+
+        return f;
+    }
+
+    public SingleRow getRow() {
+        return (SingleRow) getArguments().getSerializable(ListRoutesFragment.ROUTE_CHOSEN_KEY);
+    }
 }

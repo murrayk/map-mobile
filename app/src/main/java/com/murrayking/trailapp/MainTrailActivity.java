@@ -1,9 +1,9 @@
-package com.example.murray.testapp;
+package com.murrayking.trailapp;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class MyActivity extends Activity {
+public class MainTrailActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <fragment class="com.example.murray.testapp.ListRoutesFragment"
+    <fragment class="com.murrayking.trailapp.ListRoutesFragment"
         android:id="@+id/titles"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

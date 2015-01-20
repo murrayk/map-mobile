@@ -1,4 +1,4 @@
-package com.example.murray.testapp;
+package com.murrayking.trailapp;
 
 import android.app.Activity;
 import android.content.res.Configuration;

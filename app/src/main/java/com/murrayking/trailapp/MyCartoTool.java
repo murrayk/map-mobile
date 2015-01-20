@@ -1,4 +1,4 @@
-package com.example.murray.testapp;
+package com.murrayking.trailapp;
 
 /**
  * Created by murrayking on 14/01/2015.
