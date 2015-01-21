@@ -19,13 +19,19 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.murrayking.trailapp.MainTrailActivity"
-            android:label="@string/app_name" >
+            android:name=".IntroActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.murrayking.trailapp.MainTrailActivity"
+            android:label="@string/app_name" >
         </activity>
         <activity android:name="com.murrayking.trailapp.DetailsActivity"
             android:label="@string/app_name">
