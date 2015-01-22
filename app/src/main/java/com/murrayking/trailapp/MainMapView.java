@@ -142,7 +142,8 @@ public class MainMapView  extends Fragment{
 
         mapView.setBuiltInZoomControls(true);
         this.locationOverlay = new MyLocationNewOverlay(context, new GpsMyLocationProvider(context), mapView);
-
+        this.compassOverlay = new CompassOverlay(context, new InternalCompassOrientationProvider(context),
+                mapView);
 
         final BoundingBoxE6 bb =  kmlDocument.mKmlRoot.getBoundingBox();
 
@@ -150,6 +151,7 @@ public class MainMapView  extends Fragment{
 
         mapView.getOverlays().add(kmlOverlay);
         mapView.getOverlays().add(this.locationOverlay);
+        mapView.getOverlays().add(this.compassOverlay);
         mapView.setClickable(true);
 
         mapView.setMultiTouchControls(true);
@@ -188,8 +190,7 @@ public class MainMapView  extends Fragment{
 
 
 
-        this.compassOverlay = new CompassOverlay(context, new InternalCompassOrientationProvider(context),
-                mapView);
+
         mapView.getController().setZoom(prefs.getInt(PREFS_ZOOM_LEVEL, 1));
         mapView.scrollTo(prefs.getInt(PREFS_SCROLL_X, 0), prefs.getInt(PREFS_SCROLL_Y, 0));
 
