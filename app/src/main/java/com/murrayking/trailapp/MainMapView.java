@@ -291,6 +291,9 @@ public class MainMapView  extends Fragment{
 
 
     public static MainMapView newInstance(SingleRow row) {
+        if(row == null){
+            throw new NullPointerException("Need a map route row to display");
+        }
         MainMapView f = new MainMapView();
         Bundle args = new Bundle();
         args.putSerializable(ListRoutesFragment.ROUTE_CHOSEN_KEY, row);

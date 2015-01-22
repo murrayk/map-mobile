@@ -67,12 +67,12 @@ public class ListRoutesFragment extends ListFragment {
         if (savedInstanceState != null) {
             // Restore last state for checked position.
             selectedRow = (SingleRow)savedInstanceState.getSerializable(ListRoutesFragment.ROUTE_CHOSEN_KEY);
-            if(selectedRow == null){
-                selectedRow =(SingleRow)adapter.getItem(0);
-            }
+
         }
-
-
+        //first usage and no selection made
+        if(selectedRow == null){
+            selectedRow =(SingleRow)adapter.getItem(0);
+        }
 
         if (dualPane) {
             // CHOICE_MODE_SINGLE allows one item in the ListView to be selected at a time
@@ -103,21 +103,21 @@ public class ListRoutesFragment extends ListFragment {
             // When a DetailsFragment is created by calling newInstance the index for the data
             // it is supposed to show is passed to it. If that index hasn't been assigned we must
             // assign it in the if block
-            if (details == null || details.getRow() != row) {
+
 
                 // Make the details fragment and give it the currently selected hero index
-                details = MainMapView.newInstance(row);
+            details = MainMapView.newInstance(row);
 
-                // Start Fragment transactions
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+            // Start Fragment transactions
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
 
-                // Replace any other Fragment with our new Details Fragment with the right data
-                ft.replace(R.id.details, details);
+            // Replace any other Fragment with our new Details Fragment with the right data
+            ft.replace(R.id.details, details);
 
-                // TRANSIT_FRAGMENT_FADE calls for the Fragment to fade away
-                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                ft.commit();
-            }
+            // TRANSIT_FRAGMENT_FADE calls for the Fragment to fade away
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+
 
         } else {
 
