@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bike Patrol"
-        android:id="@+id/button2"
+        android:id="@+id/goBikePatrol"
         android:layout_marginLeft="42dp"
         android:layout_marginStart="42dp"
         android:layout_alignTop="@+id/goMapButton"
