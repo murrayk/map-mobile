@@ -1,5 +1,6 @@
 package com.murrayking.trailapp;
 
+import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -109,7 +111,7 @@ public class MainMapView  extends Fragment{
         XYTileSource tSource;
         tSource = new XYTileSource("mbtiles",
                 ResourceProxy.string.offline_mode,
-                8, 19, 256, ".png", new String[]{"http://who.cares/"});
+                8, 18, 256, ".png", new String[]{"http://who.cares/"});
 
 
         IArchiveFile[] files = { MBTilesFileArchive.getDatabaseFileArchive(utils.getOfflineMap()) };
@@ -136,6 +138,19 @@ public class MainMapView  extends Fragment{
 
             }
         });
+
+        ImageButton locationsButton = (ImageButton) rootView.findViewById(R.id.play_button);
+        locationsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showGotoLocationsPopup();
+
+            }
+        });
+
+
+
 
 
         prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
@@ -250,6 +265,48 @@ public class MainMapView  extends Fragment{
         FrameLayout mapContainer = (FrameLayout)rootView.findViewById(R.id.map_container);
         mapContainer.addView(mapView);
         return rootView;
+    }
+
+    private void showGotoLocationsPopup() {
+        // Create custom dialog object
+        final Dialog dialog = new Dialog(MainMapView.this.getActivity());
+        // Include dialog.xml file
+        dialog.setContentView(R.layout.locations_dialog);
+        // Set dialog title
+        dialog.setTitle("Custom Dialog");
+
+        // set values for custom dialog components - text, image and button
+        TextView text = (TextView) dialog.findViewById(R.id.textDialog);
+        text.setText("Custom dialog Android example.");
+        ImageView image = (ImageView) dialog.findViewById(R.id.imageDialog);
+        image.setImageResource(R.drawable.icon1);
+
+        dialog.show();
+
+        Button declineButton = (Button) dialog.findViewById(R.id.declineButton);
+        // if decline button is clicked, close the custom dialog
+        declineButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Close dialog
+                dialog.dismiss();
+            }
+        });
+
+        Button gotoBotton = (Button) dialog.findViewById(R.id.testLocation);
+        // if decline button is clicked, close the custom dialog
+        gotoBotton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Close dialog
+                dialog.dismiss();
+                mapView.getController().setZoom(17);
+                mapView.getController().animateTo(new GeoPoint(55.646821,-3.137476));
+
+            }
+        });
+
+
     }
 
     @Override

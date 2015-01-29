@@ -19,6 +19,7 @@
             android:gravity="center">
 
 
+
         </FrameLayout>
 
         <LinearLayout
@@ -54,13 +55,32 @@
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
-    <ImageButton
-        android:id="@+id/locate_button"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|top"
-        android:layout_margin="@dimen/location_button_padding"
-        android:src="@drawable/ic_action_locate"
-        android:text="New Button" />
+        android:layout_gravity="right|top">
+        <ImageButton
+            android:id="@+id/play_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="@dimen/location_button_padding"
+            android:src="@drawable/ic_action_locate"
+            android:text="New Button" />
+        <ImageButton
+            android:id="@+id/locate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="@dimen/location_button_padding"
+            android:src="@drawable/ic_action_locate"
+            android:text="New Button" />
+
+        </LinearLayout>
+
+
+
+
 
 </FrameLayout>

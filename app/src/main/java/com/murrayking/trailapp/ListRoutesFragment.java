@@ -25,7 +25,7 @@ import java.util.ArrayList;
  */
 public class ListRoutesFragment extends ListFragment {
 
-    public static final String MAP_DB_NAME = "18hi.mbtiles";
+    public static final String MAP_DB_NAME = "lowres.mbtiles";
 
     public static final String ROUTE_CHOSEN_KEY = "ROUTE_CHOSEN_KEY";
 
