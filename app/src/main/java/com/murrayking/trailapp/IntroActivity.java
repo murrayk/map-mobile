@@ -28,7 +28,15 @@ public class IntroActivity extends Activity {
                 startActivity(intent);
             }
         });
+        Button goBikePatrol = (Button)this.findViewById(R.id.goBikePatrol);
 
+        goBikePatrol.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Intent intent = new Intent(IntroActivity.this, BikePatrolActivity.class);
+                startActivity(intent);
+            }
+        });
         /*
         new Handler().postDelayed(new Runnable() {
             @Override
