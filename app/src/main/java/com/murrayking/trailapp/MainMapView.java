@@ -9,15 +9,19 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -29,6 +33,7 @@ import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
 import org.osmdroid.bonuspack.kml.KmlDocument;
 import org.osmdroid.bonuspack.overlays.FolderOverlay;
+import org.osmdroid.bonuspack.overlays.Marker;
 import org.osmdroid.tileprovider.MapTileProviderArray;
 import org.osmdroid.tileprovider.modules.IArchiveFile;
 import org.osmdroid.tileprovider.modules.MBTilesFileArchive;
@@ -62,7 +67,7 @@ public class MainMapView  extends Fragment{
     private MyLocationNewOverlay locationOverlay;
     private CompassOverlay compassOverlay;
 
-
+    private Marker marker;
     KmlDocument kmlDocument;
     FixedMapView mapView;
     Utils utils = Utils.getInstance();
@@ -273,13 +278,45 @@ public class MainMapView  extends Fragment{
         // Include dialog.xml file
         dialog.setContentView(R.layout.locations_dialog);
         // Set dialog title
-        dialog.setTitle("Custom Dialog");
+        dialog.setTitle("Go to Location");
 
-        // set values for custom dialog components - text, image and button
-        TextView text = (TextView) dialog.findViewById(R.id.textDialog);
-        text.setText("Custom dialog Android example.");
-        ImageView image = (ImageView) dialog.findViewById(R.id.imageDialog);
-        image.setImageResource(R.drawable.icon1);
+        ListView list = (ListView) dialog.findViewById(R.id.listview);
+
+
+        String[] values = getResources().getStringArray(R.array.blue_loc_names);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainMapView.this.getActivity(),
+                android.R.layout.simple_list_item_1, values);
+
+
+        list.setAdapter(adapter);
+        final String[] coords = getResources().getStringArray(R.array.blue_loc_coords);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                if(!mapView.getOverlays().contains(marker) ){
+                    marker = new Marker(mapView);
+                }
+                dialog.dismiss();
+                String coord = coords[position];
+                String[] lonlat = coord.split(",");
+                double lon = Double.valueOf(lonlat[0]);
+                double lat = Double.valueOf(lonlat[1]);
+
+                mapView.getController().setZoom(17);
+                GeoPoint loc = new GeoPoint(lat, lon);
+                mapView.getController().animateTo(new GeoPoint(lat, lon));
+
+                marker.setPosition(loc);
+                marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                mapView.getOverlays().add(marker);
+
+
+            }
+        });
+
+
 
         dialog.show();
 

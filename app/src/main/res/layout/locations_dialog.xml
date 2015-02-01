@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-
-    <ImageView
-        android:id="@+id/imageDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="6dp" />
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal">
 
     <TextView
         android:id="@+id/textDialog"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
-        android:layout_toRightOf="@+id/imageDialog"/>
+         />
+
     <Button
         android:id="@+id/testLocation"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text=" Test Location "
-        android:layout_below="@+id/textDialog"
-        android:layout_toRightOf="@+id/imageDialog"
-        android:layout_toEndOf="@+id/imageDialog"
-        android:layout_marginLeft="95dp"
-        android:layout_marginStart="95dp" />
+        android:text="Trail Head" />
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+
 
     <Button
         android:id="@+id/declineButton"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text=" Submit "
-        android:layout_below="@+id/testLocation"
-        android:layout_alignLeft="@+id/testLocation"
-        android:layout_alignStart="@+id/testLocation"
-        android:layout_marginTop="52dp" />
+        android:text=" Cancel " />
 
-</RelativeLayout>
+</LinearLayout>

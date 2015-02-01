@@ -33,4 +33,26 @@
         <item>black-route.kml</item>
     </string-array>
 
+    <string-array name="blue_loc_names">
+        <item>Falla brae</item>
+        <item>Good Game</item>
+        <item>Betty Blue</item>
+        <item>The motorway</item>
+        <item>Berm Baby Berm</item>
+        <item>Blue Velvet</item>
+        <item>The admiral</item>
+        <item>Electric Blue</item>
+    </string-array>
+    <string-array name="blue_loc_coords">
+        <item>-3.1425418,55.65589</item>
+        <item>-3.1410031,55.6536285</item>
+        <item>-3.1257166,55.6662127</item>
+        <item>-3.1337112,55.6643024</item>
+        <item>-3.1484883,55.6613186</item>
+        <item>-3.144431,55.6648204</item>
+        <item>-3.1393163,55.6572622</item>
+        <item>-3.1488516,55.6584004</item>
+    </string-array>
+
+
 </resources>
