@@ -285,9 +285,9 @@ public class MainMapView  extends Fragment{
 
         String[] values = getResources().getStringArray(R.array.blue_loc_names);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainMapView.this.getActivity(),
-                android.R.layout.simple_list_item_1, values);
-
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainMapView.this.getActivity(),
+         //       android.R.layout.simple_list_item_1, values);
+        LocationsRowAdapter adapter = new LocationsRowAdapter(MainMapView.this.getActivity(), values);
 
         list.setAdapter(adapter);
         final String[] coords = getResources().getStringArray(R.array.blue_loc_coords);
@@ -319,7 +319,7 @@ public class MainMapView  extends Fragment{
 
 
         dialog.show();
-
+        /*
         Button declineButton = (Button) dialog.findViewById(R.id.declineButton);
         // if decline button is clicked, close the custom dialog
         declineButton.setOnClickListener(new View.OnClickListener() {
@@ -329,7 +329,7 @@ public class MainMapView  extends Fragment{
                 dialog.dismiss();
             }
         });
-
+/*
         Button gotoBotton = (Button) dialog.findViewById(R.id.testLocation);
         // if decline button is clicked, close the custom dialog
         gotoBotton.setOnClickListener(new View.OnClickListener() {
@@ -342,7 +342,7 @@ public class MainMapView  extends Fragment{
 
             }
         });
-
+*/
 
     }
 
