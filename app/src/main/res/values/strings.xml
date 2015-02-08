@@ -32,6 +32,12 @@
         <item>red-route.kml</item>
         <item>black-route.kml</item>
     </string-array>
+    <string-array name="green_loc_names">
+        <item>Green Route Start</item>
+    </string-array>
+    <string-array name="green_loc_coords">
+    <item>-3.159556,55.657981</item>
+    </string-array>
 
     <string-array name="blue_loc_names">
         <item>Falla brae</item>

@@ -215,6 +215,9 @@ public class ListRoutesFragment extends ListFragment {
         private String routeKmlFile;
         private int elevationId;
         private String routeInfo;
+        private int trailNames;
+        private int trailCoords;
+        private int trailIcon;
 
 
         public int getImageId() {
@@ -237,13 +240,29 @@ public class ListRoutesFragment extends ListFragment {
 
         public String getRouteInfo(){ return routeInfo;}
 
-        SingleRow(String title, int imageId, String description, String routeKmlFile, int elevationId, String routeInfo) {
+        public int getTrailNames() {
+            return trailNames;
+        }
+
+        public int getTrailCoords() {
+            return trailCoords;
+        }
+
+        public int getTrailIcon() {
+            return trailIcon;
+        }
+
+        SingleRow(String title, int imageId, String description, String routeKmlFile, int elevationId, String routeInfo,
+                  int trailNames, int trailCoords, int trailIcon) {
             this.title = title;
             this.imageId = imageId;
             this.description = description;
             this.routeKmlFile = routeKmlFile;
             this.elevationId = elevationId;
             this.routeInfo = routeInfo;
+            this.trailNames = trailNames;
+            this.trailCoords = trailCoords;
+            this.trailIcon = trailIcon;
         }
 
 
@@ -262,10 +281,15 @@ public class ListRoutesFragment extends ListFragment {
 
             int[] images = new int[]{R.drawable.green_icon, R.drawable.blue_icon, R.drawable.red_icon, R.drawable.black_icon};
             int[] elevationArray = new int[]{R.array.green, R.array.blue, R.array.red, R.array.black};
+            int[] trailNames = new int[]{R.array.green_loc_names, R.array.blue_loc_names, R.array.red_loc_names, R.array.black_loc_names};
+            int[] trailCoords = new int[]{R.array.green_loc_coords, R.array.blue_loc_coords, R.array.red_loc_coords, R.array.black_loc_coords};
+            int[] trailIcons = new int[]{R.drawable.green_trail_icon, R.drawable.blue_trail_icon,
+            R.drawable.red_trail_icon, R.drawable.black_trail_icon};
             String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
             String[] routeInfo = resources.getStringArray(R.array.route_info);
             for (int i = 0; i < titles.length; i++) {
-                rows.add(new SingleRow(titles[i], images[i], descriptions[i], routeKmlFiles[i], elevationArray[i], routeInfo[i]));
+                rows.add(new SingleRow(titles[i], images[i], descriptions[i], routeKmlFiles[i],
+                        elevationArray[i], routeInfo[i], trailNames[i], trailCoords[i], trailIcons[i]));
             }
 
         }
@@ -293,7 +317,7 @@ public class ListRoutesFragment extends ListFragment {
             View row = inflater.inflate(R.layout.row_layout, viewGroup, false);
             TextView title = (TextView) row.findViewById(R.id.textTitle);
             TextView description = (TextView) row.findViewById(R.id.textDescription);
-            ImageView imageView = (ImageView) row.findViewById(R.id.img_thumbnail);
+            ImageView imageView = (ImageView) row.findViewById(R.id.trailIcon);
             SingleRow singleRow = rows.get(i);
 
             title.setText(singleRow.getTitle());

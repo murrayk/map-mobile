@@ -278,19 +278,24 @@ public class MainMapView  extends Fragment{
         // Include dialog.xml file
         dialog.setContentView(R.layout.locations_dialog);
         // Set dialog title
-        dialog.setTitle("Go to Location");
+        dialog.setTitle("Trail Locations ...");
+
+        SingleRow routeRow = getRow();
+
+
 
         ListView list = (ListView) dialog.findViewById(R.id.listview);
 
 
-        String[] values = getResources().getStringArray(R.array.blue_loc_names);
+        String[] values = getResources().getStringArray(routeRow.getTrailNames());
 
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainMapView.this.getActivity(),
          //       android.R.layout.simple_list_item_1, values);
-        LocationsRowAdapter adapter = new LocationsRowAdapter(MainMapView.this.getActivity(), values);
+        LocationsRowAdapter adapter = new LocationsRowAdapter(MainMapView.this.getActivity(), values, routeRow.getTrailIcon());
+
 
         list.setAdapter(adapter);
-        final String[] coords = getResources().getStringArray(R.array.blue_loc_coords);
+        final String[] coords = getResources().getStringArray(routeRow.getTrailCoords());
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
