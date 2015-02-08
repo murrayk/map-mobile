@@ -274,7 +274,7 @@ public class MainMapView  extends Fragment{
 
     private void showGotoLocationsPopup() {
         // Create custom dialog object
-        final Dialog dialog = new Dialog(MainMapView.this.getActivity());
+        final Dialog dialog = new Dialog(MainMapView.this.getActivity(), R.style.NewDialog);
         // Include dialog.xml file
         dialog.setContentView(R.layout.locations_dialog);
         // Set dialog title
