@@ -9,19 +9,16 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -267,8 +264,8 @@ public class MainMapView  extends Fragment{
 
         routeInfo.setText(Html.fromHtml(routeRow.getRouteInfo()));
         layout.addView(graphView);
-        FrameLayout mapContainer = (FrameLayout)rootView.findViewById(R.id.map_container);
-        mapContainer.addView(mapView);
+        RelativeLayout mapContainer = (RelativeLayout)rootView.findViewById(R.id.map_container);
+        mapContainer.addView(mapView, 0);
         return rootView;
     }
 
