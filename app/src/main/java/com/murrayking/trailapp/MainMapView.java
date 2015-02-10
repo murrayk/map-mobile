@@ -213,11 +213,33 @@ public class MainMapView  extends Fragment{
 
         locationOverlay.enableMyLocation();
         compassOverlay.enableCompass();
-        // init example series data
 
         //get string array pf plot
+        // create
         Resources resources = context.getResources();
 
+        if(routeRow.hasElevations()) {
+            GraphView graphView = getGraphView(routeRow, resources);
+
+
+            LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.replace);
+
+
+            layout.addView(graphView);
+        }
+
+
+        ImageView routeIcon = (ImageView)rootView.findViewById(R.id.routeIcon);
+        routeIcon.setImageResource(routeRow.getImageId());
+        TextView routeInfo = (TextView)rootView.findViewById(R.id.routeInfo);
+
+        routeInfo.setText(Html.fromHtml(routeRow.getRouteInfo()));
+        RelativeLayout mapContainer = (RelativeLayout)rootView.findViewById(R.id.map_container);
+        mapContainer.addView(mapView, 0);
+        return rootView;
+    }
+
+    private GraphView getGraphView(SingleRow routeRow, Resources resources) {
 
         String[] points = resources.getStringArray(routeRow.getElevationId());
 
@@ -256,17 +278,7 @@ public class MainMapView  extends Fragment{
         params.weight = 1.0f;
         params.setMargins(10, 10, 10, 10);
         graphView.setLayoutParams(params);
-        LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.replace);
-
-        ImageView routeIcon = (ImageView)rootView.findViewById(R.id.routeIcon);
-        routeIcon.setImageResource(routeRow.getImageId());
-        TextView routeInfo = (TextView)rootView.findViewById(R.id.routeInfo);
-
-        routeInfo.setText(Html.fromHtml(routeRow.getRouteInfo()));
-        layout.addView(graphView);
-        RelativeLayout mapContainer = (RelativeLayout)rootView.findViewById(R.id.map_container);
-        mapContainer.addView(mapView, 0);
-        return rootView;
+        return graphView;
     }
 
     private void showGotoLocationsPopup() {

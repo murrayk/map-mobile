@@ -208,6 +208,7 @@ public class ListRoutesFragment extends ListFragment {
 
 
     static class SingleRow implements Serializable {
+        public static final int NO_ELEVATIONS_AVAILABLE = -1;
 
         private String title;
         private int imageId;
@@ -266,6 +267,12 @@ public class ListRoutesFragment extends ListFragment {
         }
 
 
+        public boolean hasElevations() {
+            if (this.elevationId == -1){
+                return false;
+            }
+            return true;
+        }
     }
 
     class  MyAdapter extends BaseAdapter {
@@ -279,12 +286,13 @@ public class ListRoutesFragment extends ListFragment {
             String[] titles = resources.getStringArray(R.array.titles);
             String[] descriptions = resources.getStringArray(R.array.descriptions);
 
-            int[] images = new int[]{R.drawable.green_icon, R.drawable.blue_icon, R.drawable.red_icon, R.drawable.black_icon};
-            int[] elevationArray = new int[]{R.array.green, R.array.blue, R.array.red, R.array.black};
-            int[] trailNames = new int[]{R.array.green_loc_names, R.array.blue_loc_names, R.array.red_loc_names, R.array.black_loc_names};
-            int[] trailCoords = new int[]{R.array.green_loc_coords, R.array.blue_loc_coords, R.array.red_loc_coords, R.array.black_loc_coords};
-            int[] trailIcons = new int[]{R.drawable.green_trail_icon, R.drawable.blue_trail_icon,
-            R.drawable.red_trail_icon, R.drawable.black_trail_icon};
+            int[] images = new int[]{R.drawable.green_icon, R.drawable.green_icon, R.drawable.blue_icon, R.drawable.red_icon, R.drawable.black_icon, R.drawable.orange_icon};
+            int[] elevationArray = new int[]{R.array.green, SingleRow.NO_ELEVATIONS_AVAILABLE,
+                    R.array.blue, R.array.red, R.array.black, SingleRow.NO_ELEVATIONS_AVAILABLE};
+            int[] trailNames = new int[]{R.array.green_loc_names, R.array.green_skills_loc_names, R.array.blue_loc_names, R.array.red_loc_names, R.array.black_loc_names, R.array.bike_park_loc_names};
+            int[] trailCoords = new int[]{R.array.green_loc_coords, R.array.green_skills_loc_coords,R.array.blue_loc_coords, R.array.red_loc_coords, R.array.black_loc_coords, R.array.bike_park_coords};
+            int[] trailIcons = new int[]{R.drawable.green_trail_icon, R.drawable.green_trail_icon,R.drawable.blue_trail_icon,
+            R.drawable.red_trail_icon, R.drawable.black_trail_icon, R.drawable.orange_icon};
             String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
             String[] routeInfo = resources.getStringArray(R.array.route_info);
             for (int i = 0; i < titles.length; i++) {

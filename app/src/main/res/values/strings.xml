@@ -9,28 +9,36 @@
     <string name="activity_details">Map</string>
     <string-array name="titles">
         <item>Green Route (Easy)</item>
+        <item>Green Skills Area (Easy)</item>
         <item>Blue Route (Moderate)</item>
         <item>Red Route (Difficult)</item>
         <item>Black Route (Severe)</item>
+        <item>Bike Park (Extreme)</item>
     </string-array>
     <string-array name="descriptions">
+        <item>Beginner/novice cyclists. Basic bike skills required. Most bikes and hybrids. Some green routes can take trailers.</item>
         <item>Beginner/novice cyclists. Basic bike skills required. Most bikes and hybrids. Some green routes can take trailers.</item>
         <item>Intermediate cyclist/mountain bikers with basic offroad riding skills. Mountain bikes and hybrids.</item>
         <item>Proficient mountain bikers with good off-road riding skills. Suitable for better quality off-road mountain bikes.</item>
         <item>Expert mountain bike users, used to physically demanding routes. Quality off-road mountain bikes.</item>
+        <item>Bike Park, Riders aspiring to athlete level of technical ability, incorporates everything from full on downhill riding to big-air jumps.</item>
     </string-array>
     <string-array name="route_info" formatted="false">
         <item><![CDATA[<b>Grade:</b> Green &mdash; Easy<br/><b>Distance</b>: 3.5K &mdash; 4.5Km <br/><b>Singletrack</b>: 30% &mdash; 60%<br/><b>Estimated Time</b> To Ride: 30 mins &mdash; 1 hr]]></item>
+        <item><![CDATA[<b>Grade:</b> Green &mdash; Easy<br/><b>Distance</b>: 1.5K <br/><b>Singletrack</b>: 100%<br/><b>Estimated Time</b> To Ride: ]]></item>
         <item><![CDATA[<b>Grade:</b> Blue &mdash; Moderate <br/><b>Distance</b>: 8Km Lower Loop (recommended). Upper Loop adds 8Km. 16Km total.<br/><b>Singletrack</b>: 80% for Lower Loop 60% for Upper Loop<br/><b>Estimated Time</b>: 1 &mdash; 2 hrs for each loop]]></item>
         <item><![CDATA[<b>Grade:</b> Red &mdash; Difficult<br/><b>Distance</b>: 18Km<br/><b>Singletrack</b>: 65%<br/><b>Estimated Time</b>: 1.5 &mdash; 3 hrs]]></item>
         <item><![CDATA[<b>Grade:</b> Black &mdash; Severe <br/><b>Distance</b>: 29Km<br/><b>Singletrack</b>: 75%<br/><b>Estimated Time</b>: 3 &mdash; 5 hrs]]></item>
+        <item><![CDATA[<b>Grade:</b> Orange &mdash; Extreme <b]]></item>
 </string-array>
 
     <string-array name="routes_kml_filenames">
         <item>green-route.kml</item>
+        <item>green-skills-area.kml</item>
         <item>blue-route.kml</item>
         <item>red-route.kml</item>
         <item>black-route.kml</item>
+        <item>bike-park.kml</item>
     </string-array>
     <string-array name="green_loc_names">
         <item>Green Route Start</item>
@@ -38,7 +46,18 @@
     <string-array name="green_loc_coords">
     <item>-3.159556,55.657981</item>
     </string-array>
-
+    <string-array name="green_skills_loc_names">
+        <item>Skills Area Entrance</item>
+    </string-array>
+    <string-array name="green_skills_loc_coords">
+        <item>-3.159556,55.657981</item>
+    </string-array>
+    <string-array name="bike_park_loc_names">
+        <item>Bike Park Start</item>
+    </string-array>
+    <string-array name="bike_park_coords">
+        <item>-3.159556,55.657981</item>
+    </string-array>
     <string-array name="blue_loc_names">
         <item>Falla brae</item>
         <item>Good Game</item>

@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             >
             <ImageButton
-                
+
                 android:id="@+id/play_button"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -59,7 +59,7 @@
             android:id="@+id/replace"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center|top"
+            android:gravity="left|top"
             android:orientation="vertical">
 
             <LinearLayout
@@ -83,6 +83,7 @@
                     android:layout_gravity="left"
                     android:text="Medium Text\n test line 2"
                     />
+
             </LinearLayout>
         </LinearLayout>
 
