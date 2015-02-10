@@ -162,6 +162,14 @@ public class MainMapView  extends Fragment{
         this.compassOverlay = new CompassOverlay(context, new InternalCompassOrientationProvider(context),
                 mapView);
 
+
+        double north = 55.7107;
+        double east  =  -3.0674;
+        double south = 55.6235;
+        double west  =  -3.2006;
+
+        BoundingBoxE6  mapLimitBox = new BoundingBoxE6(north, east, south, west);
+        mapView.setScrollableAreaLimit(mapLimitBox);
         final BoundingBoxE6 bb =  kmlDocument.mKmlRoot.getBoundingBox();
 
         FolderOverlay kmlOverlay = (FolderOverlay)kmlDocument.mKmlRoot.buildOverlay(mapView, null, null, kmlDocument);
@@ -298,8 +306,6 @@ public class MainMapView  extends Fragment{
 
         String[] values = getResources().getStringArray(routeRow.getTrailNames());
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainMapView.this.getActivity(),
-         //       android.R.layout.simple_list_item_1, values);
         LocationsRowAdapter adapter = new LocationsRowAdapter(MainMapView.this.getActivity(), values, routeRow.getTrailIcon());
 
 
@@ -333,30 +339,7 @@ public class MainMapView  extends Fragment{
 
 
         dialog.show();
-        /*
-        Button declineButton = (Button) dialog.findViewById(R.id.declineButton);
-        // if decline button is clicked, close the custom dialog
-        declineButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Close dialog
-                dialog.dismiss();
-            }
-        });
-/*
-        Button gotoBotton = (Button) dialog.findViewById(R.id.testLocation);
-        // if decline button is clicked, close the custom dialog
-        gotoBotton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Close dialog
-                dialog.dismiss();
-                mapView.getController().setZoom(17);
-                mapView.getController().animateTo(new GeoPoint(55.646821,-3.137476));
 
-            }
-        });
-*/
 
     }
 
@@ -407,7 +390,6 @@ public class MainMapView  extends Fragment{
         Bundle args = new Bundle();
         args.putSerializable(ListRoutesFragment.ROUTE_CHOSEN_KEY, row);
 
-        // Assign key value to the fragment
         f.setArguments(args);
 
         return f;
