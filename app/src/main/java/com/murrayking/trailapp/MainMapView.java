@@ -158,10 +158,6 @@ public class MainMapView  extends Fragment{
         prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 
         mapView.setBuiltInZoomControls(true);
-        this.locationOverlay = new MyLocationNewOverlay(context, new GpsMyLocationProvider(context), mapView);
-        this.compassOverlay = new CompassOverlay(context, new InternalCompassOrientationProvider(context),
-                mapView);
-
 
         double north = 55.7107;
         double east  =  -3.0674;
@@ -169,6 +165,12 @@ public class MainMapView  extends Fragment{
         double west  =  -3.2006;
 
         BoundingBoxE6  mapLimitBox = new BoundingBoxE6(north, east, south, west);
+        this.locationOverlay = new LocationOverlayWithLocationUpdates(context, new GpsMyLocationProvider(context), mapView, mapLimitBox);
+        this.compassOverlay = new CompassOverlay(context, new InternalCompassOrientationProvider(context),
+                mapView);
+
+
+
         mapView.setScrollableAreaLimit(mapLimitBox);
         final BoundingBoxE6 bb =  kmlDocument.mKmlRoot.getBoundingBox();
 
