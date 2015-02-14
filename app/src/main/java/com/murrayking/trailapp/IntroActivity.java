@@ -1,8 +1,12 @@
 package com.murrayking.trailapp;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,6 +17,8 @@ public class IntroActivity extends Activity {
 
 
     private static int SPLASH_SCREEN_DELAY = 3000;
+
+    private Utils utils = Utils.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,12 @@ public class IntroActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+
+        LoadData loadData = new LoadData();
+        loadData.execute();
+
+
         /*
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -49,5 +61,68 @@ public class IntroActivity extends Activity {
                 finish();
             }
         }, SPLASH_SCREEN_DELAY);*/
+    }
+
+
+    public interface UpdateProgress {
+
+        void updateProgressBar(int percentage);
+    }
+
+    public class LoadData extends AsyncTask<Void, Integer, Void> implements UpdateProgress {
+        ProgressDialog progressBar;
+
+        //declare other objects as per your need
+        @Override
+        protected void onPreExecute()
+        {
+            progressBar = new ProgressDialog(IntroActivity.this);
+            progressBar.setCancelable(false);
+            progressBar.setMessage("Unpacking offline map ...");
+            progressBar.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progressBar.setProgress(0);
+            progressBar.setMax(100);
+            progressBar.show();
+            //progressDialog= ProgressDialog.show(MyActivity.this, "Progress Dialog Title Text","Process Description Text", true);
+
+            //do initialization of required objects objects here
+        };
+        @Override
+        protected Void doInBackground(Void... params)
+        {
+
+            //do loading operation here
+            copyOfflineMap();
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(final Integer... values) {
+            super.onProgressUpdate(values);
+
+            progressBar.setProgress(values[0]);
+
+            Log.i("makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
+
+        }
+
+        @Override
+        protected void onPostExecute(Void v){
+
+            progressBar.dismiss();
+        }
+
+
+        public void copyOfflineMap() {
+            Context context = IntroActivity.this.getApplicationContext();
+            String mapFileName = context.getResources().getString(R.string.map_db_file_name);
+            utils.copyOfflineMap(mapFileName, context.getAssets(),
+                    context.getPackageName(), this);
+        }
+
+        @Override
+        public void updateProgressBar(int percentage) {
+            publishProgress(percentage);
+        }
     }
 }

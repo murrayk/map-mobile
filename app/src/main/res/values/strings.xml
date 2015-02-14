@@ -2,10 +2,11 @@
 <resources>
 
     <string name="app_name">Glentress Trail Map</string>
-    <string name="textview">Matt is learning Android!</string>
+
+
     <string name="action_settings">Settings</string>
-    <string name="button">Update The TextView</string>
-    <string name="hint">A Name</string>
+
+    <string name="map_db_file_name">merged2.mbtiles</string>
     <string name="activity_details">Map</string>
     <string-array name="titles">
         <item>Green Route (Easy)</item>
@@ -59,6 +60,7 @@
         <item>-3.159556,55.657981</item>
     </string-array>
     <string-array name="blue_loc_names">
+        <item>** TRAIL HEAD **</item>
         <item>Falla brae</item>
         <item>Good Game</item>
         <item>Betty Blue</item>
@@ -69,6 +71,7 @@
         <item>Electric Blue</item>
     </string-array>
     <string-array name="blue_loc_coords">
+        <item>-3.13676582,55.647501</item>
         <item>-3.1425418,55.65589</item>
         <item>-3.1410031,55.6536285</item>
         <item>-3.1257166,55.6662127</item>
@@ -79,6 +82,7 @@
         <item>-3.1488516,55.6584004</item>
     </string-array>
     <string-array name="red_loc_names">
+        <item>** TRAIL HEAD **</item>
         <item>Hit squad hill</item>
         <item>Pennels Vennel</item>
         <item>Spooky Woods</item>
@@ -90,6 +94,7 @@
         <item>Lombard Street</item>
     </string-array>
     <string-array name="red_loc_coords">
+        <item>-3.13676582,55.647501</item>
         <item>-3.1334011,55.6630517</item>
         <item>-3.1465803,55.663703</item>
         <item>-3.1305793,55.6690456</item>
@@ -102,6 +107,7 @@
     </string-array>
 
     <string-array name="black_loc_names">
+        <item>** TRAIL HEAD **</item>
         <item>The goat track</item>
         <item>Soor plooms</item>
         <item>The Goat track</item>
@@ -120,6 +126,7 @@
         <item>Double X</item>
     </string-array>
     <string-array name="black_loc_coords">
+        <item>-3.13676582,55.647501</item>
         <item>-3.1422048,55.6733326</item>
         <item>-3.1520057,55.6630108</item>
         <item>-3.1487279,55.6772528</item>

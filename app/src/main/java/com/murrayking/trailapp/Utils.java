@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import com.murrayking.trailapp.IntroActivity.UpdateProgress;
 
 /**
  * Created by murray on 06/09/14.
@@ -32,11 +33,11 @@ public class Utils {
         return instance;
     }
 
-    public void copyOfflineMap(String filename, AssetManager assetManager, String packageName, ListRoutesFragment.UpdateProgress progressBarHandler){
+    public void copyOfflineMap(String filename, AssetManager assetManager, String packageName, UpdateProgress progressBarHandler){
         offlineMap = copyFileFromAssets(filename, assetManager, packageName, progressBarHandler);
     }
 
-    public File copyFileFromAssets(String filename, AssetManager assetManager, String packageName, ListRoutesFragment.UpdateProgress progressBarHandler) {
+    public File copyFileFromAssets(String filename, AssetManager assetManager, String packageName, UpdateProgress progressBarHandler) {
 
         String baseDir = Environment.getExternalStorageDirectory().getPath() + "/" + packageName;
 

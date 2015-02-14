@@ -25,11 +25,11 @@ import java.util.ArrayList;
  */
 public class ListRoutesFragment extends ListFragment {
 
-    public static final String MAP_DB_NAME = "lowres.mbtiles";
+
 
     public static final String ROUTE_CHOSEN_KEY = "ROUTE_CHOSEN_KEY";
 
-    private Utils utils = Utils.getInstance();
+
 
 
     // True or False depending on if we are in horizontal or duel pane mode
@@ -54,8 +54,6 @@ public class ListRoutesFragment extends ListFragment {
 
 
 
-        LoadData loadData = new LoadData();
-        loadData.execute();
 
         // Check if the FrameLayout with the id details exists
         View detailsFrame = getActivity().findViewById(R.id.details);
@@ -146,65 +144,7 @@ public class ListRoutesFragment extends ListFragment {
         selectedRow =(SingleRow)adapter.getItem(position);
         goToMap(selectedRow);
     }
-    public interface UpdateProgress {
 
-        void updateProgressBar(int percentage);
-    }
-
-    public class LoadData extends AsyncTask<Void, Integer, Void> implements UpdateProgress {
-        ProgressDialog progressBar;
-
-        //declare other objects as per your need
-        @Override
-        protected void onPreExecute()
-        {
-            progressBar = new ProgressDialog(ListRoutesFragment.this.getActivity());
-            progressBar.setCancelable(false);
-            progressBar.setMessage("Unpacking offline map ...");
-            progressBar.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            progressBar.setProgress(0);
-            progressBar.setMax(100);
-            progressBar.show();
-            //progressDialog= ProgressDialog.show(MyActivity.this, "Progress Dialog Title Text","Process Description Text", true);
-
-            //do initialization of required objects objects here
-        };
-        @Override
-        protected Void doInBackground(Void... params)
-        {
-
-            //do loading operation here
-            copyOfflineMap();
-            return null;
-        }
-
-        @Override
-        protected void onProgressUpdate(final Integer... values) {
-            super.onProgressUpdate(values);
-
-            progressBar.setProgress(values[0]);
-
-            Log.i("makemachine", "onProgressUpdate(): " + String.valueOf(values[0]));
-
-        }
-
-        @Override
-        protected void onPostExecute(Void v){
-
-            progressBar.dismiss();
-        }
-
-
-        public void copyOfflineMap() {
-            utils.copyOfflineMap(ListRoutesFragment.MAP_DB_NAME, ListRoutesFragment.this.getActivity().getAssets(),
-                    ListRoutesFragment.this.getActivity().getPackageName(), this);
-        }
-
-        @Override
-        public void updateProgressBar(int percentage) {
-            publishProgress(percentage);
-        }
-    }
 
 
     static class SingleRow implements Serializable {
