@@ -17,6 +17,8 @@ import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 public class LocationOverlayWithLocationUpdates extends MyLocationNewOverlay {
     private BoundingBoxE6 mapLimitBox;
     private Context context;
+    private Toast toast;
+
     public LocationOverlayWithLocationUpdates(Context context, IMyLocationProvider myLocationProvider,
                                               MapView mapView, BoundingBoxE6 mapLimitBox) {
         super(myLocationProvider, mapView, new DefaultResourceProxyImpl(context));
@@ -24,6 +26,26 @@ public class LocationOverlayWithLocationUpdates extends MyLocationNewOverlay {
         this.context = context;
     }
 
+    /**
+     * <strong>public void showAToast (String st)</strong></br>
+     * this little method displays a toast on the screen.</br>
+     * it checks if a toast is currently visible</br>
+     * if so </br>
+     * ... it "sets" the new text</br>
+     * else</br>
+     * ... it "makes" the new text</br>
+     * and "shows" either or
+     * @param st the string to be toasted
+     */
+
+    public void showAToast (String st){ //"Toast toast" is declared in the class
+        try{ toast.getView().isShown();     // true if visible
+            toast.setText(st);
+        } catch (Exception e) {         // invisible if exception
+            toast = Toast.makeText(context, st,  Toast.LENGTH_SHORT);
+        }
+        toast.show();  //finally display it
+    }
 
 
     @Override
@@ -32,8 +54,7 @@ public class LocationOverlayWithLocationUpdates extends MyLocationNewOverlay {
         boolean isUserOutSideMapLimits = !mapLimitBox.contains(new GeoPoint(location.getLatitude(),location.getLongitude()));
 
         if(isUserOutSideMapLimits){
-            Toast.makeText(context,
-                    "You are outside the Map limits", Toast.LENGTH_LONG).show();
+            showAToast("You are outside the Map limits");
         }
     }
 }

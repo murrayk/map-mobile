@@ -6,7 +6,7 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="map_db_file_name">merged2.mbtiles</string>
+    <string name="map_db_file_name">merged3.mbtiles</string>
     <string name="activity_details">Map</string>
     <string-array name="titles">
         <item>Green Route (Easy)</item>
