@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Glentress Trail Map Inners</string>
+
+
+    <string name="action_settings">Settings</string>
+
+    <string name="map_db_file_name">merged2.mbtiles</string>
+    <string name="activity_details">Map</string>
+    <string-array name="titles">
+        <item>Green Route (Easy)</item>
+        <item>Green Skills Area (Easy)</item>
+        <item>Blue Route (Moderate)</item>
+        <item>Red Route (Difficult)</item>
+        <item>Black Route (Severe)</item>
+        <item>Bike Park (Extreme)</item>
+    </string-array>
+    <string-array name="descriptions">
+        <item>Beginner/novice cyclists. Basic bike skills required. Most bikes and hybrids. Some green routes can take trailers.</item>
+        <item>Beginner/novice cyclists. Basic bike skills required. Most bikes and hybrids. Some green routes can take trailers.</item>
+        <item>Intermediate cyclist/mountain bikers with basic offroad riding skills. Mountain bikes and hybrids.</item>
+        <item>Proficient mountain bikers with good off-road riding skills. Suitable for better quality off-road mountain bikes.</item>
+        <item>Expert mountain bike users, used to physically demanding routes. Quality off-road mountain bikes.</item>
+        <item>Bike Park, Riders aspiring to athlete level of technical ability, incorporates everything from full on downhill riding to big-air jumps.</item>
+    </string-array>
+    <string-array name="route_info" formatted="false">
+        <item><![CDATA[<b>Grade:</b> Green &mdash; Easy<br/><b>Distance</b>: 3.5K &mdash; 4.5Km <br/><b>Singletrack</b>: 30% &mdash; 60%<br/><b>Estimated Time</b> To Ride: 30 mins &mdash; 1 hr]]></item>
+        <item><![CDATA[<b>Grade:</b> Green &mdash; Easy<br/><b>Distance</b>: 1.5K <br/><b>Singletrack</b>: 100%<br/><b>Estimated Time</b> To Ride: ]]></item>
+        <item><![CDATA[<b>Grade:</b> Blue &mdash; Moderate <br/><b>Distance</b>: 8Km Lower Loop (recommended). Upper Loop adds 8Km. 16Km total.<br/><b>Singletrack</b>: 80% for Lower Loop 60% for Upper Loop<br/><b>Estimated Time</b>: 1 &mdash; 2 hrs for each loop]]></item>
+        <item><![CDATA[<b>Grade:</b> Red &mdash; Difficult<br/><b>Distance</b>: 18Km<br/><b>Singletrack</b>: 65%<br/><b>Estimated Time</b>: 1.5 &mdash; 3 hrs]]></item>
+        <item><![CDATA[<b>Grade:</b> Black &mdash; Severe <br/><b>Distance</b>: 29Km<br/><b>Singletrack</b>: 75%<br/><b>Estimated Time</b>: 3 &mdash; 5 hrs]]></item>
+        <item><![CDATA[<b>Grade:</b> Orange &mdash; Extreme <b]]></item>
+    </string-array>
+
+    <string-array name="routes_kml_filenames">
+        <item>green-route.kml</item>
+        <item>green-skills-area.kml</item>
+        <item>blue-route.kml</item>
+        <item>red-route.kml</item>
+        <item>black-route.kml</item>
+        <item>bike-park.kml</item>
+    </string-array>
+    <string-array name="green_loc_names">
+        <item>Green Route Start</item>
+    </string-array>
+    <string-array name="green_loc_coords">
+        <item>-3.159556,55.657981</item>
+    </string-array>
+    <string-array name="green_skills_loc_names">
+        <item>Skills Area Entrance</item>
+    </string-array>
+    <string-array name="green_skills_loc_coords">
+        <item>-3.159556,55.657981</item>
+    </string-array>
+    <string-array name="bike_park_loc_names">
+        <item>Bike Park Start</item>
+    </string-array>
+    <string-array name="bike_park_coords">
+        <item>-3.159556,55.657981</item>
+    </string-array>
+    <string-array name="blue_loc_names">
+        <item>** TRAIL HEAD **</item>
+        <item>Falla brae</item>
+        <item>Good Game</item>
+        <item>Betty Blue</item>
+        <item>The motorway</item>
+        <item>Berm Baby Berm</item>
+        <item>Blue Velvet</item>
+        <item>The admiral</item>
+        <item>Electric Blue</item>
+    </string-array>
+    <string-array name="blue_loc_coords">
+        <item>-3.13676582,55.647501</item>
+        <item>-3.1425418,55.65589</item>
+        <item>-3.1410031,55.6536285</item>
+        <item>-3.1257166,55.6662127</item>
+        <item>-3.1337112,55.6643024</item>
+        <item>-3.1484883,55.6613186</item>
+        <item>-3.144431,55.6648204</item>
+        <item>-3.1393163,55.6572622</item>
+        <item>-3.1488516,55.6584004</item>
+    </string-array>
+    <string-array name="red_loc_names">
+        <item>** TRAIL HEAD **</item>
+        <item>Hit squad hill</item>
+        <item>Pennels Vennel</item>
+        <item>Spooky Woods</item>
+        <item>Spooky Wood Climb</item>
+        <item>Magic Mushroom</item>
+        <item>Pie run</item>
+        <item>Super G</item>
+        <item>The Matrix</item>
+        <item>Lombard Street</item>
+    </string-array>
+    <string-array name="red_loc_coords">
+        <item>-3.13676582,55.647501</item>
+        <item>-3.1334011,55.6630517</item>
+        <item>-3.1465803,55.663703</item>
+        <item>-3.1305793,55.6690456</item>
+        <item>-3.1366518,55.6692271</item>
+        <item>-3.1307996,55.6592164</item>
+        <item>-3.1280722,55.6613718</item>
+        <item>-3.1327507,55.6652459</item>
+        <item>-3.1272315,55.6554105</item>
+        <item>-3.1271321,55.6542433</item>
+    </string-array>
+
+    <string-array name="black_loc_names">
+        <item>** TRAIL HEAD **</item>
+        <item>The goat track</item>
+        <item>Soor plooms</item>
+        <item>The Goat track</item>
+        <item>Tower ride</item>
+        <item>Redemption Climb</item>
+        <item>Deliverance</item>
+        <item>Deliverance</item>
+        <item>Leithen door</item>
+        <item>Boundary trail</item>
+        <item>The mustard snake</item>
+        <item>Britney Spears</item>
+        <item>The kipps loop</item>
+        <item>Ewok Village</item>
+        <item>Worm Hole</item>
+        <item>The bitch</item>
+        <item>Double X</item>
+    </string-array>
+    <string-array name="black_loc_coords">
+        <item>-3.13676582,55.647501</item>
+        <item>-3.1422048,55.6733326</item>
+        <item>-3.1520057,55.6630108</item>
+        <item>-3.1487279,55.6772528</item>
+        <item>-3.1560915,55.6778646</item>
+        <item>-3.1121072,55.6589317</item>
+        <item>-3.1204603,55.6700512</item>
+        <item>-3.124295,55.6719027</item>
+        <item>-3.1140714,55.6726058</item>
+        <item>-3.1330245,55.6760256</item>
+        <item>-3.1386893,55.6843974</item>
+        <item>-3.145726133718489,55.687039389118837</item>
+        <item>-3.1507878,55.6816566</item>
+        <item>-3.1214599,55.6554302</item>
+        <item>-3.1350958,55.6556431</item>
+        <item>-3.1295382,55.6542453</item>
+        <item>-3.125672730038805,55.655080827400937</item>
+    </string-array>
+
+
+</resources>

@@ -12,6 +12,18 @@ android {
         versionName "1.0"
     }
 
+    productFlavors {
+        glentress {
+            applicationId "com.murrayking.trailapp"
+            versionName "1.0"
+        }
+        inners {
+            applicationId "com.murrayking.trailapp.inners"
+            versionName "1.0-full"
+        }
+    }
+
+
 }
 
 dependencies {
