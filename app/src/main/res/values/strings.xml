@@ -160,4 +160,13 @@
         <item>@drawable/black_icon</item>
         <item>@drawable/orange_icon</item>
     </array>
+    new int[]{R.array.green_loc_names, R.array.green_skills_loc_names, R.array.blue_loc_names, R.array.red_loc_names, R.array.black_loc_names, R.array.bike_park_loc_names};
+    <array name="trail_names" >
+        <item>@array/green_loc_names</item>
+        <item>@array/green_skills_loc_names</item>
+        <item>@array/blue_loc_names</item>
+        <item>@array/red_loc_names</item>
+        <item>@array/black_loc_names</item>
+        <item>@array/bike_park_loc_names</item>
+    </array>
 </resources>

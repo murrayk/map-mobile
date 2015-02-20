@@ -118,4 +118,15 @@
         <item>4.2,333</item>
         <item>4.5,335</item>
     </string-array>
+
+    new int[]{R.array.green, SingleRow.NO_ELEVATIONS_AVAILABLE,
+    R.array.blue, R.array.red, R.array.black, SingleRow.NO_ELEVATIONS_AVAILABLE};
+    <array name="elevations" >
+        <item>@array/green</item>
+        <item></item>
+        <item>@array/blue</item>
+        <item>@array/red</item>
+        <item>@array/black</item>
+        <item></item>
+    </array>
 </resources>
