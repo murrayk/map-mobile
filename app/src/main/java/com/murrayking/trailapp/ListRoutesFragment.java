@@ -2,13 +2,11 @@ package com.murrayking.trailapp;
 
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.os.AsyncTask;
+import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -226,8 +224,10 @@ public class ListRoutesFragment extends ListFragment {
             String[] titles = resources.getStringArray(R.array.titles);
             String[] descriptions = resources.getStringArray(R.array.descriptions);
 
-            int[] images = new int[]{R.drawable.green_icon, R.drawable.green_icon, R.drawable.blue_icon,
-                    R.drawable.red_icon, R.drawable.black_icon, R.drawable.orange_icon};
+
+            TypedArray icons = resources.obtainTypedArray(R.array.route_list_icons);
+
+
             int[] elevationArray = new int[]{R.array.green, SingleRow.NO_ELEVATIONS_AVAILABLE,
                     R.array.blue, R.array.red, R.array.black, SingleRow.NO_ELEVATIONS_AVAILABLE};
             int[] trailNames = new int[]{R.array.green_loc_names, R.array.green_skills_loc_names, R.array.blue_loc_names, R.array.red_loc_names, R.array.black_loc_names, R.array.bike_park_loc_names};
@@ -237,7 +237,7 @@ public class ListRoutesFragment extends ListFragment {
             String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
             String[] routeInfo = resources.getStringArray(R.array.route_info);
             for (int i = 0; i < titles.length; i++) {
-                rows.add(new SingleRow(titles[i], images[i], descriptions[i], routeKmlFiles[i],
+                rows.add(new SingleRow(titles[i], icons.getResourceId(i, -1), descriptions[i], routeKmlFiles[i],
                         elevationArray[i], routeInfo[i], trailNames[i], trailCoords[i], trailIcons[i]));
             }
 

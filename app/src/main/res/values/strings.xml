@@ -145,5 +145,19 @@
         <item>-3.125672730038805,55.655080827400937</item>
     </string-array>
 
+    <string name="bbNorth" >55.7107</string>
+    <string name="bbEast" >-3.0674</string>
+    <string name="bbSouth" >55.6235</string>
+    <string name="bbWest" >-3.2006</string>
 
+
+
+    <array name="route_list_icons" >
+        <item>@drawable/green_icon</item>
+        <item>@drawable/green_icon</item>
+        <item>@drawable/blue_icon</item>
+        <item>@drawable/red_icon</item>
+        <item>@drawable/black_icon</item>
+        <item>@drawable/orange_icon</item>
+    </array>
 </resources>

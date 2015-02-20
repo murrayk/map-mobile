@@ -159,12 +159,9 @@ public class MainMapView  extends Fragment{
 
         mapView.setBuiltInZoomControls(true);
 
-        double north = 55.7107;
-        double east  =  -3.0674;
-        double south = 55.6235;
-        double west  =  -3.2006;
 
-        BoundingBoxE6  mapLimitBox = new BoundingBoxE6(north, east, south, west);
+
+        BoundingBoxE6  mapLimitBox = getMapLimits();
         this.locationOverlay = new LocationOverlayWithLocationUpdates(context, new GpsMyLocationProvider(context), mapView, mapLimitBox);
         this.compassOverlay = new CompassOverlay(context, new InternalCompassOrientationProvider(context),
                 mapView);
@@ -247,6 +244,14 @@ public class MainMapView  extends Fragment{
         RelativeLayout mapContainer = (RelativeLayout)rootView.findViewById(R.id.map_container);
         mapContainer.addView(mapView, 0);
         return rootView;
+    }
+
+    private BoundingBoxE6 getMapLimits() {
+        double north = Double.valueOf(R.string.bbNorth);
+        double east  = Double.valueOf(R.string.bbEast);
+        double south = Double.valueOf(R.string.bbSouth);
+        double west  =  Double.valueOf(R.string.bbWest);
+        return new BoundingBoxE6(north, east, south, west);
     }
 
     private GraphView getGraphView(SingleRow routeRow, Resources resources) {
