@@ -10,23 +10,20 @@
     <string name="activity_details">Map</string>
     <string-array name="titles">
         <item>Red Route (Difficult)</item>
-        <item>Black Route (Severe)</item>
-        <item>Bike Park (Extreme)</item>
+        <item>Downhill Routes (Extreme)</item>
     </string-array>
     <string-array name="descriptions">
-        <item>Proficient mountain bikers with good off-road riding skills. Suitable for better quality off-road mountain bikes.</item>
+
         <item>Expert mountain bike users, used to physically demanding routes. Quality off-road mountain bikes.</item>
         <item>Bike Park, Riders aspiring to athlete level of technical ability, incorporates everything from full on downhill riding to big-air jumps.</item>
     </string-array>
     <string-array name="route_info" formatted="false">
         <item><![CDATA[<b>Grade:</b> Red &mdash; Difficult<br/><b>Distance</b>: 19Km<br/><b>Singletrack</b>: 75%<br/><b>Estimated Time</b>: 2 &mdash; 4 hrs]]></item>
-        <item><![CDATA[<b>Grade:</b> Black &mdash; Severe <br/><b>Distance</b>: 29Km<br/><b>Singletrack</b>: 75%<br/><b>Estimated Time</b>: 3 &mdash; 5 hrs]]></item>
         <item><![CDATA[<b>Grade:</b> Orange &mdash; Extreme <b]]></item>
     </string-array>
 
     <string-array name="routes_kml_filenames">
         <item>innersxc.kml</item>
-        <item>black-route.kml</item>
         <item>bike-park.kml</item>
     </string-array>
     <string-array name="green_loc_names">
