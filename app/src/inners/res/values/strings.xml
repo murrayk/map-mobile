@@ -10,12 +10,12 @@
     <string name="activity_details">Map</string>
     <string-array name="titles">
         <item>Red Route (Difficult)</item>
-        <item>Downhill Routes (Extreme)</item>
+        <item>Downhill (Extreme)</item>
     </string-array>
     <string-array name="descriptions">
 
         <item>Expert mountain bike users, used to physically demanding routes. Quality off-road mountain bikes.</item>
-        <item>Bike Park, Riders aspiring to athlete level of technical ability, incorporates everything from full on downhill riding to big-air jumps.</item>
+        <item>Downhill Park, Riders aspiring to athlete level of technical ability, incorporates everything from full on downhill riding to big-air jumps.</item>
     </string-array>
     <string-array name="route_info" formatted="false">
         <item><![CDATA[<b>Grade:</b> Red &mdash; Difficult<br/><b>Distance</b>: 19Km<br/><b>Singletrack</b>: 75%<br/><b>Estimated Time</b>: 2 &mdash; 4 hrs]]></item>
@@ -130,10 +130,34 @@
         <item>-3.125672730038805,55.655080827400937</item>
     </string-array>
 
-    <string name="bbNorth" >55.7107</string>
-    <string name="bbEast" >-3.0674</string>
-    <string name="bbSouth" >55.6235</string>
-    <string name="bbWest" >-3.2006</string>
+
+
+    <array name="route_list_icons" >
+        <item>@drawable/red_icon</item>
+        <item>@drawable/orange_icon</item>
+    </array>
+
+    <array name="trail_names" >
+        <item>@array/red_loc_names</item>
+        <item>@array/bike_park_loc_names</item>
+    </array>
+
+    <array name="trail_coords" >
+        <item>@array/red_loc_coords</item>
+        <item>@array/bike_park_loc_coords</item>
+    </array>
+
+    <array name="trail_icons" >
+
+        <item>@drawable/red_trail_icon</item>
+
+        <item>@drawable/orange_icon</item>
+    </array>
+
+    <string name="bbNorth" >55.6262</string>
+    <string name="bbEast" >-2.9881</string>
+    <string name="bbSouth" >55.5694</string>
+    <string name="bbWest" >-3.0815</string>
 
     <array name="routes_icons" >
 

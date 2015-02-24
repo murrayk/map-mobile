@@ -56,7 +56,7 @@
     <string-array name="bike_park_loc_names">
         <item>Bike Park Start</item>
     </string-array>
-    <string-array name="bike_park_coords">
+    <string-array name="bike_park_loc_coords">
         <item>-3.159556,55.657981</item>
     </string-array>
     <string-array name="blue_loc_names">
@@ -145,11 +145,6 @@
         <item>-3.125672730038805,55.655080827400937</item>
     </string-array>
 
-    <string name="bbNorth" >55.7107</string>
-    <string name="bbEast" >-3.0674</string>
-    <string name="bbSouth" >55.6235</string>
-    <string name="bbWest" >-3.2006</string>
-
 
 
     <array name="route_list_icons" >
@@ -169,4 +164,29 @@
         <item>@array/black_loc_names</item>
         <item>@array/bike_park_loc_names</item>
     </array>
+
+    <array name="trail_coords" >
+        <item>@array/green_loc_coords</item>
+        <item>@array/green_skills_loc_coords</item>
+        <item>@array/blue_loc_coords</item>
+        <item>@array/red_loc_coords</item>
+        <item>@array/black_loc_coords</item>
+        <item>@array/bike_park_loc_coords</item>
+    </array>
+
+    <array name="trail_icons" >
+        <item>@drawable/green_trail_icon</item>
+        <item>@drawable/green_trail_icon</item>
+        <item>@drawable/blue_trail_icon</item>
+        <item>@drawable/red_trail_icon</item>
+        <item>@drawable/black_trail_icon</item>
+        <item>@drawable/orange_icon</item>
+    </array>
+
+    <string name="bbNorth" >55.7107</string>
+    <string name="bbEast" >-3.0674</string>
+    <string name="bbSouth" >55.6235</string>
+    <string name="bbWest" >-3.2006</string>
+
+
 </resources>

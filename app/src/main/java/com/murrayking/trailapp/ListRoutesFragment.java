@@ -230,15 +230,14 @@ public class ListRoutesFragment extends ListFragment {
 
             TypedArray elevations = resources.obtainTypedArray(R.array.elevations);
             TypedArray trailNames = resources.obtainTypedArray(R.array.trail_names);
-            int[] trailCoords =  new int[]{R.array.green_loc_coords, R.array.green_skills_loc_coords,R.array.blue_loc_coords, R.array.red_loc_coords, R.array.black_loc_coords, R.array.bike_park_coords};
-            int[] trailIcons = new int[]{R.drawable.green_trail_icon, R.drawable.green_trail_icon,R.drawable.blue_trail_icon,
-            R.drawable.red_trail_icon, R.drawable.black_trail_icon, R.drawable.orange_icon};
+            TypedArray trailCoords =  resources.obtainTypedArray(R.array.trail_coords);
+            TypedArray trailIcons = resources.obtainTypedArray(R.array.trail_icons);
             String[] routeKmlFiles = resources.getStringArray(R.array.routes_kml_filenames);
             String[] routeInfo = resources.getStringArray(R.array.route_info);
             for (int i = 0; i < titles.length; i++) {
                 rows.add(new SingleRow(titles[i], icons.getResourceId(i, -1), descriptions[i], routeKmlFiles[i],
                         elevations.getResourceId(i, SingleRow.NO_ELEVATIONS_AVAILABLE), routeInfo[i],
-                        trailNames.getResourceId(i, -1), trailCoords[i], trailIcons[i]));
+                        trailNames.getResourceId(i, -1), trailCoords.getResourceId(i, -1), trailIcons.getResourceId(i, -1)));
             }
 
         }
