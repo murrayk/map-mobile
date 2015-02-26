@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Glentress Trail Map Inners</string>
+    <string name="app_name">Innerleithen Trail Map Inners</string>
 
 
     <string name="action_settings">Settings</string>
@@ -24,113 +24,45 @@
 
     <string-array name="routes_kml_filenames">
         <item>innersxc.kml</item>
-        <item>bike-park.kml</item>
+        <item>inners_downhill.kml</item>
     </string-array>
-    <string-array name="green_loc_names">
-        <item>Green Route Start</item>
+    <string-array name="red_inners_loc_names">
+        <item>Oh deer!</item>
+        <item>Minch moor ascent</item>
+        <item>Razor rock</item>
+        <item>Plora Craig</item>
+        <item>Minch Moor Shortcut</item>
+        <item>Enduro track</item>
+        <item>Caddon bank</item>
+        <item>Clattering path</item>
+        <item>Taniel hill</item>
+        <item>Stell burn climb</item>
     </string-array>
-    <string-array name="green_loc_coords">
-        <item>-3.159556,55.657981</item>
-    </string-array>
-    <string-array name="green_skills_loc_names">
-        <item>Skills Area Entrance</item>
-    </string-array>
-    <string-array name="green_skills_loc_coords">
-        <item>-3.159556,55.657981</item>
-    </string-array>
-    <string-array name="bike_park_loc_names">
-        <item>Bike Park Start</item>
-    </string-array>
-    <string-array name="bike_park_coords">
-        <item>-3.159556,55.657981</item>
-    </string-array>
-    <string-array name="blue_loc_names">
-        <item>** TRAIL HEAD **</item>
-        <item>Falla brae</item>
-        <item>Good Game</item>
-        <item>Betty Blue</item>
-        <item>The motorway</item>
-        <item>Berm Baby Berm</item>
-        <item>Blue Velvet</item>
-        <item>The admiral</item>
-        <item>Electric Blue</item>
-    </string-array>
-    <string-array name="blue_loc_coords">
-        <item>-3.13676582,55.647501</item>
-        <item>-3.1425418,55.65589</item>
-        <item>-3.1410031,55.6536285</item>
-        <item>-3.1257166,55.6662127</item>
-        <item>-3.1337112,55.6643024</item>
-        <item>-3.1484883,55.6613186</item>
-        <item>-3.144431,55.6648204</item>
-        <item>-3.1393163,55.6572622</item>
-        <item>-3.1488516,55.6584004</item>
-    </string-array>
-    <string-array name="red_loc_names">
-        <item>** TRAIL HEAD **</item>
-        <item>Hit squad hill</item>
-        <item>Pennels Vennel</item>
-        <item>Spooky Woods</item>
-        <item>Spooky Wood Climb</item>
-        <item>Magic Mushroom</item>
-        <item>Pie run</item>
-        <item>Super G</item>
-        <item>The Matrix</item>
-        <item>Lombard Street</item>
-    </string-array>
-    <string-array name="red_loc_coords">
-        <item>-3.13676582,55.647501</item>
-        <item>-3.1334011,55.6630517</item>
-        <item>-3.1465803,55.663703</item>
-        <item>-3.1305793,55.6690456</item>
-        <item>-3.1366518,55.6692271</item>
-        <item>-3.1307996,55.6592164</item>
-        <item>-3.1280722,55.6613718</item>
-        <item>-3.1327507,55.6652459</item>
-        <item>-3.1272315,55.6554105</item>
-        <item>-3.1271321,55.6542433</item>
+    <string-array name="red_inners_loc_coords">
+        <item>-3.0254363,55.6150772</item>
+        <item>-3.0274547,55.5891056</item>
+        <item>-3.0254363,55.6150772</item>
+        <item>-3.0262562,55.6128622</item>
+        <item>-3.0274547,55.5891056</item>
+        <item>-3.0161337,55.5908486</item>
+        <item>-3.048261,55.6143615</item>
+        <item>-3.0427628,55.5924062</item>
+        <item>-3.0468882,55.6049031</item>
+        <item>-3.0545879,55.6113824</item>
     </string-array>
 
-    <string-array name="black_loc_names">
-        <item>** TRAIL HEAD **</item>
-        <item>The goat track</item>
-        <item>Soor plooms</item>
-        <item>The Goat track</item>
-        <item>Tower ride</item>
-        <item>Redemption Climb</item>
-        <item>Deliverance</item>
-        <item>Deliverance</item>
-        <item>Leithen door</item>
-        <item>Boundary trail</item>
-        <item>The mustard snake</item>
-        <item>Britney Spears</item>
-        <item>The kipps loop</item>
-        <item>Ewok Village</item>
-        <item>Worm Hole</item>
-        <item>The bitch</item>
-        <item>Double X</item>
+    <string-array name="inners_downhill_loc_names">
+        <item>Matador</item>
+        <item>Gold run</item>
+        <item>Make or break</item>
+        <item>Cresta run</item>
     </string-array>
-    <string-array name="black_loc_coords">
-        <item>-3.13676582,55.647501</item>
-        <item>-3.1422048,55.6733326</item>
-        <item>-3.1520057,55.6630108</item>
-        <item>-3.1487279,55.6772528</item>
-        <item>-3.1560915,55.6778646</item>
-        <item>-3.1121072,55.6589317</item>
-        <item>-3.1204603,55.6700512</item>
-        <item>-3.124295,55.6719027</item>
-        <item>-3.1140714,55.6726058</item>
-        <item>-3.1330245,55.6760256</item>
-        <item>-3.1386893,55.6843974</item>
-        <item>-3.145726133718489,55.687039389118837</item>
-        <item>-3.1507878,55.6816566</item>
-        <item>-3.1214599,55.6554302</item>
-        <item>-3.1350958,55.6556431</item>
-        <item>-3.1295382,55.6542453</item>
-        <item>-3.125672730038805,55.655080827400937</item>
+    <string-array name="inners_downhill_loc_coords">
+        <item>-3.0362553,55.6070268</item>
+        <item>-3.0375277,55.6067061</item>
+        <item>-3.0371302,55.6068009</item>
+        <item>-3.0375277,55.6067061</item>
     </string-array>
-
-
 
     <array name="route_list_icons" >
         <item>@drawable/red_icon</item>
@@ -138,13 +70,13 @@
     </array>
 
     <array name="trail_names" >
-        <item>@array/red_loc_names</item>
-        <item>@array/bike_park_loc_names</item>
+        <item>@array/red_inners_loc_names</item>
+        <item>@array/inners_downhill_loc_names</item>
     </array>
 
     <array name="trail_coords" >
-        <item>@array/red_loc_coords</item>
-        <item>@array/bike_park_loc_coords</item>
+        <item>@array/red_inners_loc_coords</item>
+        <item>@array/inners_downhill_loc_coords</item>
     </array>
 
     <array name="trail_icons" >
