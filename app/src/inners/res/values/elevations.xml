@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="innerxc" >
+    <string-array name="inners_xc" >
         <item>0.0,175.09729</item>
         <item>0.074,168.36804</item>
         <item>0.161,173.17468</item>
@@ -114,9 +114,37 @@
         <item>18.463,146.7384</item>
     </string-array>
 
+    <string-array name="inners_downhill" >
+        <item>0.0,467.7</item>
+        <item>0.034,474.5</item>
+        <item>0.123,474.7</item>
+        <item>0.146,473.2</item>
+        <item>0.271,460.9</item>
+        <item>0.374,442.9</item>
+        <item>0.415,424.4</item>
+        <item>0.48,417.2</item>
+        <item>0.651,371.6</item>
+        <item>0.721,331.7</item>
+        <item>0.772,327.8</item>
+        <item>0.915,281.9</item>
+        <item>0.961,276.0</item>
+        <item>0.994,277.1</item>
+        <item>1.021,274.4</item>
+        <item>1.072,251.2</item>
+        <item>1.178,246.5</item>
+        <item>1.195,238.7</item>
+        <item>1.312,235.8</item>
+        <item>1.405,212.5</item>
+        <item>1.489,207.0</item>
+        <item>1.553,206.0</item>
+        <item>1.563,183.8</item>
+        <item>1.709,157.4</item>
+        <item>1.779,151.5</item>
+    </string-array>
+
     <array name="elevations" >
-        <item>@array/innerxc</item>
-        <item></item>
+        <item>@array/inners_xc</item>
+        <item>@array/inners_downhill</item>
     </array>
 
 
