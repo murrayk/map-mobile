@@ -35,16 +35,17 @@ public class LocationOverlayWithLocationUpdates extends MyLocationNewOverlay {
      * else</br>
      * ... it "makes" the new text</br>
      * and "shows" either or
-     * @param st the string to be toasted
+     * @param message the string to be toasted
      */
 
-    public void showAToast (String st){ //"Toast toast" is declared in the class
-        try{ toast.getView().isShown();     // true if visible
-            toast.setText(st);
-        } catch (Exception e) {         // invisible if exception
-            toast = Toast.makeText(context, st,  Toast.LENGTH_SHORT);
-        }
-        toast.show();  //finally display it
+    public void showAToast (String message){ //"Toast toast" is declared in the class
+
+
+        if(toast != null)
+            toast.cancel();
+        toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+        toast.show();
+
     }
 
 
@@ -56,5 +57,10 @@ public class LocationOverlayWithLocationUpdates extends MyLocationNewOverlay {
         if(isUserOutSideMapLimits){
             showAToast("You are outside the Map limits");
         }
+    }
+
+    public void onPause() {
+        if(toast != null)
+            toast.cancel();
     }
 }

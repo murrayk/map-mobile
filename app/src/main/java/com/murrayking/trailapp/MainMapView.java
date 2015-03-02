@@ -61,7 +61,7 @@ public class MainMapView  extends Fragment{
     public static final String PREFS_ZOOM_LEVEL = "zoomLevel";
     public static final String PREFS_SHOW_LOCATION = "showLocation";
     public static final String PREFS_SHOW_COMPASS = "showCompass";
-    private MyLocationNewOverlay locationOverlay;
+    private LocationOverlayWithLocationUpdates locationOverlay;
     private CompassOverlay compassOverlay;
 
     private Marker marker;
@@ -373,7 +373,7 @@ public class MainMapView  extends Fragment{
 
         this.locationOverlay.disableMyLocation();
         this.compassOverlay.disableCompass();
-
+        this.locationOverlay.onPause();
         super.onPause();
     }
 

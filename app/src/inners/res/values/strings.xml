@@ -85,7 +85,8 @@
 
         <item>@drawable/orange_icon</item>
     </array>
-
+    //tilemill -3.0831,55.5720,-2.9842,55.6252  center=-3.0355,55.6013,13
+    //tilemill wide 1-14 -3.2153,55.5314,-2.8685,55.6943
     <string name="bbNorth" >55.6262</string>
     <string name="bbEast" >-2.9881</string>
     <string name="bbSouth" >55.5694</string>
