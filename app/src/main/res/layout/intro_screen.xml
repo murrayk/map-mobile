@@ -33,8 +33,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="50dip" />
-        android:layout_alignTop="@+id/goMapButton"
-        android:layout_toRightOf="@+id/goMapButton"
-        android:layout_toEndOf="@+id/goMapButton" />
+
 
 </RelativeLayout>

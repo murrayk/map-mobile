@@ -15,8 +15,7 @@ import android.widget.Button;
  */
 public class IntroActivity extends Activity {
 
-
-    private static int SPLASH_SCREEN_DELAY = 3000;
+    private  static String HD_MAP_PREFIX = "hd_";
 
     private Utils utils = Utils.getInstance();
 
@@ -24,6 +23,9 @@ public class IntroActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_screen);
+
+
+
 
         Button goToMap = (Button)this.findViewById(R.id.goMapButton);
 
@@ -44,7 +46,6 @@ public class IntroActivity extends Activity {
             }
         });
 
-
         LoadData loadData = new LoadData();
         loadData.execute();
 
@@ -61,6 +62,17 @@ public class IntroActivity extends Activity {
                 finish();
             }
         }, SPLASH_SCREEN_DELAY);*/
+    }
+
+    private boolean isHighDensityScreen() {
+        float density = getResources().getDisplayMetrics().density;
+        //set the offline map to high or low density
+        // return 0.75 if it's LDPI
+        // return 1.0 if it's MDPI
+        // return 1.5 if it's HDPI
+        float xhdpi = 2.0f;
+        return density >= xhdpi;
+
     }
 
 
@@ -116,6 +128,11 @@ public class IntroActivity extends Activity {
         public void copyOfflineMap() {
             Context context = IntroActivity.this.getApplicationContext();
             String mapFileName = context.getResources().getString(R.string.map_db_file_name);
+            if(isHighDensityScreen()){
+
+                mapFileName = HD_MAP_PREFIX + mapFileName;
+            }
+
             utils.copyOfflineMap(mapFileName, context.getAssets(),
                     context.getPackageName(), this);
         }

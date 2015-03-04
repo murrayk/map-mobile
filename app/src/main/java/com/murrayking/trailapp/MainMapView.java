@@ -43,7 +43,6 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
-import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
 import java.io.File;
 
@@ -247,8 +246,7 @@ public class MainMapView  extends Fragment{
     }
 
     private BoundingBoxE6 getMapLimits() {
-        String test =getResources().getString(R.string.bbEast);
-        double test2 = Double.parseDouble(test);
+
         double north = Double.parseDouble (getResources ().getString (R.string.bbNorth));
         double east  = Double.parseDouble (getResources ().getString (R.string.bbEast));
         double south = Double.parseDouble (getResources().getString(R.string.bbSouth));
