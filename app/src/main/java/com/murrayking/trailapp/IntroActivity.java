@@ -8,8 +8,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 /**
  * Created by murrayking on 21/01/2015.
@@ -28,7 +26,7 @@ public class IntroActivity extends Activity {
 
 
 
-        Button goToMap = (Button)this.findViewById(R.id.goMapButton);
+        View goToMap = this.findViewById(R.id.goMapButton);
 
         goToMap.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -37,7 +35,7 @@ public class IntroActivity extends Activity {
                 startActivity(intent);
             }
         });
-        ImageButton goBikePatrol = (ImageButton)this.findViewById(R.id.goBikePatrol);
+        View goBikePatrol = this.findViewById(R.id.goBikePatrol);
 
         goBikePatrol.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#ffff4a43">
 
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
 
-</RelativeLayout>
+
+        android:src="@drawable/tweedpatrol" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/tvbp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:autoText="false" />
+
+    <ImageButton
+        android:id="@+id/goBikePatrol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:src="@drawable/paypal_donation_button"
+        android:text="Donate"
+        android:paddingRight="15dp"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
