@@ -193,7 +193,7 @@ public class MainMapView  extends Fragment{
                 else
                     mapView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
 
-                //work out zoomlevel mapView.zoomToBoundingBox(); doesn't always so wrote own work.
+                //work out zoomlevel mapView.zoomToBoundingBox(); doesn't always work so wrote own function.
                 //use own code.
 
                 GeoPoint nw = new GeoPoint(bb.getLatNorthE6(), bb.getLonWestE6());

@@ -36,7 +36,7 @@
                 android:layout_toLeftOf="@+id/locate_button"
                 android:layout_toStartOf="@+id/locate_button"
                 android:layout_marginRight="23dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="23dp" />
             <ImageButton
                 android:id="@+id/locate_button"
@@ -44,7 +44,7 @@
                 android:src="@drawable/ic_action_locate"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dip"
                 android:text="New Button"
                 android:layout_gravity="right|top"
                 android:layout_alignParentTop="true"
@@ -53,7 +53,19 @@
                 android:layout_marginRight="24dp"
                 android:layout_marginEnd="24dp" />
 
-        </RelativeLayout></RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/copyright"
+                    android:id="@+id/textView"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="10dip" />
+
+            </RelativeLayout></RelativeLayout>
 
         <LinearLayout
             android:id="@+id/replace"

@@ -187,6 +187,10 @@
     <string name="bbEast" >-3.0674</string>
     <string name="bbSouth" >55.6235</string>
     <string name="bbWest" >-3.2006</string>
+    <string name="copyright">©OpenStreetMap contributors</string>
+    <string name="tvbp">The Tweed Valley Bike Patrol provides visitors to Glentress and Innerleithen Forests with the advantages of local knowledge, bike repair skills and emergency assistance from a team of skilled riders.\n\n
+All patrollers are qualified MBLA Trail Cycle Leaders, Mountain Bike Leaders or Mountain Rescue Team members with specialist first aid training in outdoor scenarios.\n\n
+We are a completely voluntary organisation that runs solely on donations made by the public; donations can be made at various collection boxes in the Tweed Valley or by contacting us..</string>
 
 
 </resources>

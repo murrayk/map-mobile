@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * Created by murrayking on 21/01/2015.
@@ -36,7 +37,7 @@ public class IntroActivity extends Activity {
                 startActivity(intent);
             }
         });
-        Button goBikePatrol = (Button)this.findViewById(R.id.goBikePatrol);
+        ImageButton goBikePatrol = (ImageButton)this.findViewById(R.id.goBikePatrol);
 
         goBikePatrol.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
