@@ -24,8 +24,6 @@ public class IntroActivity extends Activity {
         setContentView(R.layout.intro_screen);
 
 
-
-
         View goToMap = this.findViewById(R.id.goMapButton);
 
         goToMap.setOnClickListener(new View.OnClickListener() {
