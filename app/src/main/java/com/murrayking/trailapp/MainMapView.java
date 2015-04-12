@@ -217,7 +217,7 @@ public class MainMapView  extends Fragment{
         mapView.getController().setZoom(prefs.getInt(PREFS_ZOOM_LEVEL, 1));
         mapView.scrollTo(prefs.getInt(PREFS_SCROLL_X, 0), prefs.getInt(PREFS_SCROLL_Y, 0));
 
-        locationOverlay.enableMyLocation();
+        //locationOverlay.enableMyLocation();
         compassOverlay.enableCompass();
 
         //get string array pf plot
