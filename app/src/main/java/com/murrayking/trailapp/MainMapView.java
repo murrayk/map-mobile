@@ -134,8 +134,15 @@ public class MainMapView  extends Fragment{
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                MainMapView.this.locationOverlay.enableFollowLocation();
+                if(!locationOverlay.isMyLocationEnabled()) {
+                    locationOverlay.enableMyLocation();
+                    locationOverlay.enableFollowLocation();
+                    //highlight button?
+                    //when following
+                } else {
+                    locationOverlay.disableMyLocation();
+                    locationOverlay.disableFollowLocation();
+                }
 
             }
         });
@@ -217,7 +224,11 @@ public class MainMapView  extends Fragment{
         mapView.getController().setZoom(prefs.getInt(PREFS_ZOOM_LEVEL, 1));
         mapView.scrollTo(prefs.getInt(PREFS_SCROLL_X, 0), prefs.getInt(PREFS_SCROLL_Y, 0));
 
-        //locationOverlay.enableMyLocation();
+
+        /*if(!locationOverlay.isMyLocationEnabled()) {
+            locationOverlay.enableMyLocation();
+        }*/
+
         compassOverlay.enableCompass();
 
         //get string array pf plot
@@ -371,7 +382,8 @@ public class MainMapView  extends Fragment{
 
         this.locationOverlay.disableMyLocation();
         this.compassOverlay.disableCompass();
-        this.locationOverlay.onPause();
+        //
+        // this.locationOverlay.onPause();
         super.onPause();
     }
 
