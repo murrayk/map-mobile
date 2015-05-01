@@ -157,6 +157,8 @@ public class MainMapView  extends Fragment{
             }
         });
 
+        ImageButton gridRef = (ImageButton) rootView.findViewById(R.id.grid_ref_button);
+
 
 
 
