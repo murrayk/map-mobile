@@ -33,7 +33,7 @@ public class EPSG_27700 {
     public EPSG_27700() {
     }
 
-    double[] toLocalSystem(double lat, double lon) {
+    public double[] toLocalSystem(double lat, double lon) {
         double[] cartesian = this.wgs84.convertLatLongToCartesian(lat, lon);
         double[] newCartesian = this.toWgs84.reverseHelmertTransformation(cartesian[0],
                 cartesian[1],
@@ -48,7 +48,7 @@ public class EPSG_27700 {
     ;
 
 
-    String getGridRef(int precision, double northings, double eastings) {
+    public String getGridRef(int precision, double northings, double eastings) {
         int e =0;
         int n =0;
         int y =0;

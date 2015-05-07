@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -25,6 +27,7 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.murrayking.trailapp.ListRoutesFragment.SingleRow;
+import com.murrayking.trailapp.com.murrayking.trailapp.converter.EPSG_27700;
 
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
@@ -77,15 +80,15 @@ public class MainMapView  extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.main, container, false);
-        Context context = inflater.getContext();
+        final View rootView = inflater.inflate(R.layout.main, container, false);
+        final Context context = inflater.getContext();
 
 
         getActivity().getActionBar().hide();
 
 
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
-        SingleRow routeRow = getRow();
+        final SingleRow routeRow = getRow();
 
         kmlDocument = new KmlDocument();
         File route = utils.copyFileFromAssets(routeRow.getRouteKmlFile(), this.getActivity().getAssets(), this.getActivity().getPackageName(), null);
@@ -130,18 +133,18 @@ public class MainMapView  extends Fragment{
         mapView = new FixedMapView(context, 256, resProxy, provider);
 
 
-        ImageButton mButton = (ImageButton) rootView.findViewById(R.id.locate_button);
+        final ImageButton mButton = (ImageButton) rootView.findViewById(R.id.locate_button);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!locationOverlay.isMyLocationEnabled()) {
+                if (!locationOverlay.isMyLocationEnabled()) {
                     locationOverlay.enableMyLocation();
                     locationOverlay.enableFollowLocation();
-                    //highlight button?
-                    //when following
+                    mButton.setBackgroundResource(R.drawable.round_button_hi);
                 } else {
                     locationOverlay.disableMyLocation();
                     locationOverlay.disableFollowLocation();
+                    mButton.setBackgroundResource(R.drawable.round_button);
                 }
 
             }
@@ -159,7 +162,14 @@ public class MainMapView  extends Fragment{
 
         ImageButton gridRef = (ImageButton) rootView.findViewById(R.id.grid_ref_button);
 
+        gridRef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                showGridRefDialog();
+
+            }
+        });
 
 
 
@@ -356,10 +366,54 @@ public class MainMapView  extends Fragment{
             }
         });
 
-
-
         dialog.show();
 
+
+    }
+
+
+    private void showGridRefDialog(){
+        // Create custom dialog object
+        final Dialog dialog = new Dialog(MainMapView.this.getActivity(), R.style.NewDialog);
+        // Include dialog.xml file
+        dialog.setContentView(R.layout.grid_ref_dialog);
+        // Set dialog title
+        dialog.setTitle("Grid Reference");
+
+        TextView gridRefText = (TextView) dialog.findViewById(R.id.grid_ref);
+        TextView eastingsNorthings = (TextView) dialog.findViewById(R.id.eastingsNorthings);
+        TextView latLong =  (TextView) dialog.findViewById(R.id.latLong);
+
+        EPSG_27700 natgrid =  new EPSG_27700() ;
+
+        Location lastFix = this.locationOverlay.getLastFix();
+        if(lastFix !=  null) {
+            double latt = lastFix.getLatitude();
+            double lont = lastFix.getLongitude();
+
+            //328398 , 639568
+
+            double[] coords = natgrid.toLocalSystem(latt, lont);
+
+            int northing = (int) coords[0];
+            int easting = (int) coords[1];
+
+            eastingsNorthings.setText(easting + ", " + northing);
+
+            String gridRef = natgrid.getGridRef(5, northing, easting);
+            gridRefText.setText(gridRef);
+
+            latLong.setText(latt + ", " + lont);
+
+            dialog.show();
+        }
+        Button  dismissGridDialog = (Button) dialog.findViewById(R.id.dismissGridDialog);
+        dismissGridDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
 
     }
 
@@ -377,7 +431,7 @@ public class MainMapView  extends Fragment{
         final SharedPreferences.Editor edit = prefs.edit();
         edit.putInt(PREFS_SCROLL_X, mapView.getScrollX());
         edit.putInt(PREFS_SCROLL_Y, mapView.getScrollY());
-        edit.putInt(PREFS_ZOOM_LEVEL,  mapView.getZoomLevel());
+        edit.putInt(PREFS_ZOOM_LEVEL, mapView.getZoomLevel());
         edit.putBoolean(PREFS_SHOW_LOCATION, locationOverlay.isMyLocationEnabled());
         edit.putBoolean(PREFS_SHOW_COMPASS, compassOverlay.isCompassEnabled());
         edit.commit();
