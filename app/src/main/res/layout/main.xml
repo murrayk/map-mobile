@@ -25,27 +25,28 @@
             >
             <ImageButton
 
-                android:id="@+id/play_button"
+                android:id="@+id/grid_ref_button"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-
+                android:src="@drawable/grid_ref"
                 android:background="@drawable/round_button"
-                android:src="@drawable/ic_action_search"
+
                 android:text="New Button"
                 android:layout_alignTop="@+id/locate_button"
-                android:layout_toLeftOf="@+id/textView"
-                android:layout_toStartOf="@+id/textView" />
+                android:layout_toLeftOf="@+id/copyright"
+                android:layout_toStartOf="@+id/copyright" />
             <ImageButton
-                android:id="@+id/grid_ref_button"
+                android:id="@+id/play_button"
                 android:background="@drawable/round_button"
-                android:src="@drawable/ic_action_locate"
+
+                android:src="@drawable/ic_action_search"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:text="New Button"
                 android:layout_gravity="right|top"
-                android:layout_below="@+id/textView"
-                android:layout_toRightOf="@+id/play_button"
-                android:layout_toEndOf="@+id/play_button"
+                android:layout_below="@+id/copyright"
+                android:layout_toRightOf="@+id/grid_ref_button"
+                android:layout_toEndOf="@+id/grid_ref_button"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp" />
 
@@ -57,9 +58,9 @@
                     android:background="@drawable/round_button"
                     android:src="@drawable/ic_action_locate"
                     android:adjustViewBounds="true"
-                    android:layout_alignTop="@+id/grid_ref_button"
-                    android:layout_toRightOf="@+id/grid_ref_button"
-                    android:layout_toEndOf="@+id/grid_ref_button"
+                    android:layout_alignTop="@+id/play_button"
+                    android:layout_toRightOf="@+id/play_button"
+                    android:layout_toEndOf="@+id/play_button"
                     android:layout_marginLeft="21dp"
                     android:layout_marginStart="21dp" />
                 <TextView
@@ -68,7 +69,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:text="@string/copyright"
-                    android:id="@+id/textView"
+                    android:id="@+id/copyright"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"

@@ -132,6 +132,15 @@ public class MainMapView  extends Fragment{
 
         mapView = new FixedMapView(context, 256, resProxy, provider);
 
+        final ImageButton gridRef = (ImageButton) rootView.findViewById(R.id.grid_ref_button);
+        gridRef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showGridRefDialog();
+
+            }
+        });
 
         final ImageButton mButton = (ImageButton) rootView.findViewById(R.id.locate_button);
         mButton.setOnClickListener(new View.OnClickListener() {
@@ -141,10 +150,15 @@ public class MainMapView  extends Fragment{
                     locationOverlay.enableMyLocation();
                     locationOverlay.enableFollowLocation();
                     mButton.setBackgroundResource(R.drawable.round_button_hi);
+                    //show grid ref button
+                    ;
+                    gridRef.setVisibility(View.VISIBLE);
+
                 } else {
                     locationOverlay.disableMyLocation();
                     locationOverlay.disableFollowLocation();
                     mButton.setBackgroundResource(R.drawable.round_button);
+                    gridRef.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -160,16 +174,8 @@ public class MainMapView  extends Fragment{
             }
         });
 
-        ImageButton gridRef = (ImageButton) rootView.findViewById(R.id.grid_ref_button);
 
-        gridRef.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                showGridRefDialog();
-
-            }
-        });
 
 
 
