@@ -39,6 +39,16 @@ public class BikePatrolActivity extends Activity {
             }
         });
 
+        View goToWww = this.findViewById(R.id.goToWww);
+        goToWww.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                //https://www.paypal.com/cgi-bin/webscr
+
+                openWebPage("http://tweedvalleybikepatrol.org/");
+            }
+        });
+
     }
 
     public void openWebPage(String url) {
