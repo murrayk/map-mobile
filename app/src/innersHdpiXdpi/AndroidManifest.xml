@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.murrayking.trailapp" >
+
+    <compatible-screens>
+        <screen android:screenDensity="hdpi" android:screenSize="small"/>
+        <screen android:screenDensity="hdpi" android:screenSize="normal"/>
+        <screen android:screenDensity="hdpi" android:screenSize="large"/>
+        <screen android:screenDensity="hdpi" android:screenSize="xlarge"/>
+
+        <screen android:screenDensity="xhpdi" android:screenSize="small"/>
+        <screen android:screenDensity="xhpdi" android:screenSize="normal"/>
+        <screen android:screenDensity="xhpdi" android:screenSize="large"/>
+        <screen android:screenDensity="xhpdi" android:screenSize="xlarge"/>
+
+    </compatible-screens>
+
+
+
+</manifest>

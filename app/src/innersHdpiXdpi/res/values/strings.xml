@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Innerleithen Trail Map Inners</string>
+
+
+    <string name="action_settings">Settings</string>
+
+    <string name="map_db_file_name">inners.mbtiles</string>
+    <string name="activity_details">Map</string>
+    <string-array name="titles">
+        <item>Red Route (Difficult)</item>
+        <item>Downhill (Extreme)</item>
+    </string-array>
+    <string-array name="descriptions">
+
+        <item>Expert mountain bike users, used to physically demanding routes. Quality off-road mountain bikes.</item>
+        <item>Downhill Park, Riders aspiring to athlete level of technical ability, incorporates everything from full on downhill riding to big-air jumps.</item>
+    </string-array>
+    <string-array name="route_info" formatted="false">
+        <item><![CDATA[<b>Grade:</b> Red &mdash; Difficult<br/><b>Distance</b>: 19Km<br/><b>Singletrack</b>: 75%<br/><b>Estimated Time</b>: 2 &mdash; 4 hrs]]></item>
+        <item><![CDATA[<b>Grade:</b> Orange &mdash; Extreme <b]]></item>
+    </string-array>
+
+    <string-array name="routes_kml_filenames">
+        <item>innersxc.kml</item>
+        <item>inners_downhill.kml</item>
+    </string-array>
+    <string-array name="red_inners_loc_names">
+        <item>Oh deer!</item>
+        <item>Minch moor ascent</item>
+        <item>Razor rock</item>
+        <item>Plora Craig</item>
+        <item>Minch Moor Shortcut</item>
+        <item>Enduro track</item>
+        <item>Caddon bank</item>
+        <item>Clattering path</item>
+        <item>Taniel hill</item>
+        <item>Stell burn climb</item>
+    </string-array>
+    <string-array name="red_inners_loc_coords">
+        <item>-3.0254363,55.6150772</item>
+        <item>-3.0274547,55.5891056</item>
+        <item>-3.0254363,55.6150772</item>
+        <item>-3.0262562,55.6128622</item>
+        <item>-3.0274547,55.5891056</item>
+        <item>-3.0161337,55.5908486</item>
+        <item>-3.048261,55.6143615</item>
+        <item>-3.0427628,55.5924062</item>
+        <item>-3.0468882,55.6049031</item>
+        <item>-3.0545879,55.6113824</item>
+    </string-array>
+
+    <string-array name="inners_downhill_loc_names">
+        <item>Matador</item>
+        <item>Gold run</item>
+        <item>Make or break</item>
+        <item>Cresta run</item>
+    </string-array>
+    <string-array name="inners_downhill_loc_coords">
+        <item>-3.0362553,55.6070268</item>
+        <item>-3.0375277,55.6067061</item>
+        <item>-3.0371302,55.6068009</item>
+        <item>-3.0375277,55.6067061</item>
+    </string-array>
+
+    <array name="route_list_icons" >
+        <item>@drawable/red_icon</item>
+        <item>@drawable/orange_icon</item>
+    </array>
+
+    <array name="trail_names" >
+        <item>@array/red_inners_loc_names</item>
+        <item>@array/inners_downhill_loc_names</item>
+    </array>
+
+    <array name="trail_coords" >
+        <item>@array/red_inners_loc_coords</item>
+        <item>@array/inners_downhill_loc_coords</item>
+    </array>
+
+    <array name="trail_icons" >
+
+        <item>@drawable/red_trail_icon</item>
+
+        <item>@drawable/orange_icon</item>
+    </array>
+
+    //tilemill wide 1-14 -3.2153,55.5314,-2.8685,55.6943
+
+    //smaller area
+    //tilemill 1-18 -3.0615,55.5720,-3.0016,55.6252
+    <string name="bbNorth" >55.6262</string>
+    <string name="bbEast" >-2.9881</string>
+    <string name="bbSouth" >55.5694</string>
+    <string name="bbWest" >-3.0815</string>
+
+    <array name="routes_icons" >
+
+    </array>
+
+</resources>
