@@ -14,6 +14,7 @@ import android.view.View;
  */
 public class IntroActivity extends Activity {
 
+    private  static String HD_MAP_PREFIX = "hd_";
 
     private Utils utils = Utils.getInstance();
 
@@ -124,6 +125,10 @@ public class IntroActivity extends Activity {
         public void copyOfflineMap() {
             Context context = IntroActivity.this.getApplicationContext();
             String mapFileName = context.getResources().getString(R.string.map_db_file_name);
+            if(isHighDensityScreen()){
+
+                mapFileName = HD_MAP_PREFIX + mapFileName;
+            }
 
             utils.copyOfflineMap(mapFileName, context.getAssets(),
                     context.getPackageName(), this);

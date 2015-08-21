@@ -17,9 +17,9 @@ android {
             applicationId "com.murrayking.trailapp"
             versionName "1.0"
         }
-        innersLdpiMdpi {
+        inners {
             applicationId "com.murrayking.trailapp.inners"
-            versionName "1.0"
+            versionName "1.0-full"
         }
     }
 
