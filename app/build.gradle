@@ -8,14 +8,19 @@ android {
         applicationId "com.murrayking.trailapp"
         minSdkVersion 14
         targetSdkVersion 20
-        versionCode 1
+        versionCode 3
         versionName "1.0"
     }
 
     productFlavors {
-        glentress {
-            applicationId "com.murrayking.trailapp"
-            versionName "1.0"
+        glentressld {
+            applicationId "com.murrayking.trailapp.glentress"
+            versionName "1.0-ld"
+        }
+
+        glentresshd {
+            applicationId "com.murrayking.trailapp.glentress"
+            versionName "1.0-hd"
         }
         inners {
             applicationId "com.murrayking.trailapp.inners"

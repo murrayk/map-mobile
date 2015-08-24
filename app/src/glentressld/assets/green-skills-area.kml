@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="skillsarea" id="skillsarea">
+	<SimpleField name="id" type="int"></SimpleField>
+	<SimpleField name="routelabel" type="string"></SimpleField>
+</Schema>
+<Folder><name>skillsarea</name>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#skillsarea">
+		<SimpleData name="id">26604062</SimpleData>
+		<SimpleData name="routelabel">Skills</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1560988,55.6600055 -3.1558499,55.6600394 -3.1556182,55.6600733 -3.1555324,55.6600685 -3.1554723,55.6599958 -3.1553435,55.6600152</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#skillsarea">
+		<SimpleData name="id">26604060</SimpleData>
+		<SimpleData name="routelabel">Skills</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1554723,55.6599958 -3.1556472,55.6599502 -3.1557545,55.6598716 -3.1559873,55.6598748 -3.1560988,55.6600055 -3.1563563,55.6600394 -3.1565881,55.6600055</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#skillsarea">
+		<SimpleData name="id">26604057</SimpleData>
+		<SimpleData name="routelabel">Skills</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1553435,55.6600152 -3.1553575,55.6599533 -3.1556268,55.6597925 -3.1560559,55.6597053 -3.156248,55.6597293 -3.1564765,55.6596085 -3.1569743,55.6594536 -3.157146,55.6594245 -3.1571374,55.659531 -3.157101,55.6596204 -3.1569915,55.6597005 -3.1567683,55.659778 -3.1565452,55.6598409 -3.1567426,55.6598893 -3.1565881,55.6600055 -3.1565881,55.6600733 -3.156528,55.6602331 -3.1563563,55.6602089 -3.156116,55.6602186 -3.1561074,55.6602815 -3.1561675,55.660359 -3.1560731,55.6603832 -3.1557298,55.6603251 -3.1554294,55.660359 -3.1551547,55.6604025 -3.1550689,55.6604316 -3.1554809,55.6605091 -3.1555152,55.6605381 -3.155395,55.6605478 -3.1552577,55.6605865 -3.1554465,55.6606688 -3.1554208,55.6607027 -3.1546483,55.6606301 -3.1539359,55.660664 -3.1535313,55.6606355 -3.1532493,55.6606156 -3.1534209,55.6605187 -3.1535497,55.6604737 -3.1540593,55.6603466 -3.1545797,55.6603285 -3.1549634,55.6602603 -3.1555324,55.6600685</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#skillsarea">
+		<SimpleData name="id">55960810</SimpleData>
+		<SimpleData name="routelabel">Skills</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.152375,55.6592832 -3.1529574,55.6597973 -3.1533853,55.6599054 -3.1535325,55.6599426 -3.1543919,55.6601681 -3.1551547,55.6601169 -3.1553435,55.6600152</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#skillsarea">
+		<SimpleData name="id">55960979</SimpleData>
+		<SimpleData name="routelabel">Skills</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1535497,55.6604737 -3.153069,55.6603348 -3.1531463,55.6603057 -3.1534467,55.6602767 -3.1531291,55.6601605 -3.1531119,55.6601169 -3.1534467,55.6600346 -3.1533853,55.6599054</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>

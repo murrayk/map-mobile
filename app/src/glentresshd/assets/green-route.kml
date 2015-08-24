@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="green_route" id="green_route">
+	<SimpleField name="id" type="int"></SimpleField>
+</Schema>
+<Folder><name>green_route</name>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#green_route">
+		<SimpleData name="id">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1600667,55.6581869 -3.1598414,55.657975 -3.159707300000012,55.657950800000023 -3.159524899999988,55.657944799999981 -3.1591447,55.6581033</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#green_route">
+		<SimpleData name="id">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1623954,55.652779 -3.1616464,55.6535031 -3.1606165,55.6543323 -3.1600478,55.6553008 -3.1600371,55.6563782 -3.1599039,55.65744 -3.1596022,55.6578138 -3.1591447,55.6581033</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#green_route">
+		<SimpleData name="id">81943418</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1634816,55.6539869 -3.1634507,55.6538629 -3.1633786,55.6537157 -3.1632173,55.6535201 -3.1628843,55.6533845 -3.1627607,55.6533884 -3.1626886,55.6533632 -3.1626955,55.6533206 -3.1627573,55.6532741 -3.1631109,55.6532141 -3.1633752,55.6532335 -3.1635365,55.6532664 -3.1636876,55.6533051 -3.1637974,55.6533729 -3.1637665,55.6537835 -3.1637288,55.6538707 -3.1637254,55.6539346 -3.1637734,55.6539365 -3.1639176,55.6538029 -3.1639657,55.653648 -3.1639245,55.6531269 -3.1640034,55.6529352 -3.1640412,55.6526912 -3.1639863,55.6525536 -3.163794,55.6523871 -3.1635949,55.6523638 -3.163255,55.6524781 -3.1623954,55.652779</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#green_route">
+		<SimpleData name="id">81943357</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1621931,55.654375 -3.1624236,55.6544655 -3.1624787,55.6544923 -3.1625634,55.6545861 -3.1627054,55.6549299 -3.1630735,55.6556595 -3.1633337,55.6562825 -3.1634085,55.6564417 -3.1635649,55.6566546 -3.1638811,55.6570286 -3.1639627,55.6572913 -3.16377,55.6577247 -3.1638043,55.6578254 -3.1638867,55.6578429</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#green_route">
+		<SimpleData name="id">81943390</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1638867,55.6578429 -3.163921,55.6578371 -3.1640103,55.657746 -3.1640618,55.657595 -3.1641682,55.6574478 -3.1644291,55.6571186 -3.1644634,55.6570566 -3.1644325,55.6569849 -3.1643536,55.656799 -3.1641098,55.6564233 -3.1640137,55.6563439 -3.1638901,55.6561812 -3.1638077,55.6559953 -3.1636807,55.6558888 -3.1634404,55.6553756 -3.1633615,55.6545582 -3.1633615,55.6544517 -3.1633924,55.6543684 -3.1634816,55.6539869</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>50006e14</color><width>14</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#green_route">
+		<SimpleData name="id">81943370</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><altitudeMode>relativeToGround</altitudeMode><coordinates>-3.1600667,55.6581869 -3.1601525,55.6582535 -3.1602437,55.6582444 -3.1602866,55.6581536 -3.1601898,55.6579552 -3.1601146,55.6578612 -3.1601254,55.6576461 -3.1603725,55.6570127 -3.1605712,55.6564763 -3.1606464,55.6563854 -3.1606733,55.6560308 -3.1606572,55.6556277 -3.1607147,55.6554532 -3.1607469,55.6554138 -3.1607898,55.655429 -3.1607791,55.6556151 -3.1608486,55.6566013 -3.1607969,55.6567322 -3.1607973,55.6568664 -3.1606046,55.6573238 -3.1605557,55.6574209 -3.1605503,55.6575681 -3.1605917,55.657828 -3.1606691,55.657984 -3.1608267,55.6580792 -3.1610286,55.65814 -3.1614351,55.6582211 -3.1619798,55.6582523 -3.1623448,55.6581338 -3.1628537,55.6579248 -3.1631412,55.657711 -3.1633127,55.6572742 -3.1632629,55.6568468 -3.1631858,55.6566403 -3.1630111,55.6563336 -3.1628752,55.6560317 -3.1628336,55.6556735 -3.1626173,55.6552464 -3.1623733,55.6548959 -3.1620766,55.6546269 -3.1619546,55.654569 -3.1619546,55.6544595 -3.1620295,55.6544094 -3.1621931,55.654375</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>
