@@ -10,6 +10,7 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.murrayking.trailapp.ListRoutesFragment.SingleRow;
-import com.murrayking.trailapp.com.murrayking.trailapp.converter.EPSG_27700;
+import com.murrayking.trailapp.converter.EPSG_27700;
 
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
@@ -111,11 +112,12 @@ public class MainMapView  extends Fragment{
          * Comment: I don't quite get why BitmapTileSource base is abstract; it
          * doesn't contain any abstract methods.
          */
-
+        int maxZoom = this.getResources().getInteger(R.integer.maximumZoom);
+        Log.d("maxzoom" , "" + maxZoom);
         XYTileSource tSource;
         tSource = new XYTileSource("mbtiles",
                 ResourceProxy.string.offline_mode,
-                8, 18, 256, ".png", new String[]{"http://who.cares/"});
+                8, maxZoom, 256, ".png", new String[]{"http://who.cares/"});
 
 
         IArchiveFile[] files = { MBTilesFileArchive.getDatabaseFileArchive(utils.getOfflineMap()) };

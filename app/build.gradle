@@ -8,7 +8,7 @@ android {
         applicationId "com.murrayking.trailapp"
         minSdkVersion 14
         targetSdkVersion 20
-        versionCode 3
+        versionCode 4
         versionName "1.0"
     }
 
@@ -21,6 +21,11 @@ android {
         glentresshd {
             applicationId "com.murrayking.trailapp.glentress"
             versionName "1.0-hd"
+        }
+
+        glentressxhd {
+            applicationId "com.murrayking.trailapp.glentress"
+            versionName "1.0-xhd"
         }
         inners {
             applicationId "com.murrayking.trailapp.inners"

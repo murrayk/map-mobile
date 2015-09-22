@@ -11,6 +11,7 @@ import android.app.AlertDialog.Builder;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -84,7 +85,44 @@ public class TestExpansionPack extends Activity implements IDownloaderClient
         mDownloadViewGroup = this.findViewById(R.id.downloadViewGroup);
         mDownloadProgressBar = (ProgressBar)this.findViewById(R.id.downloadProgressBar);
         mProgressPercentTextView = (TextView)this.findViewById(R.id.downloadProgressPercentTextView);
+        mDownloaderClientStub = DownloaderClientMarshaller.CreateStub(this, DownloaderService.class);
 
+/**
+ * Before we do anything, are the files we expect already here and
+ * delivered (presumably by Market) For free titles, this is probably
+ * worth doing. (so no Market request is necessary)
+ */
+        if (!expansionFilesDelivered()) {
+
+            try {
+                Intent launchIntent = TestExpansionPack.this.getIntent();
+                Intent intentToLaunchThisActivityFromNotification = new Intent(TestExpansionPack.this, TestExpansionPack.this.getClass());
+                intentToLaunchThisActivityFromNotification.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intentToLaunchThisActivityFromNotification.setAction(launchIntent.getAction());
+
+                if (launchIntent.getCategories() != null) {
+                    for (String category : launchIntent.getCategories()) {
+                        intentToLaunchThisActivityFromNotification.addCategory(category);
+                    }
+                }
+
+                // Build PendingIntent used to open this activity from
+                // Notification
+                PendingIntent pendingIntent = PendingIntent.getActivity(TestExpansionPack.this, 0, intentToLaunchThisActivityFromNotification, PendingIntent.FLAG_UPDATE_CURRENT);
+                // Request to start the download
+                int startResult = DownloaderClientMarshaller.startDownloadServiceIfRequired(this, pendingIntent, DownloaderService.class);
+
+                if (startResult != DownloaderClientMarshaller.NO_DOWNLOAD_REQUIRED) {
+                    // The DownloaderService has started downloading the files, show progress
+                    //initializeDownloadUI();
+                    return;
+                } // otherwise, download not needed so we fall through to the app
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.e("TAG", "Cannot find package!", e);
+            }
+        } else {
+            validateXAPKZipFiles();
+        }
     }
 
     /**

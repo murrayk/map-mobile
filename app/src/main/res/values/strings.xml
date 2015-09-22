@@ -230,4 +230,6 @@ We are a completely voluntary organisation that runs solely on donations made by
     <string name="time_remaining">Time remaining: %1$s</string>
     <string name="time_remaining_notification">%1$s left</string>
 
+
+    <integer name="maximumZoom">18</integer>
 </resources>
