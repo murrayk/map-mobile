@@ -1,6 +1,7 @@
 package com.murrayking.trailapp;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.widget.Toast;
 
@@ -9,12 +10,12 @@ import org.osmdroid.util.BoundingBoxE6;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.mylocation.IMyLocationProvider;
-import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
+import org.osmdroid.views.overlay.mylocation.MyMutableLocationOverlay;
 
 /**
  * Created by murrayking on 12/02/2015.
  */
-public class LocationOverlayWithLocationUpdates extends MyLocationNewOverlay {
+public class LocationOverlayWithLocationUpdates extends MyMutableLocationOverlay {
     private BoundingBoxE6 mapLimitBox;
     private Context context;
     private Toast toast;
@@ -24,6 +25,10 @@ public class LocationOverlayWithLocationUpdates extends MyLocationNewOverlay {
         super(myLocationProvider, mapView, new DefaultResourceProxyImpl(context));
         this.mapLimitBox = mapLimitBox;
         this.context = context;
+        this.mPersonBitmap = BitmapFactory.decodeResource(context.getResources(),
+                R.drawable.person);
+        this.mDirectionArrowBitmap = BitmapFactory.decodeResource(context.getResources(),
+                R.drawable.person);
     }
 
     /**
